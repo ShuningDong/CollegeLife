@@ -15,4 +15,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="main_logo">main logo</string>
     <string name="options_logo" />
+    <string name="desc">Image</string>
 </resources>
