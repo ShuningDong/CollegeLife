@@ -16,4 +16,7 @@
     <string name="main_logo">main logo</string>
     <string name="options_logo" />
     <string name="desc">Image</string>
+    <string name="setting_icon">setting_icon</string>
+    <string name="settings_button">settings_button</string>
+    <string name="settings">settings</string>
 </resources>
