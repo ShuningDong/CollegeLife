@@ -1,27 +1,21 @@
 package com.example.collegelife.ui.main;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.collegelife.R;
 
-public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+public class PlayerActivity extends AppCompatActivity {
+    private static final String TAG = "Player_Activity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        menufragment mainMenu = new menufragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.container, mainMenu).commit();
-
-        Log.d(TAG, "onCreate is called for main activity");
+        setContentView(R.layout.activity_player);
     }
+
 
     @Override
     protected void onStart() {

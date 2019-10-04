@@ -7,15 +7,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.collegelife.R;
 
-public class player1page extends AppCompatActivity {
-    private static final String TAG = "Player1_page";
-
+public class MenuActivity extends AppCompatActivity {
+    private static final String TAG = "Menu_Activity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_player1page);
-    }
+        setContentView(R.layout.activity_menu);
 
+        MenuFragment mainMenu = new MenuFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.container, mainMenu).commit();
+
+        Log.d(TAG, "onCreate is called for main activity");
+    }
 
     @Override
     protected void onStart() {

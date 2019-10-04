@@ -16,11 +16,11 @@ import com.example.collegelife.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class menufragment extends Fragment implements View.OnClickListener {
+public class MenuFragment extends Fragment implements View.OnClickListener {
 
-    private static final String TAG = "Menu_fragment";
+    private static final String TAG = "Menu_Fragment";
 
-    public menufragment() {
+    public MenuFragment() {
         // Required empty public constructor
     }
 
@@ -29,7 +29,7 @@ public class menufragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.menu_fragment, container, false);
+        View v = inflater.inflate(R.layout.fragment_menu, container, false);
 
         Button start_button = v.findViewById(R.id.start_button);
         start_button.setOnClickListener(this);
@@ -37,6 +37,31 @@ public class menufragment extends Fragment implements View.OnClickListener {
         settings_button.setOnClickListener(this);
 
         return v;
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart is called");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume is called");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause is called");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop is called");
     }
 
 
@@ -48,12 +73,12 @@ public class menufragment extends Fragment implements View.OnClickListener {
 
                 case R.id.start_button:
                     //move to player page after click the start button
-                    startActivity(new Intent(activity.getApplicationContext(), player1page.class));
+                    startActivity(new Intent(activity.getApplicationContext(), PlayerActivity.class));
                     break;
 
                 case R.id.settings_button:
                     //move to settings menu after clicking gear icon
-                    //startActivity(new Intent(activity.getApplicationContext(), player1page.class));
+                    //startActivity(new Intent(activity.getApplicationContext(), PlayerActivity.class));
                     Log.d(TAG, "settings menu coming soon");
                     break;
             }
