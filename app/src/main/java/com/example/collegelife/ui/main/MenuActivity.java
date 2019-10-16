@@ -17,7 +17,7 @@ public class MenuActivity extends AppCompatActivity {
         MenuFragment mainMenu = new MenuFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.container, mainMenu).commit();
 
-        Log.d(TAG, "onCreate is called for main activity");
+        Log.d(TAG, "onCreated is called for main activity");
     }
 
     @Override
