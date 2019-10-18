@@ -49,7 +49,10 @@ public class CharacterFragment extends Fragment {
                     if (activity != null) {
                         Intent intent = new Intent(activity, GameActivity.class);
                         intent.putExtra("Player_name", player);
+                        Intent intent2 = new Intent (activity,SpinboardActivity.class);
+                        intent2.putExtra("Player_name", player);
                         startActivity(intent);
+                        startActivity(intent2);
                     }else {
                         Log.d(TAG, "Game Activity is null");
                     }

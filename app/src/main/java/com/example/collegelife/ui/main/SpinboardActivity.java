@@ -1,5 +1,6 @@
 package com.example.collegelife.ui.main;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,15 +14,23 @@ import android.widget.TextView;
 import android.widget.ImageView;
 
 import com.example.collegelife.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.Random;
+import java.util.Map;
+import java.util.HashMap;
 
 public class SpinboardActivity extends AppCompatActivity {
 
     private static final String TAG = "SpinBoardActivity";
 
+    private FirebaseFirestore mFirestore;
     Button button;
     TextView textView;
     ImageView spinboard;
@@ -192,6 +201,28 @@ public class SpinboardActivity extends AppCompatActivity {
             text = "0";
         }
 
+
+
+        mFirestore = FirebaseFirestore.getInstance();
+
+        Intent intent = getIntent();
+        String player_name = intent.getStringExtra("Player_name");
+
+        Map<String, String> scores = new HashMap<>();
+        scores.put("name", player_name);
+        scores.put("score", text);
+        mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Toast.makeText(SpinboardActivity.this, "player added to firebase", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                String error = e.getMessage();
+                Toast.makeText(SpinboardActivity.this, "Error: "+error, Toast.LENGTH_SHORT).show();
+            }
+        });
         return text;
     }
 }
