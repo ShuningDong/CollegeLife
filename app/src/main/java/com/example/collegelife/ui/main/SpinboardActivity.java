@@ -2,6 +2,7 @@ package com.example.collegelife.ui.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.animation.Animation;
@@ -60,6 +61,9 @@ public class SpinboardActivity extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
                         textView.setText(currentNumber(360 - (degree % 360)));
+                        Intent i = new Intent(getApplicationContext(), PopupCardActivity.class);
+                        startActivity(i);
+
 
                     }
 
