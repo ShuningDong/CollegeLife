@@ -12,9 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.main.popup_Passclass"
+            android:name=".ui.main.PopupCardActivity"
             android:theme="@style/AppTheme.PopMe"></activity>
-        <activity android:name=".ui.main.PlayerActivity" />
+        <activity android:name=".ui.main.CharacterActivity" />
         <activity android:name=".ui.main.MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
