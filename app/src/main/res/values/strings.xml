@@ -25,4 +25,8 @@
     <string name="start_game">Start game</string>
     <string name="next_player">Next player</string>
     <string name="name">Name</string>
+
+    <string name="title_activity_game">GameActivity</string>
+    <string name="game_image">game_image</string>
+    <string name="play">press to play</string>
 </resources>

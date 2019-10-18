@@ -21,8 +21,10 @@ public class Character {
         return this.Name;
     }
 
-    public int getGPA(){
-        return this.GPA;
+    public String getGPA(){
+        String gpa = "";
+        gpa += this.GPA;
+        return gpa;
     }
 
     public double getDebt(){

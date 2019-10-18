@@ -6,6 +6,7 @@ import android.app.Activity;
 
 import androidx.fragment.app.Fragment;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,17 +17,12 @@ import android.widget.Toast;
 
 import com.example.collegelife.R;
 
+import java.io.Serializable;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class CharacterFragment extends Fragment {
-    Character player1;
-    Character player2;
-    Character player3;
-    Character player4;
-
-    Character[] play = {};
-
     private static final String TAG = "Character_Fragment";
 
     public CharacterFragment() {
@@ -48,11 +44,16 @@ public class CharacterFragment extends Fragment {
                 if (edit_text.getText().toString().isEmpty()){
                     Toast.makeText(getActivity(), "Enter Name!", Toast.LENGTH_SHORT).show();
                 }else {
-                    player1 = new Character(edit_text.getText().toString());
-                }
-                Activity activity = getActivity();
-                if (activity != null) {
-                    startActivity(new Intent(getActivity().getApplicationContext(), PopupCardActivity.class));
+                    String player = edit_text.getText().toString();
+                    Activity activity = getActivity();
+                    if (activity != null) {
+                        Intent intent = new Intent(activity, GameActivity.class);
+                        intent.putExtra("Player_name", player);
+                        startActivity(intent);
+                    }else {
+                        Log.d(TAG, "Game Activity is null");
+                    }
+
                 }
             }
         });
@@ -63,9 +64,13 @@ public class CharacterFragment extends Fragment {
                 if (edit_text.getText().toString().isEmpty()){
                     Toast.makeText(getActivity(), "Enter Name!", Toast.LENGTH_SHORT).show();
                 }else {
-                    player1 = new Character(edit_text.getText().toString());
-                    Log.d(TAG, player1.getName());
-
+                    String player1 = edit_text.getText().toString();
+                    Log.d(TAG, player1);
+                    CharacterFragment fragment = new CharacterFragment();
+                    getFragmentManager().beginTransaction()
+                            .replace(R.id.container, fragment)
+                            .addToBackStack(CharacterFragment.class.getSimpleName())
+                            .commit();
                 }
             }
         });
