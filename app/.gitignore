@@ -2,3 +2,6 @@
 
 # api files
 *.json
+
+# gradle files
+*.gradle

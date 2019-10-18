@@ -96,6 +96,7 @@ public class GameActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent1 = new Intent(view.getContext(), SpinboardActivity.class);
+                intent1.putExtra("Player_name", player1.getName());
                 view.getContext().startActivity(intent1);
             }
         });
