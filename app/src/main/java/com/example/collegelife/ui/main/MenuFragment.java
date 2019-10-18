@@ -43,6 +43,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         Button settings_button = v.findViewById(R.id.settings_button);
         settings_button.setOnClickListener(this);
 
+        Log.d(TAG, "onCreate is called");
+
         return v;
     }
 
@@ -80,12 +82,12 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
 
                 case R.id.start_button:
                     //move to player page after click the start button
-                    startActivity(new Intent(activity.getApplicationContext(), PlayerActivity.class));
+                    startActivity(new Intent(activity.getApplicationContext(), CharacterActivity.class));
                     break;
 
                 case R.id.settings_button:
                     //move to settings menu after clicking gear icon
-                    //startActivity(new Intent(activity.getApplicationContext(), PlayerActivity.class));
+                    //startActivity(new Intent(activity.getApplicationContext(), CharacterActivity.class));
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     DocumentReference docRef = db.collection("Test").document("IqRoZmat383tkUD4G88U");
                     docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
