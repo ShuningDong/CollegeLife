@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.util.Log;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.collegelife.R;
@@ -51,7 +50,10 @@ public class CharacterFragment extends Fragment {
                 }else {
                     player1 = new Character(edit_text.getText().toString());
                 }
-                //startActivity(new Intent(getActivity().getApplicationContext(), popup_Passclass.class));
+                Activity activity = getActivity();
+                if (activity != null) {
+                    startActivity(new Intent(getActivity().getApplicationContext(), PopupCardActivity.class));
+                }
             }
         });
         Button next_button = v.findViewById(R.id.next_player);

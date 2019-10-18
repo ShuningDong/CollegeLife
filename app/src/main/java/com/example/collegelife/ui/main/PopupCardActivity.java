@@ -1,8 +1,6 @@
 package com.example.collegelife.ui.main;
 
 import android.app.Activity;
-import android.app.DownloadManager;
-import android.hardware.display.DisplayManager;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -11,15 +9,12 @@ import android.view.WindowManager;
 
 import com.example.collegelife.R;
 
-
-import android.os.Bundle;
-
-public class popup_Passclass extends Activity {
+public class PopupCardActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popup__passclass);
+        setContentView(R.layout.activity_popupcard);
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
