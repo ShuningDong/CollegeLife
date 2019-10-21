@@ -9,35 +9,37 @@
 
     <TextView
         android:id="@+id/place1"
-        android:layout_width="409dp"
-        android:layout_height="32dp"
+        android:layout_width="322dp"
+        android:layout_height="37dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="68dp"
         android:text="@string/place1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/place2"
-        android:layout_width="409dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/insert2"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/place3"
-        android:layout_width="407dp"
-        android:layout_height="31dp"
+        android:layout_width="325dp"
+        android:layout_height="37dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="148dp"
         android:text="@string/insert3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/place2"
+        android:layout_width="322dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="108dp"
+        android:text="@string/insert2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,4 +52,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/DeanListText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dean List Student"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="26dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
