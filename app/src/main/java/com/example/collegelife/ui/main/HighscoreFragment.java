@@ -26,6 +26,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -55,11 +56,14 @@ public class HighscoreFragment extends Fragment implements View.OnClickListener 
 
         Button del = v.findViewById(R.id.del_button);
         del.setOnClickListener(this);
+        Button update = v.findViewById(R.id.Update_button);
+        update.setOnClickListener(this);
 
         //startActivity(new Intent(activity.getApplicationContext(), CharacterActivity.class));
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         Task<QuerySnapshot> docRef = db.collection("ranking list")
-                .whereGreaterThan("score", "20")
+                .orderBy("score", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -88,7 +92,6 @@ public class HighscoreFragment extends Fragment implements View.OnClickListener 
                     }
                 });
 
-        showUpdate(db);
 
         Log.d(TAG, "onCreate is called");
 
@@ -125,31 +128,47 @@ public class HighscoreFragment extends Fragment implements View.OnClickListener 
 
         Activity activity =  getActivity();
         if (activity != null) {
-            if (v.getId() == R.id.del_button) {
-                //startActivity(new Intent(activity.getApplicationContext(), CharacterActivity.class));
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-                db.collection("ranking list").document("Px4ia5kglpnAJzhpQXKA")
-                        .delete()
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Log.d(TAG, "DocumentSnapshot successfully deleted!");
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                             Log.w(TAG, "Error deleting document", e);
-                            }
-                        });
-                Log.d(TAG, "settings menu coming soon");
+            switch (v.getId()) {
+
+                case R.id.del_button:
+                    //startActivity(new Intent(activity.getApplicationContext(), CharacterActivity.class));
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    db.collection("ranking list").document("KR5zNqF190hlV6DXPf2L")
+                            .delete()
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                 Log.w(TAG, "Error deleting document", e);
+                                }
+                            });
+                    break;
+                case R.id.Update_button:
+                    //startActivity(new Intent(activity.getApplicationContext(), CharacterActivity.class));
+                    FirebaseFirestore db_u = FirebaseFirestore.getInstance();
+                    db_u.collection("ranking list")
+                            .document("KR5zNqF190hlV6DXPf2L")
+                            .update("score", 187)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG, "DocumentSnapshot successfully updated!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w(TAG, "Error editing document", e);
+                                }
+                            });
+                    break;
             }
         }
     }
-
-    private void showUpdate( FirebaseFirestore db) {
-        db.collection("ranking list").document().update("score", "87");
-    }
-
 
 }

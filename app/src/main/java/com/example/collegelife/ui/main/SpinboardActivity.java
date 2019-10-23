@@ -208,9 +208,9 @@ public class SpinboardActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String player_name = intent.getStringExtra("Player_name");
 
-        Map<String, String> scores = new HashMap<>();
+        Map<String, Object> scores = new HashMap<>();
         scores.put("name", player_name);
-        scores.put("score", text);
+        scores.put("score", Integer.parseInt(text));
         mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
