@@ -5,4 +5,76 @@ xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/container"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".ui.main.MenuActivity"/>
+tools:context=".ui.main.MenuActivity">
+
+    <Button
+        android:id="@+id/settings_button"
+        android:layout_width="112dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="285dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="onClick"
+        android:text="@string/settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/game_logo"
+        android:layout_width="198dp"
+        android:layout_height="192dp"
+        android:layout_marginTop="64dp"
+        android:contentDescription="@string/main_logo"
+        android:src="@drawable/ic_school_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/game_name"
+        android:layout_width="205dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/college_life"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_logo" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="135dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="142dp"
+        android:layout_height="76dp"
+        android:text="@string/start"
+        app:layout_constraintBottom_toTopOf="@+id/sign_in_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_name" />
+
+    <ImageButton
+        android:id="@+id/logout"
+        android:layout_width="67dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/logout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/exit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

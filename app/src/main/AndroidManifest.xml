@@ -11,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.main.HighscoreActivity"></activity>
+        <activity android:name=".ui.main.MenuActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.main.HighscoreActivity" />
         <activity
             android:name=".ui.main.GameActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -22,13 +29,6 @@
             android:theme="@style/AppTheme.PopMe" />
         <activity android:name=".ui.main.CharacterActivity" />
         <activity android:name=".ui.main.SpinboardActivity" />
-        <activity android:name=".ui.main.MenuActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

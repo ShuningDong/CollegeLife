@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".spinboard">
+    tools:context=".ui.main.SpinboardActivity">
 
     <Button
         android:id="@+id/spinbn"
@@ -15,13 +15,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="165dp"
         android:layout_marginBottom="84dp"
-        android:text="SPIN" />
+        android:text="@string/spin" />
 
     <ImageView
         android:id="@+id/spinboard"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_centerInParent="true"
+        android:contentDescription="@string/spinboard"
         android:src="@drawable/spinboard" />
 
     <ImageView
@@ -36,6 +37,7 @@
         android:layout_marginTop="193dp"
         android:layout_marginEnd="176dp"
         android:layout_marginBottom="364dp"
+        android:contentDescription="@string/pointer"
         android:scaleType="centerInside"
         android:src="@drawable/pointer" />
 
@@ -48,6 +50,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="154dp"
-        android:text="TextView"
-        android:textSize="32dp" />
+        android:textSize="32sp" />
 </RelativeLayout>
