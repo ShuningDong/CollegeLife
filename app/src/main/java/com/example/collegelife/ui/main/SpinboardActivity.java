@@ -1,8 +1,15 @@
 package com.example.collegelife.ui.main;
 
+
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,11 +42,19 @@ public class SpinboardActivity extends AppCompatActivity {
     TextView textView;
     ImageView spinboard;
 
+    //sensor
+    private SensorManager sm;
+    private float acelVal; //current acceleration value and gravity.
+    private float acelLast;  //last acceleration value and gravity.
+    private float shake;  //acceleration value differ from gravity.
+
     Random r;
 
     int degree = 0, degree_old = 0;
 
     private static final float FACTOR = 4.86f;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +65,18 @@ public class SpinboardActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.result);
         spinboard = (ImageView) findViewById(R.id.spinboard);
 
+        //sensor
+        sm = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        sm.registerListener(sensorListener, sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),SensorManager.SENSOR_DELAY_NORMAL);
+
+        acelVal = SensorManager.GRAVITY_EARTH;
+        acelLast = SensorManager.GRAVITY_EARTH;
+        shake = 0.00f;
+
+
+
         r = new Random();
-        button.setOnClickListener(new View.OnClickListener() {
+    /*    button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 degree_old = degree % 360;
@@ -84,9 +109,61 @@ public class SpinboardActivity extends AppCompatActivity {
                 });
                 spinboard.startAnimation(rotate);
             }
-        });
+        });*/
     }
 
+    private final SensorEventListener sensorListener = new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent sensorEvent) {
+            float x = sensorEvent.values[0];
+            float y = sensorEvent.values[1];
+            float z = sensorEvent.values[2];
+
+            acelLast = acelVal;
+            acelVal = (float) Math.sqrt((double) (x*x+y*y+z*z));
+            float delta = acelVal-acelLast;
+            shake = shake * 0.9f + delta;
+
+            if(shake > 12){
+                degree_old = degree % 360;
+                degree = r.nextInt(3600) + 720;
+                RotateAnimation rotate = new RotateAnimation(degree_old, degree,
+                        RotateAnimation.RELATIVE_TO_SELF, 0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+                rotate.setDuration(3600);
+                rotate.setFillAfter(true);
+                rotate.setInterpolator(new DecelerateInterpolator());
+                rotate.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        textView.setText("");
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        textView.setText(currentNumber(360 - (degree % 360)));
+                        Intent i = new Intent(getApplicationContext(), PopupCardActivity.class);
+                        startActivity(i);
+
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+
+                });
+                spinboard.startAnimation(rotate);
+                Toast toast = Toast.makeText(getApplicationContext(),"I am shaking!", Toast.LENGTH_LONG);
+                toast.show();
+            }
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+        }
+    };
     private String currentNumber(int degrees) {
         String text = "";
         if (degrees >= (FACTOR * 1) && degrees < (FACTOR * 3)) {
