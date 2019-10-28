@@ -57,4 +57,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="start">Start</string>
     <string name="logout">logout</string>
+    <string name="GPA">GPA</string>
+    <string name="Debt">Debt</string>
+    <string name="backgroundgrid">backgroundgrid</string>
+
 </resources>
