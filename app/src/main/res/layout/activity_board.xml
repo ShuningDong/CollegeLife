@@ -29,6 +29,24 @@
         </LinearLayout>
     </ScrollView>
 
+    <ImageView
+        android:id="@+id/imageHome"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/home"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:id="@+id/imageDog"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/dog"
+        android:layout_marginEnd="120dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/GPA"
         android:layout_width="wrap_content"
