@@ -26,20 +26,14 @@
                 android:scaleType="fitStart"
                 android:src="@drawable/grid3"
                 android:adjustViewBounds="true"/>
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="backgroundgrid2"
-                android:scaleType="fitStart"
-                android:src="@drawable/grid2"
-                android:adjustViewBounds="true"/>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
                 android:contentDescription="backgroundgrid1"
                 android:scaleType="fitStart"
-                android:src="@drawable/grid1"
-                android:adjustViewBounds="true"/>
+                android:src="@drawable/grid1" />
 
         </LinearLayout>
     </ScrollView>
@@ -62,16 +56,6 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-    <TextView
-        android:id="@+id/GPA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/GPA"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Debt"
@@ -86,7 +70,18 @@
         app:layout_constraintTop_toTopOf="parent">
     </TextView>
 
-    <ImageButton
+    <TextView
+        android:id="@+id/GPA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/GPA"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/SpinButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
