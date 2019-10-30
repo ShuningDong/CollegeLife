@@ -38,9 +38,9 @@ public class SpinboardActivity extends AppCompatActivity {
     private static final String TAG = "SpinBoardActivity";
 
     private FirebaseFirestore mFirestore;
-    Button button;
+    //Button button;
     TextView textView;
-    ImageView spinboard;
+    ImageView spinboard2;
 
     //sensor
     private SensorManager sm;
@@ -52,7 +52,7 @@ public class SpinboardActivity extends AppCompatActivity {
 
     int degree = 0, degree_old = 0;
 
-    private static final float FACTOR = 4.86f;
+    private static final float FACTOR = 45.0f;
 
 
 
@@ -61,9 +61,9 @@ public class SpinboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinboard);
 
-        button = (Button) findViewById(R.id.spinbn);
+        //button = (Button) findViewById(R.id.spinbn);
         textView = (TextView) findViewById(R.id.result);
-        spinboard = (ImageView) findViewById(R.id.spinboard);
+        spinboard2 = (ImageView) findViewById(R.id.spinboard);
 
         //sensor
         sm = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -153,7 +153,7 @@ public class SpinboardActivity extends AppCompatActivity {
                     }
 
                 });
-                spinboard.startAnimation(rotate);
+                spinboard2.startAnimation(rotate);
                 Toast toast = Toast.makeText(getApplicationContext(),"I am shaking!", Toast.LENGTH_LONG);
                 toast.show();
             }
@@ -166,7 +166,19 @@ public class SpinboardActivity extends AppCompatActivity {
     };
     private String currentNumber(int degrees) {
         String text = "";
-        if (degrees >= (FACTOR * 1) && degrees < (FACTOR * 3)) {
+        if (degrees >= (FACTOR * 0) && degrees < (FACTOR * 2)) {
+            text = "2";
+        }
+        if (degrees >= (FACTOR * 2) && degrees < (FACTOR * 4)) {
+            text = "3";
+        }
+        if (degrees >= (FACTOR * 4) && degrees < (FACTOR * 6)) {
+            text = "4";
+        }
+        if (degrees >= (FACTOR * 6) && degrees < (FACTOR * 8)) {
+            text = "1";
+        }
+     /*   if (degrees >= (FACTOR * 1) && degrees < (FACTOR * 3)) {
             text = "32";
         }
         if (degrees >= (FACTOR * 3) && degrees < (FACTOR * 5)) {
@@ -276,7 +288,7 @@ public class SpinboardActivity extends AppCompatActivity {
         }
         if ((degrees >= (FACTOR * 73) && degrees < 360) || (degrees >= 0 && degrees < (FACTOR * 1))) {
             text = "0";
-        }
+        }*/
 
 
 

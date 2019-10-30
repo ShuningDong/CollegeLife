@@ -6,37 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.SpinboardActivity">
 
-    <Button
-        android:id="@+id/spinbn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="165dp"
-        android:layout_marginBottom="84dp"
-        android:text="@string/spin" />
-
-    <ImageView
-        android:id="@+id/spinboard"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        android:contentDescription="@string/spinboard"
-        android:src="@drawable/spinboard" />
-
     <ImageView
         android:id="@+id/pointer"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
+        android:layout_width="78dp"
+        android:layout_height="84dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="189dp"
-        android:layout_marginTop="193dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginBottom="364dp"
+        android:layout_marginStart="174dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="336dp"
         android:contentDescription="@string/pointer"
         android:scaleType="centerInside"
         android:src="@drawable/pointer" />
@@ -51,4 +32,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="154dp"
         android:textSize="32sp" />
+
+    <ImageView
+        android:id="@+id/spinboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/spinboard2" />
 </RelativeLayout>
