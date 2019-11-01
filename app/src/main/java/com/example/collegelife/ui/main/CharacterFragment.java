@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.collegelife.R;
@@ -36,6 +37,7 @@ public class CharacterFragment extends Fragment {
     private int count = 0;
     // multiplayer
     private String[] players = new String[4];
+    private String[] token = new String[4];
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,8 +58,9 @@ public class CharacterFragment extends Fragment {
                     count++;
                     Activity activity = getActivity();
                     if (activity != null) {
-                        Intent intent = new Intent(activity, GameActivity.class);
+                        Intent intent = new Intent(activity, BoardActivity.class);
                         intent.putExtra("players", players);
+                        intent.putExtra("tokens", token);
                         startActivity(intent);
                     }else {
                         Log.d(TAG, "Game Activity is null");
@@ -80,12 +83,50 @@ public class CharacterFragment extends Fragment {
                     //call function to hide add player button
                     updateUI(v, count);
                     Log.d(TAG, player);
-                    //CharacterFragment fragment = new CharacterFragment();
-                   // getFragmentManager().beginTransaction()
-                           // .replace(R.id.container, fragment)
-                           // .addToBackStack(CharacterFragment.class.getSimpleName())
-                           // .commit();
                 }
+            }
+        });
+
+        ImageButton spade_button = v.findViewById(R.id.SpadeButton);
+        spade_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                token[count] = "spade";
+                v.findViewById(R.id.SpadeButton).setVisibility(View.GONE);
+                }
+        });
+
+
+        ImageButton heart_button = v.findViewById(R.id.HeartButton);
+        heart_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                token[count] = "heart";
+                v.findViewById(R.id.HeartButton).setVisibility(View.GONE);
+            }
+        });
+
+
+        ImageButton club_button = v.findViewById(R.id.ClubButton);
+        club_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                token[count] = "club";
+                v.findViewById(R.id.ClubButton).setVisibility(View.GONE);
+            }
+        });
+
+
+        ImageButton diamond_button = v.findViewById(R.id.DiamondButton);
+        diamond_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                token[count] = "diamond";
+                v.findViewById(R.id.DiamondButton).setVisibility(View.GONE);
             }
         });
 
