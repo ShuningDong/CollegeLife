@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".ui.main.BoardActivity">
 
 
@@ -11,6 +12,7 @@
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#BBDEFB"
         tools:layout_editor_absoluteX="55dp"
         tools:layout_editor_absoluteY="132dp">
 
@@ -19,23 +21,26 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:contentDescription="backgroundgrid1"
-                android:scaleType="fitStart"
-                android:src="@drawable/untitled" />
 
             <TableLayout
                 android:layout_width="177dp"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
 
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textViewBoarderTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
+                </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#C5E1A5">
+                    android:background="#FFFFFF">
 
                     <TextView
                         android:id="@+id/textViewStart"
@@ -47,153 +52,172 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#C8E6C9">
+
+                    <TextView
+                        android:id="@+id/textViewGrid1"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Register a class"
+                        android:textAlignment="center" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#F0F4C3">
 
                     <TextView
                         android:id="@+id/textViewGrid2"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:text="Grid1"
+                        android:text="community service"
                         android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#C5E1A5">
+                    android:background="#C8E6C9">
 
                     <TextView
                         android:id="@+id/textViewGrid3"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:text="Grid1"
-                        android:textAlignment="center" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textViewGrid4"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Grid1"
+                        android:text="Fall break trip"
                         android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#C5E1A5">
+                    android:background="#F0F4C3">
 
                     <TextView
-                        android:id="@+id/textViewGrid5"
+                        android:id="@+id/textViewGrid4"
                         android:layout_height="100dp"
-                        android:text="Grid1"
+                        android:text="Rent an apartment"
                         android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#C8E6C9">
+
+                    <TextView
+                        android:id="@+id/textViewGrid5"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Buy a pet"
+                        android:textAlignment="center" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#F0F4C3">
 
                     <TextView
                         android:id="@+id/textViewGrid6"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:text="Grid1"
+                        android:text="Dropping a class"
                         android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#C5E1A5">
+                    android:background="#C8E6C9">
 
                     <TextView
                         android:id="@+id/textViewGrid7"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:text="Grid1"
+                        android:text="Join a club"
                         android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#F0F4C3">
 
                     <TextView
                         android:id="@+id/textViewGrid8"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:text="Grid1"
+                        android:text="Spring break trip"
                         android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#C5E1A5">
+                    android:background="#C8E6C9">
 
                     <TextView
                         android:id="@+id/textViewGrid9"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:text="Grid1"
-                        android:textAlignment="center" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textViewGrid10"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Grid1"
+                        android:text="Miss class"
                         android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#C5E1A5">
+                    android:background="#F0F4C3">
+
+                    <TextView
+                        android:id="@+id/textViewGrid10"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Buy food"
+                        android:textAlignment="center" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#C8E6C9">
 
                     <TextView
                         android:id="@+id/textViewGrid11"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:text="Grid11"
+                        android:text="Pay utilities bills"
                         android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#F0F4C3">
 
                     <TextView
                         android:id="@+id/textViewGrid12"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:text="Grid12"
+                        android:text="Get grade from a class"
                         android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#C8E6C9">
 
                     <TextView
                         android:id="@+id/textViewGridGraduation"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="100dp"
                         android:text="Happy Graduation"
                         android:textAlignment="center" />
                 </TableRow>
             </TableLayout>
-
 
 
         </LinearLayout>
