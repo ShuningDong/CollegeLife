@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 import com.example.collegelife.R;
 
+import java.util.ArrayList;
+
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
@@ -28,6 +30,9 @@ public class GameActivity extends AppCompatActivity {
      */
     private static final boolean AUTO_HIDE = true;
     private static final String TAG = "Game_Activity";
+    // multiplayer
+    private String[] players;
+    private ArrayList<Character> character = new ArrayList<>();
 
     /**
      * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
@@ -81,10 +86,14 @@ public class GameActivity extends AppCompatActivity {
 
         // get info from calling fragment
         Intent intent = getIntent();
-        String player_name = intent.getStringExtra("Player_name");
-        Character player1 = new Character(player_name);
-        Log.d(TAG, player_name);
-
+        players = intent.getStringArrayExtra("players");
+        for (int i=0; i < players.length; i++) {
+            String player_name = players[i];
+            Character player = new Character(player_name);
+            character.add(player);
+            Log.d(TAG, player_name);
+        }
+        Character player1 = character.get(0);
         TextView showName = (TextView) findViewById(R.id.Player_Name);
         showName.setText(player1.getName());
         TextView showGPA = (TextView) findViewById(R.id.GPA);

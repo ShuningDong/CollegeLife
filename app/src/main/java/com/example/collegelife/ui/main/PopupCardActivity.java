@@ -30,5 +30,11 @@ public class PopupCardActivity extends Activity {
         params.y = -20;
 
         getWindow().setAttributes(params);
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        PopupCardActivity.super.onBackPressed();
     }
 }

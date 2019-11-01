@@ -18,6 +18,9 @@ import android.widget.Toast;
 import com.example.collegelife.R;
 
 import java.io.Serializable;
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +32,10 @@ public class CharacterFragment extends Fragment {
         // Required empty public constructor
     }
 
+    private String player;
+    private int count = 0;
+    // multiplayer
+    private String[] players = new String[4];
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,11 +51,13 @@ public class CharacterFragment extends Fragment {
                 if (edit_text.getText().toString().isEmpty()){
                     Toast.makeText(getActivity(), "Enter Name!", Toast.LENGTH_SHORT).show();
                 }else {
-                    String player = edit_text.getText().toString();
+                    player = edit_text.getText().toString();
+                    players[count] = player;
+                    count++;
                     Activity activity = getActivity();
                     if (activity != null) {
                         Intent intent = new Intent(activity, GameActivity.class);
-                        intent.putExtra("Player_name", player);
+                        intent.putExtra("players", players);
                         startActivity(intent);
                     }else {
                         Log.d(TAG, "Game Activity is null");
@@ -64,13 +73,18 @@ public class CharacterFragment extends Fragment {
                 if (edit_text.getText().toString().isEmpty()){
                     Toast.makeText(getActivity(), "Enter Name!", Toast.LENGTH_SHORT).show();
                 }else {
-                    String player1 = edit_text.getText().toString();
-                    Log.d(TAG, player1);
-                    CharacterFragment fragment = new CharacterFragment();
-                    getFragmentManager().beginTransaction()
-                            .replace(R.id.container, fragment)
-                            .addToBackStack(CharacterFragment.class.getSimpleName())
-                            .commit();
+                    player = edit_text.getText().toString();
+                    players[count] = player;
+                    count++;
+                    edit_text.setText("");
+                    //call function to hide add player button
+                    updateUI(v, count);
+                    Log.d(TAG, player);
+                    //CharacterFragment fragment = new CharacterFragment();
+                   // getFragmentManager().beginTransaction()
+                           // .replace(R.id.container, fragment)
+                           // .addToBackStack(CharacterFragment.class.getSimpleName())
+                           // .commit();
                 }
             }
         });
@@ -82,6 +96,14 @@ public class CharacterFragment extends Fragment {
         return v;
     }
 
+    private void updateUI(View v, int count) {
+        if (count >= 3) {
+
+            v.findViewById(R.id.next_player).setVisibility(View.GONE);
+            Toast.makeText(getActivity(), "max players!", Toast.LENGTH_SHORT).show();
+
+        }
+    }
 
     @Override
     public void onStart() {

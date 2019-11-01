@@ -5,6 +5,7 @@ package com.example.collegelife.ui.main;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -143,6 +144,13 @@ public class SpinboardActivity extends AppCompatActivity {
                         textView.setText(currentNumber(360 - (degree % 360)));
                         Intent i = new Intent(getApplicationContext(), PopupCardActivity.class);
                         startActivity(i);
+
+                        try {
+                            Thread.sleep(200);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        SpinboardActivity.super.onBackPressed();
 
 
                     }

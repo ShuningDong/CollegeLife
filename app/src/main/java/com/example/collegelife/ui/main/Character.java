@@ -1,5 +1,8 @@
 package com.example.collegelife.ui.main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Character {
 
     private String Name;
@@ -8,12 +11,13 @@ public class Character {
     private String Major;
 
     // constructor
-    public Character(String name) {
+    Character(String name) {
         Name = name;
         GPA = 4;
         Debt = 0;
         Major = "";
     }
+
 
 
     ///////// methods /////////
