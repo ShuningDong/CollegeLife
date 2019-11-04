@@ -3,6 +3,7 @@ package com.example.collegelife.ui.main;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.WindowManager;
 
@@ -10,6 +11,7 @@ import android.view.WindowManager;
 import com.example.collegelife.R;
 
 public class PopupCardActivity extends Activity {
+    private static final String TAG = "popup_Activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,4 +39,35 @@ public class PopupCardActivity extends Activity {
         }
         PopupCardActivity.super.onBackPressed();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume is called");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause is called");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop is called");
+    }
+
+    @Override
+    // Shoulde be called before onPause
+    protected void onSaveInstanceState(Bundle outstate){
+        super.onSaveInstanceState(outstate);
+    }
+
+    @Override
+    // Should be called after onStart and onResume
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+    }
+
 }
