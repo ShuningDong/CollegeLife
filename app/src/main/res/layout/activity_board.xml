@@ -53,6 +53,7 @@
                             android:id="@+id/textViewStart"
                             android:layout_width="174dp"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/start"
                             android:textAlignment="center" />
 
@@ -81,6 +82,7 @@
                             android:id="@+id/textViewGrid1"
                             android:layout_width="190dp"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/register_a_class"
                             android:textAlignment="center" />
 
@@ -108,6 +110,7 @@
                             android:id="@+id/textViewGrid2"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/community_service"
                             android:textAlignment="center" />
 
@@ -135,6 +138,7 @@
                             android:id="@+id/textViewGrid3"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/fall_break_trip"
                             android:textAlignment="center" />
 
@@ -162,6 +166,7 @@
                             android:id="@+id/textViewGrid4"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/rent_an_apartment"
                             android:textAlignment="center" />
 
@@ -189,6 +194,7 @@
                             android:id="@+id/textViewGrid5"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/buy_a_pet"
                             android:textAlignment="center" />
 
@@ -216,6 +222,7 @@
                             android:id="@+id/textViewGrid6"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/dropping_a_class"
                             android:textAlignment="center" />
 
@@ -243,6 +250,7 @@
                             android:id="@+id/textViewGrid7"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/join_a_club"
                             android:textAlignment="center" />
 
@@ -270,6 +278,7 @@
                             android:id="@+id/textViewGrid8"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/spring_break_trip"
                             android:textAlignment="center" />
 
@@ -297,6 +306,7 @@
                             android:id="@+id/textViewGrid9"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/miss_class"
                             android:textAlignment="center" />
 
@@ -324,6 +334,7 @@
                             android:id="@+id/textViewGrid10"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/buy_food"
                             android:textAlignment="center" />
 
@@ -351,6 +362,7 @@
                             android:id="@+id/textViewGrid11"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/pay_utilities_bills"
                             android:textAlignment="center" />
 
@@ -378,6 +390,7 @@
                             android:id="@+id/textViewGrid12"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/get_grade_from_a_class"
                             android:textAlignment="center" />
 
@@ -405,6 +418,7 @@
                             android:id="@+id/textViewGridGraduation"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
+                            android:gravity="center"
                             android:text="@string/happy_graduation"
                             android:textAlignment="center" />
 
