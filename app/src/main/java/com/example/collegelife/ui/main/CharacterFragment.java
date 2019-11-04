@@ -34,10 +34,12 @@ public class CharacterFragment extends Fragment {
     }
 
     private String player;
-    private int count = 0;
+    private int pcount = 0;
+    private int tcount = 0;
     // multiplayer
     private String[] players = new String[4];
     private String[] token = new String[4];
+    private boolean hasPicked = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,16 +56,21 @@ public class CharacterFragment extends Fragment {
                     Toast.makeText(getActivity(), "Enter Name!", Toast.LENGTH_SHORT).show();
                 }else {
                     player = edit_text.getText().toString();
-                    players[count] = player;
-                    count++;
-                    Activity activity = getActivity();
-                    if (activity != null) {
-                        Intent intent = new Intent(activity, BoardActivity.class);
-                        intent.putExtra("players", players);
-                        intent.putExtra("tokens", token);
-                        startActivity(intent);
-                    }else {
-                        Log.d(TAG, "Game Activity is null");
+                    players[pcount] = player;
+                    pcount++;
+                    if(tcount == pcount) {
+                        Activity activity = getActivity();
+                        if (activity != null) {
+                            Intent intent = new Intent(activity, BoardActivity.class);
+                            intent.putExtra("players", players);
+                            intent.putExtra("tokens", token);
+                            startActivity(intent);
+                        } else {
+                            Log.d(TAG, "Game Activity is null");
+                        }
+                    } else {
+                        Toast.makeText(getActivity(), "Every player needs a logo!", Toast.LENGTH_SHORT).show();
+                        pcount--;
                     }
 
                 }
@@ -76,13 +83,19 @@ public class CharacterFragment extends Fragment {
                 if (edit_text.getText().toString().isEmpty()){
                     Toast.makeText(getActivity(), "Enter Name!", Toast.LENGTH_SHORT).show();
                 }else {
-                    player = edit_text.getText().toString();
-                    players[count] = player;
-                    count++;
-                    edit_text.setText("");
-                    //call function to hide add player button
-                    updateUI(v, count);
-                    Log.d(TAG, player);
+                    if (tcount == (pcount + 1)) {
+                        player = edit_text.getText().toString();
+                        players[pcount] = player;
+                        pcount++;
+                        edit_text.setText("");
+                        hasPicked = false;
+                        //call function to hide add player button
+                        updateUI(v, pcount);
+                        Log.d(TAG, player);
+                        Log.d(TAG, "#" + tcount);
+                    } else {
+                        Toast.makeText(getActivity(), "Every player needs a logo!", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -92,9 +105,13 @@ public class CharacterFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                token[count] = "spade";
-                v.findViewById(R.id.SpadeButton).setVisibility(View.GONE);
+                if (!hasPicked) {
+                    token[tcount] = "spade";
+                    v.findViewById(R.id.SpadeButton).setVisibility(View.GONE);
+                    hasPicked = true;
+                    tcount++;
                 }
+            }
         });
 
 
@@ -103,8 +120,12 @@ public class CharacterFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                token[count] = "heart";
-                v.findViewById(R.id.HeartButton).setVisibility(View.GONE);
+                if (!hasPicked) {
+                    token[tcount] = "heart";
+                    v.findViewById(R.id.HeartButton).setVisibility(View.GONE);
+                    hasPicked = true;
+                    tcount++;
+                }
             }
         });
 
@@ -114,8 +135,12 @@ public class CharacterFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                token[count] = "club";
-                v.findViewById(R.id.ClubButton).setVisibility(View.GONE);
+                if (!hasPicked) {
+                    token[tcount] = "club";
+                    v.findViewById(R.id.ClubButton).setVisibility(View.GONE);
+                    hasPicked = true;
+                    tcount++;
+                }
             }
         });
 
@@ -125,8 +150,12 @@ public class CharacterFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                token[count] = "diamond";
-                v.findViewById(R.id.DiamondButton).setVisibility(View.GONE);
+                if (!hasPicked) {
+                    token[tcount] = "diamond";
+                    v.findViewById(R.id.DiamondButton).setVisibility(View.GONE);
+                    hasPicked = true;
+                    tcount++;
+                }
             }
         });
 
