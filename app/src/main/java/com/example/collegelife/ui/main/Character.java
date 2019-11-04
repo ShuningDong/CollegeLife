@@ -1,5 +1,7 @@
 package com.example.collegelife.ui.main;
 
+import android.widget.ImageView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,14 +10,18 @@ public class Character {
     private String Name;
     private int GPA;
     private double Debt;
-    private String Major;
+    private String Icon;
+    private boolean playState;
+    private ImageView CurrentBlock;
 
     // constructor
     Character(String name) {
         Name = name;
         GPA = 4;
         Debt = 0;
-        Major = "";
+        Icon = "";
+        CurrentBlock = null;
+        playState = true;
     }
 
 
@@ -31,11 +37,16 @@ public class Character {
         return gpa;
     }
 
+    public void setGPA(int gpa){
+        int temp = this.GPA;
+        this.GPA = (temp + gpa)/2;
+    }
+
     public double getDebt(){
         return this.Debt;
     }
 
-    public void addLoan(double amount){
+    public void addDebt(double amount){
         this.Debt += amount;
     }
 
@@ -43,7 +54,21 @@ public class Character {
         this.Debt -= amount;
     }
 
-    public String getMajor(){
-        return this.Major;
+    String getIcon(){
+        return this.Icon;
     }
+
+    void setIcon(String icon){
+        this.Icon = icon;
+    }
+
+    ImageView getCurrentBlock(){
+        return this.CurrentBlock;
+    }
+
+    void setCurrentBlock(ImageView block){
+        this.CurrentBlock = block;
+    }
+
+
 }

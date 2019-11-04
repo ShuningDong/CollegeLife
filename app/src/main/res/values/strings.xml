@@ -60,5 +60,20 @@
     <string name="GPA">GPA</string>
     <string name="Debt">Debt</string>
     <string name="backgroundgrid">backgroundgrid</string>
+    <string name="happy_graduation">Happy Graduation</string>
+    <string name="get_grade_from_a_class">Get grade from a class</string>
+    <string name="pay_utilities_bills">Pay utilities bills</string>
+    <string name="register_a_class">Register a class</string>
+    <string name="miss_class">Miss class</string>
+    <string name="dropping_a_class">Dropping a class</string>
+    <string name="join_a_club">Join a club</string>
+    <string name="buy_a_pet">Buy a pet</string>
+    <string name="rent_an_apartment">Rent an apartment</string>
+    <string name="fall_break_trip">Fall break trip</string>
+    <string name="community_service">community service</string>
+    <string name="spring_break_trip">Spring break trip</string>
+    <string name="buy_food">Buy food</string>
+    <string name="house">house</string>
+    <string name="dog">dog</string>
 
 </resources>

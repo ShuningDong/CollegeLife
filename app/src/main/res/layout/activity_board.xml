@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#BBDEFB"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="132dp">
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,219 +28,399 @@
                 android:layout_gravity="center_horizontal">
 
                 <TableRow
+                    android:id="@+id/top"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/textViewBoarderTop"
-                        android:layout_width="match_parent"
+                        android:layout_width="128dp"
                         android:layout_height="100dp" />
                 </TableRow>
 
                 <TableRow
-                    android:layout_width="match_parent"
+                    android:id="@+id/space_s"
+                    android:layout_width="195dp"
                     android:layout_height="wrap_content"
                     android:background="#FFFFFF">
 
-                    <TextView
-                        android:id="@+id/textViewStart"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Start"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewStart"
+                            android:layout_width="174dp"
+                            android:layout_height="100dp"
+                            android:text="@string/start"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_s"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="0" />
+
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C8E6C9">
 
-                    <TextView
-                        android:id="@+id/textViewGrid1"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Register a class"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGrid1"
+                            android:layout_width="190dp"
+                            android:layout_height="100dp"
+                            android:text="@string/register_a_class"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="1" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#F0F4C3">
 
-                    <TextView
-                        android:id="@+id/textViewGrid2"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="community service"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGrid2"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="@string/community_service"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="2" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#C8E6C9">
 
-                    <TextView
-                        android:id="@+id/textViewGrid3"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Fall break trip"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGrid3"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="@string/fall_break_trip"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="3" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#F0F4C3">
 
-                    <TextView
-                        android:id="@+id/textViewGrid4"
-                        android:layout_height="100dp"
-                        android:text="Rent an apartment"
-                        android:textAlignment="center" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGrid4"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="@string/rent_an_apartment"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="4" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#C8E6C9">
 
-                    <TextView
-                        android:id="@+id/textViewGrid5"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Buy a pet"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGrid5"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="@string/buy_a_pet"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="5" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#F0F4C3">
 
-                    <TextView
-                        android:id="@+id/textViewGrid6"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Dropping a class"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGrid6"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="@string/dropping_a_class"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="6" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#C8E6C9">
 
-                    <TextView
-                        android:id="@+id/textViewGrid7"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Join a club"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGrid7"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="@string/join_a_club"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="7" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_8"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#F0F4C3">
 
-                    <TextView
-                        android:id="@+id/textViewGrid8"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Spring break trip"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGrid8"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="@string/spring_break_trip"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="8" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_9"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#C8E6C9">
 
-                    <TextView
-                        android:id="@+id/textViewGrid9"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Miss class"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGrid9"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="@string/miss_class"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_9"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="9" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_10"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#F0F4C3">
 
-                    <TextView
-                        android:id="@+id/textViewGrid10"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Buy food"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGrid10"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="@string/buy_food"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="10" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_11"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#C8E6C9">
 
-                    <TextView
-                        android:id="@+id/textViewGrid11"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Pay utilities bills"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGrid11"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="@string/pay_utilities_bills"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_11"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="11" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#F0F4C3">
 
-                    <TextView
-                        android:id="@+id/textViewGrid12"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Get grade from a class"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGrid12"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="@string/get_grade_from_a_class"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_12"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="12" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/space_f"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#C8E6C9">
 
-                    <TextView
-                        android:id="@+id/textViewGridGraduation"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="Happy Graduation"
-                        android:textAlignment="center" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewGridGraduation"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="@string/happy_graduation"
+                            android:textAlignment="center" />
+
+                        <TableRow
+                            android:id="@+id/icons_13"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:tag="13" />
+                    </LinearLayout>
+
                 </TableRow>
             </TableLayout>
 
 
         </LinearLayout>
     </ScrollView>
-
-    <ImageView
-        android:id="@+id/imageHome"
-        android:layout_width="60dp"
-        android:layout_height="80dp"
-        app:srcCompat="@drawable/home"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <ImageView
-        android:id="@+id/imageDog"
-        android:layout_width="60dp"
-        android:layout_height="80dp"
-        app:srcCompat="@drawable/dog"
-        android:layout_marginEnd="120dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/Debt"
@@ -266,6 +446,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageHome"
+        android:layout_width="41dp"
+        android:layout_height="42dp"
+        android:contentDescription="@string/house"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/imageDog"
+        android:layout_width="41dp"
+        android:layout_height="49dp"
+        android:contentDescription="@string/dog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dog" />
+
+    <TextView
+        android:id="@+id/display_name"
+        android:layout_width="111dp"
+        android:layout_height="29dp"
+        android:background="#DA0A0A"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/SpinButton"
         android:layout_width="60dp"
@@ -273,10 +482,8 @@
         android:layout_marginStart="69dp"
         android:layout_marginTop="492dp"
         android:layout_marginEnd="22dp"
-        android:layout_marginBottom="44dp"
         android:background="@drawable/spinboard2"
         android:contentDescription="@string/Spade"
-        app:layout_constraintBottom_toTopOf="@+id/next_player"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

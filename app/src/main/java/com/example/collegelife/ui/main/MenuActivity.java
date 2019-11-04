@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+
 public class MenuActivity extends AppCompatActivity {
 
     private static final String TAG = "Menu_Activity";
@@ -43,7 +44,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), CharacterActivity.class);
-                intent.putExtra("user",user);
+                intent.putExtra("user", user);
                 startActivity(intent);
             }
         });
@@ -53,7 +54,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), HighscoreActivity.class);
-                intent.putExtra("user",user);
+                intent.putExtra("user", user);
                 startActivity(intent);
             }
         });
