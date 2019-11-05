@@ -847,10 +847,29 @@
         app:srcCompat="@drawable/dog" />
 
     <TextView
+        android:id="@+id/textCurrentPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="start"
+        android:text="Current Player:"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintVertical_bias="10"
+        app:layout_constraintBottom_toBottomOf="@id/display_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
         android:id="@+id/display_name"
         android:layout_width="111dp"
         android:layout_height="29dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="16dp"
         android:background="#DA0A0A"
+        android:gravity="center"
         android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -861,14 +880,11 @@
         android:id="@+id/SpinButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="69dp"
-        android:layout_marginTop="492dp"
         android:layout_marginEnd="22dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/spinboard2"
         android:contentDescription="@string/Spade"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
