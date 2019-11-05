@@ -80,6 +80,9 @@
     <string name="pet_sick">Your pet got sick</string>
     <string name="apply_scholarship">Your pet got sick</string>
     <string name="drop_phone">Drop and break your phone</string>
+    <string name="description">You enter the Mobile App Development Club\nYou start to build your own mobile app</string>    <!-- temp longest string-->
+    <string name="action">Go back to start</string><!-- temp only string-->
+    <string name="remark">* If you have rent apartment</string> <!-- temp longest string-->
 
 
 </resources>
