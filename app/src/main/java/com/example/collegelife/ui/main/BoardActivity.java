@@ -28,11 +28,23 @@ public class BoardActivity extends AppCompatActivity {
     private Game game;
     private TextView showName;
 
+    //gpa and debt information
+    TextView gpaview;
+    TextView debtview;
+
+
+    double gpa = 4.0;
+    int debt = 0;
+
+
     String str = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
+
+        TextView gpaview = (TextView)this.findViewById(R.id.gpa);
+        TextView debtview = (TextView)this.findViewById(R.id.debt);
 
         Button spin = findViewById(R.id.SpinButton);
         spin.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +62,12 @@ public class BoardActivity extends AppCompatActivity {
 
         setBoard(characters);
 
+        String gpa1 = Double.toString(gpa);
+        String debt1 = Integer.toString(debt);
+
+        gpaview.setText(gpa1);
+        debtview.setText(debt1);
+
         game = new Game(characters);
 
         Character currPlayer = game.getCurrentPlayer();
@@ -63,13 +81,21 @@ public class BoardActivity extends AppCompatActivity {
     private void setBoard(ArrayList<Character> playerList){
 
         TableRow startBlock = findViewById(R.id.icons_s);
+        //transfer gpa and debt to string in order to fit in textView.
+        String gpa1 = Double.toString(gpa);
+        String debt1 = Integer.toString(debt);
+
         for (Character player: playerList) {
+
+
+
             switch (player.getIcon()) {
                 case ("spade"):
                     ImageView spade = new ImageView(this);
                     spade.setImageResource(R.drawable.spade);
                     startBlock.addView(spade, 100, 100);
                     player.setCurrentBlock(spade);
+
                     break;
 
                 case ("heart"):
@@ -77,6 +103,7 @@ public class BoardActivity extends AppCompatActivity {
                     heart.setImageResource(R.drawable.heart);
                     startBlock.addView(heart, 100, 100);
                     player.setCurrentBlock(heart);
+
                     break;
 
                 case ("club"):
@@ -84,6 +111,7 @@ public class BoardActivity extends AppCompatActivity {
                     club.setImageResource(R.drawable.club);
                     startBlock.addView(club, 100, 100);
                     player.setCurrentBlock(club);
+
                     break;
 
                 case ("diamond"):
@@ -91,6 +119,7 @@ public class BoardActivity extends AppCompatActivity {
                     diamond.setImageResource(R.drawable.diamond);
                     startBlock.addView(diamond, 100, 100);
                     player.setCurrentBlock(diamond);
+
                     break;
             }
         }
@@ -102,7 +131,7 @@ public class BoardActivity extends AppCompatActivity {
         TableRow block = (TableRow) player.getCurrentBlock().getParent();
         String space = (String) block.getTag();
 
-
+        //setContentView(R.layout.activity_board);
         if(game.validMove(Integer.parseInt(space), move_space)) {
 
             // get next block based off spin
@@ -113,12 +142,15 @@ public class BoardActivity extends AppCompatActivity {
             //removes symbol from current space
             block.removeView(player.getCurrentBlock());
 
-            //add pop up window intent
-            Intent i = new Intent(getApplicationContext(), PopupCardActivity.class);
+
             //link to pop up window
-
-
             Intent intent = new Intent(getApplicationContext(), PopupCardActivity.class);
+
+
+            TextView gpaview = (TextView)this.findViewById(R.id.gpa);
+            TextView debtview = (TextView)this.findViewById(R.id.debt);
+
+
             //move symbol to next block
             switch (player.getIcon()) {
                 case ("spade"):
@@ -131,25 +163,30 @@ public class BoardActivity extends AppCompatActivity {
                         case (1):
 
                             intent.putExtra("str","Welcome !!You need to register for class");
+                            debt-=10000;
                             break;
                         case (2):
 
                             intent.putExtra("str","You attend a community service. Trying to give back to the society");
+
                             break;
                         case (3):
 
                             intent.putExtra("str", "Finally Break time !!\n" +
                                     "You went to Florida for fun\n");
+                            debt-=200;
                             break;
                         case (4):
 
                             intent.putExtra("str","You were kick off from your parent home\n" +
                                     "You need to rent an apartment");
+                            debt-=500;
                             break;
                         case (5):
 
                         intent.putExtra("str","You feel lonely\n" +
                                 "You decide to buy a dog\n");
+                            debt-=200;
                         break;
                         case (6):
 
@@ -166,21 +203,26 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Break time Again!! \n" +
                                     "You went to Chicago for fun ");
+                            debt-=200;
                             break;
                         case (9):
 
                             intent.putExtra("str","You overslept\n" +
                                     "You miss the most important class");
+                            gpa-=0.1;
                             break;
                         case (10):
 
                             intent.putExtra("str","You feel hungry \n" +
                                     "It is grocery shopping time");
+                            debt-=50;
                             break;
                         case (11):
 
                             intent.putExtra("str","Opp! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
+
+                            debt -=100;
                             break;
                         case (12):
 
@@ -191,6 +233,7 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Happy second semester\n" +
                                     "you need to register for class again ");
+                            debt-=10000;
                             break;
                         case (14):
 
@@ -201,21 +244,25 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","You can’t go anywhere\n" +
                                     "You need to buy a car");
+                            debt-=9000;
                             break;
                         case (16):
 
                             intent.putExtra("str","Don’t forget your rent!\n" +
                                     "You no longer live with your parent");
+                            debt-=500;
                             break;
                         case (17):
 
                             intent.putExtra("str","You lovely dog get sick\n" +
                                     "You need to take her to the pet");
+                            debt-=300;
                             break;
                         case (18):
 
                             intent.putExtra("str","You try to pay off your loan\n" +
                                     "You try to apply for scholarship\n");
+                            debt+=5000;
                             break;
                         case (19):
 
@@ -226,6 +273,7 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Break time Again!! \n" +
                                     "You went to Chicago for fun");
+                            debt-=200;
                             break;
 
                         case (21):
@@ -237,11 +285,13 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","You feel hungry \n" +
                                     "It is grocery shopping time");
+                            debt-=50;
                             break;
                         case (23):
 
                             intent.putExtra("str","Oops! You drop your phone!\n" +
                                     "Touch screen no longer working \n");
+                            debt-=50;
                             break;
                         case (24):
 
@@ -254,7 +304,8 @@ public class BoardActivity extends AppCompatActivity {
 
 
                     startActivity(intent);
-                    //startActivity(i);
+
+
 
                     break;
 
@@ -269,25 +320,30 @@ public class BoardActivity extends AppCompatActivity {
                         case (1):
 
                             intent.putExtra("str","Welcome !!You need to register for class");
+                            debt-=10000;
                             break;
                         case (2):
 
                             intent.putExtra("str","You attend a community service. Trying to give back to the society");
+
                             break;
                         case (3):
 
                             intent.putExtra("str", "Finally Break time !!\n" +
                                     "You went to Florida for fun\n");
+                            debt-=200;
                             break;
                         case (4):
 
                             intent.putExtra("str","You were kick off from your parent home\n" +
                                     "You need to rent an apartment");
+                            debt-=500;
                             break;
                         case (5):
 
                             intent.putExtra("str","You feel lonely\n" +
                                     "You decide to buy a dog\n");
+                            debt-=200;
                             break;
                         case (6):
 
@@ -304,21 +360,26 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Break time Again!! \n" +
                                     "You went to Chicago for fun ");
+                            debt-=200;
                             break;
                         case (9):
 
                             intent.putExtra("str","You overslept\n" +
                                     "You miss the most important class");
+                            gpa-=0.1;
                             break;
                         case (10):
 
                             intent.putExtra("str","You feel hungry \n" +
                                     "It is grocery shopping time");
+                            debt-=50;
                             break;
                         case (11):
 
                             intent.putExtra("str","Opp! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
+
+                            debt -=100;
                             break;
                         case (12):
 
@@ -329,6 +390,7 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Happy second semester\n" +
                                     "you need to register for class again ");
+                            debt-=10000;
                             break;
                         case (14):
 
@@ -339,21 +401,25 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","You can’t go anywhere\n" +
                                     "You need to buy a car");
+                            debt-=9000;
                             break;
                         case (16):
 
                             intent.putExtra("str","Don’t forget your rent!\n" +
                                     "You no longer live with your parent");
+                            debt-=500;
                             break;
                         case (17):
 
                             intent.putExtra("str","You lovely dog get sick\n" +
                                     "You need to take her to the pet");
+                            debt-=300;
                             break;
                         case (18):
 
                             intent.putExtra("str","You try to pay off your loan\n" +
                                     "You try to apply for scholarship\n");
+                            debt+=5000;
                             break;
                         case (19):
 
@@ -364,6 +430,7 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Break time Again!! \n" +
                                     "You went to Chicago for fun");
+                            debt-=200;
                             break;
 
                         case (21):
@@ -375,11 +442,13 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","You feel hungry \n" +
                                     "It is grocery shopping time");
+                            debt-=50;
                             break;
                         case (23):
 
                             intent.putExtra("str","Oops! You drop your phone!\n" +
                                     "Touch screen no longer working \n");
+                            debt-=50;
                             break;
                         case (24):
 
@@ -392,6 +461,9 @@ public class BoardActivity extends AppCompatActivity {
 
 
                     startActivity(intent);
+
+
+
                     break;
 
                 case ("club"):
@@ -405,25 +477,30 @@ public class BoardActivity extends AppCompatActivity {
                         case (1):
 
                             intent.putExtra("str","Welcome !!You need to register for class");
+                            debt-=10000;
                             break;
                         case (2):
 
                             intent.putExtra("str","You attend a community service. Trying to give back to the society");
+
                             break;
                         case (3):
 
                             intent.putExtra("str", "Finally Break time !!\n" +
                                     "You went to Florida for fun\n");
+                            debt-=200;
                             break;
                         case (4):
 
                             intent.putExtra("str","You were kick off from your parent home\n" +
                                     "You need to rent an apartment");
+                            debt-=500;
                             break;
                         case (5):
 
                             intent.putExtra("str","You feel lonely\n" +
                                     "You decide to buy a dog\n");
+                            debt-=200;
                             break;
                         case (6):
 
@@ -440,21 +517,26 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Break time Again!! \n" +
                                     "You went to Chicago for fun ");
+                            debt-=200;
                             break;
                         case (9):
 
                             intent.putExtra("str","You overslept\n" +
                                     "You miss the most important class");
+                            gpa-=0.1;
                             break;
                         case (10):
 
                             intent.putExtra("str","You feel hungry \n" +
                                     "It is grocery shopping time");
+                            debt-=50;
                             break;
                         case (11):
 
                             intent.putExtra("str","Opp! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
+
+                            debt -=100;
                             break;
                         case (12):
 
@@ -465,6 +547,7 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Happy second semester\n" +
                                     "you need to register for class again ");
+                            debt-=10000;
                             break;
                         case (14):
 
@@ -475,21 +558,25 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","You can’t go anywhere\n" +
                                     "You need to buy a car");
+                            debt-=9000;
                             break;
                         case (16):
 
                             intent.putExtra("str","Don’t forget your rent!\n" +
                                     "You no longer live with your parent");
+                            debt-=500;
                             break;
                         case (17):
 
                             intent.putExtra("str","You lovely dog get sick\n" +
                                     "You need to take her to the pet");
+                            debt-=300;
                             break;
                         case (18):
 
                             intent.putExtra("str","You try to pay off your loan\n" +
                                     "You try to apply for scholarship\n");
+                            debt+=5000;
                             break;
                         case (19):
 
@@ -500,6 +587,7 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Break time Again!! \n" +
                                     "You went to Chicago for fun");
+                            debt-=200;
                             break;
 
                         case (21):
@@ -511,11 +599,13 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","You feel hungry \n" +
                                     "It is grocery shopping time");
+                            debt-=50;
                             break;
                         case (23):
 
                             intent.putExtra("str","Oops! You drop your phone!\n" +
                                     "Touch screen no longer working \n");
+                            debt-=50;
                             break;
                         case (24):
 
@@ -541,25 +631,30 @@ public class BoardActivity extends AppCompatActivity {
                         case (1):
 
                             intent.putExtra("str","Welcome !!You need to register for class");
+                            debt-=10000;
                             break;
                         case (2):
 
                             intent.putExtra("str","You attend a community service. Trying to give back to the society");
+
                             break;
                         case (3):
 
                             intent.putExtra("str", "Finally Break time !!\n" +
                                     "You went to Florida for fun\n");
+                            debt-=200;
                             break;
                         case (4):
 
                             intent.putExtra("str","You were kick off from your parent home\n" +
                                     "You need to rent an apartment");
+                            debt-=500;
                             break;
                         case (5):
 
                             intent.putExtra("str","You feel lonely\n" +
                                     "You decide to buy a dog\n");
+                            debt-=200;
                             break;
                         case (6):
 
@@ -576,21 +671,26 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Break time Again!! \n" +
                                     "You went to Chicago for fun ");
+                            debt-=200;
                             break;
                         case (9):
 
                             intent.putExtra("str","You overslept\n" +
                                     "You miss the most important class");
+                            gpa-=0.1;
                             break;
                         case (10):
 
                             intent.putExtra("str","You feel hungry \n" +
                                     "It is grocery shopping time");
+                            debt-=50;
                             break;
                         case (11):
 
                             intent.putExtra("str","Opp! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
+
+                            debt -=100;
                             break;
                         case (12):
 
@@ -601,6 +701,7 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Happy second semester\n" +
                                     "you need to register for class again ");
+                            debt-=10000;
                             break;
                         case (14):
 
@@ -611,21 +712,25 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","You can’t go anywhere\n" +
                                     "You need to buy a car");
+                            debt-=9000;
                             break;
                         case (16):
 
                             intent.putExtra("str","Don’t forget your rent!\n" +
                                     "You no longer live with your parent");
+                            debt-=500;
                             break;
                         case (17):
 
                             intent.putExtra("str","You lovely dog get sick\n" +
                                     "You need to take her to the pet");
+                            debt-=300;
                             break;
                         case (18):
 
                             intent.putExtra("str","You try to pay off your loan\n" +
                                     "You try to apply for scholarship\n");
+                            debt+=5000;
                             break;
                         case (19):
 
@@ -636,6 +741,7 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Break time Again!! \n" +
                                     "You went to Chicago for fun");
+                            debt-=200;
                             break;
 
                         case (21):
@@ -647,11 +753,13 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","You feel hungry \n" +
                                     "It is grocery shopping time");
+                            debt-=50;
                             break;
                         case (23):
 
                             intent.putExtra("str","Oops! You drop your phone!\n" +
                                     "Touch screen no longer working \n");
+                            debt-=50;
                             break;
                         case (24):
 
@@ -666,6 +774,13 @@ public class BoardActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
             }
+
+            //set gpa and debt shown on broad.
+            String gpa1 = Double.toString(gpa);
+            String debt1 = Integer.toString(debt);
+
+            gpaview.setText(gpa1);
+            debtview.setText(debt1);
         }else {
             int validSpace = (move_space + Integer.parseInt(space)) - 25;
             Toast.makeText(getApplicationContext(), "Invalid move. Need a " + validSpace + " or lower", Toast.LENGTH_SHORT).show();
@@ -791,6 +906,8 @@ public class BoardActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+
+
         if (requestCode == 0){
             if(resultCode == 0) {
                 turn = data.getIntExtra("spin", 0);
@@ -798,6 +915,7 @@ public class BoardActivity extends AppCompatActivity {
                 Log.d(TAG, "Spin: " + turn);
             }
         }
+
     }
 
 
