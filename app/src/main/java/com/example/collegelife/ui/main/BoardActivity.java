@@ -17,8 +17,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.collegelife.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BoardActivity extends AppCompatActivity {
 
@@ -31,6 +37,10 @@ public class BoardActivity extends AppCompatActivity {
     //gpa and debt information
     TextView gpaview;
     TextView debtview;
+
+    private FirebaseFirestore mFirestore;
+
+
 
 
     double gpa = 4.0;
@@ -168,6 +178,12 @@ public class BoardActivity extends AppCompatActivity {
             String clubdebt_s;
             String diamondgpa_s;
             String diamonddebt_s;
+
+            mFirestore = FirebaseFirestore.getInstance();
+
+            Intent intent1 = getIntent();
+            String player_name = intent1.getStringExtra("Player_name");
+            Map<String, Object> scores = new HashMap<>();
 
             //move symbol to next block
             switch (player.getIcon()) {
@@ -315,6 +331,22 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Finals finally over ~~\n" +
                                     "Here is your grade\n");
+
+
+                            scores.put("name", "spade");
+                            scores.put("score", spadedebt);
+                            mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Toast.makeText(BoardActivity.this, "player added to firebase", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    String error = e.getMessage();
+                                    Toast.makeText(BoardActivity.this, "Error: "+error, Toast.LENGTH_SHORT).show();
+                                }
+                            });
                             break;
 
 
@@ -481,6 +513,21 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Finals finally over ~~\n" +
                                     "Here is your grade\n");
+
+                            scores.put("name", "heart");
+                            scores.put("score", heartdebt);
+                            mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Toast.makeText(BoardActivity.this, "player added to firebase", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    String error = e.getMessage();
+                                    Toast.makeText(BoardActivity.this, "Error: "+error, Toast.LENGTH_SHORT).show();
+                                }
+                            });
                             break;
 
 
@@ -644,6 +691,20 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Finals finally over ~~\n" +
                                     "Here is your grade\n");
+                            scores.put("name", "club");
+                            scores.put("score", clubdebt);
+                            mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Toast.makeText(BoardActivity.this, "player added to firebase", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    String error = e.getMessage();
+                                    Toast.makeText(BoardActivity.this, "Error: "+error, Toast.LENGTH_SHORT).show();
+                                }
+                            });
                             break;
 
 
@@ -805,6 +866,21 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Finals finally over ~~\n" +
                                     "Here is your grade\n");
+
+                            scores.put("name", "diamond");
+                            scores.put("score", diamonddebt);
+                            mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Toast.makeText(BoardActivity.this, "player added to firebase", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    String error = e.getMessage();
+                                    Toast.makeText(BoardActivity.this, "Error: "+error, Toast.LENGTH_SHORT).show();
+                                }
+                            });
                             break;
 
 
@@ -989,6 +1065,9 @@ public class BoardActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
+
+
+
         super.onStop();
         Log.d(TAG, "onStop is called");
     }

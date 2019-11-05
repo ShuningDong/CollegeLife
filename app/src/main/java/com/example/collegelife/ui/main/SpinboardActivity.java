@@ -193,8 +193,9 @@ public class SpinboardActivity extends AppCompatActivity {
         }
 
 
+        //write firebase
 
-        mFirestore = FirebaseFirestore.getInstance();
+        /*mFirestore = FirebaseFirestore.getInstance();
 
         Intent intent = getIntent();
         String player_name = intent.getStringExtra("Player_name");
@@ -213,7 +214,7 @@ public class SpinboardActivity extends AppCompatActivity {
                 String error = e.getMessage();
                 Toast.makeText(SpinboardActivity.this, "Error: "+error, Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
         return spin;
     }
 }
