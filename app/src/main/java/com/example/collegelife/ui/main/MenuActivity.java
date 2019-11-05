@@ -40,8 +40,6 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         Button start_button = findViewById(R.id.start_button);
-        findViewById(R.id.start_button).setVisibility(View.VISIBLE);
-        findViewById(R.id.sign_in_button).setVisibility(View.GONE);
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,8 +115,6 @@ public class MenuActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
         Log.d(TAG, "onStart is called");
-        findViewById(R.id.sign_in_button).setVisibility(View.GONE);
-        findViewById(R.id.start_button).setVisibility(View.VISIBLE);
 
     }
 
