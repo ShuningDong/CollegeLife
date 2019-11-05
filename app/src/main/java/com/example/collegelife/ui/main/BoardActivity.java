@@ -146,6 +146,109 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","You were kick off from your parent home\n" +
                                     "You need to rent an apartment");
                             break;
+                        case (5):
+
+                        intent.putExtra("str","You feel lonely\n" +
+                                "You decide to buy a dog\n");
+                        break;
+                        case (6):
+
+                            intent.putExtra("str","You fail your mid-term exam\n" +
+                                    "You decide to drop the class a retake\n");
+                            break;
+
+                        case (7):
+
+                        intent.putExtra("str","You enter the Mobile App Development Club\n" +
+                                "You start to build your own mobile app");
+                        break;
+                        case (8):
+
+                            intent.putExtra("str","Break time Again!! \n" +
+                                    "You went to Chicago for fun ");
+                            break;
+                        case (9):
+
+                            intent.putExtra("str","You overslept\n" +
+                                    "You miss the most important class");
+                            break;
+                        case (10):
+
+                            intent.putExtra("str","You feel hungry \n" +
+                                    "It is grocery shopping time");
+                            break;
+                        case (11):
+
+                            intent.putExtra("str","Opp! Your electricity went off!\n" +
+                                    "Did you pay your utilities bill?\n");
+                            break;
+                        case (12):
+
+                            intent.putExtra("str","Finals finally over ~~\n" +
+                                    "Here is your grade\n");
+                            break;
+                        case (13):
+
+                            intent.putExtra("str","Happy second semester\n" +
+                                    "you need to register for class again ");
+                            break;
+                        case (14):
+
+                            intent.putExtra("str","You attend a community service \n" +
+                                    "Trying to give back to the society");
+                            break;
+                        case (15):
+
+                            intent.putExtra("str","You can’t go anywhere\n" +
+                                    "You need to buy a car");
+                            break;
+                        case (16):
+
+                            intent.putExtra("str","Don’t forget your rent!\n" +
+                                    "You no longer live with your parent");
+                            break;
+                        case (17):
+
+                            intent.putExtra("str","You lovely dog get sick\n" +
+                                    "You need to take her to the pet");
+                            break;
+                        case (18):
+
+                            intent.putExtra("str","You try to pay off your loan\n" +
+                                    "You try to apply for scholarship\n");
+                            break;
+                        case (19):
+
+                            intent.putExtra("str","You enter the Game Animation Club\n" +
+                                    "You start to build your own game");
+                            break;
+                        case (20):
+
+                            intent.putExtra("str","Break time Again!! \n" +
+                                    "You went to Chicago for fun");
+                            break;
+
+                        case (21):
+
+                            intent.putExtra("str","You overslept\n" +
+                                    "You miss the most important class");
+                            break;
+                        case (22):
+
+                            intent.putExtra("str","You feel hungry \n" +
+                                    "It is grocery shopping time");
+                            break;
+                        case (23):
+
+                            intent.putExtra("str","Oops! You drop your phone!\n" +
+                                    "Touch screen no longer working \n");
+                            break;
+                        case (24):
+
+                            intent.putExtra("str","Finals finally over ~~\n" +
+                                    "Here is your grade\n");
+                            break;
+
 
                     }
 
@@ -160,6 +263,135 @@ public class BoardActivity extends AppCompatActivity {
                     club.setImageResource(R.drawable.heart);
                     player.setCurrentBlock(club);
                     nextBlock.addView(club, 100, 100);
+
+                    switch (newSpace) {
+
+                        case (1):
+
+                            intent.putExtra("str","Welcome !!You need to register for class");
+                            break;
+                        case (2):
+
+                            intent.putExtra("str","You attend a community service. Trying to give back to the society");
+                            break;
+                        case (3):
+
+                            intent.putExtra("str", "Finally Break time !!\n" +
+                                    "You went to Florida for fun\n");
+                            break;
+                        case (4):
+
+                            intent.putExtra("str","You were kick off from your parent home\n" +
+                                    "You need to rent an apartment");
+                            break;
+                        case (5):
+
+                            intent.putExtra("str","You feel lonely\n" +
+                                    "You decide to buy a dog\n");
+                            break;
+                        case (6):
+
+                            intent.putExtra("str","You fail your mid-term exam\n" +
+                                    "You decide to drop the class a retake\n");
+                            break;
+
+                        case (7):
+
+                            intent.putExtra("str","You enter the Mobile App Development Club\n" +
+                                    "You start to build your own mobile app");
+                            break;
+                        case (8):
+
+                            intent.putExtra("str","Break time Again!! \n" +
+                                    "You went to Chicago for fun ");
+                            break;
+                        case (9):
+
+                            intent.putExtra("str","You overslept\n" +
+                                    "You miss the most important class");
+                            break;
+                        case (10):
+
+                            intent.putExtra("str","You feel hungry \n" +
+                                    "It is grocery shopping time");
+                            break;
+                        case (11):
+
+                            intent.putExtra("str","Opp! Your electricity went off!\n" +
+                                    "Did you pay your utilities bill?\n");
+                            break;
+                        case (12):
+
+                            intent.putExtra("str","Finals finally over ~~\n" +
+                                    "Here is your grade\n");
+                            break;
+                        case (13):
+
+                            intent.putExtra("str","Happy second semester\n" +
+                                    "you need to register for class again ");
+                            break;
+                        case (14):
+
+                            intent.putExtra("str","You attend a community service \n" +
+                                    "Trying to give back to the society");
+                            break;
+                        case (15):
+
+                            intent.putExtra("str","You can’t go anywhere\n" +
+                                    "You need to buy a car");
+                            break;
+                        case (16):
+
+                            intent.putExtra("str","Don’t forget your rent!\n" +
+                                    "You no longer live with your parent");
+                            break;
+                        case (17):
+
+                            intent.putExtra("str","You lovely dog get sick\n" +
+                                    "You need to take her to the pet");
+                            break;
+                        case (18):
+
+                            intent.putExtra("str","You try to pay off your loan\n" +
+                                    "You try to apply for scholarship\n");
+                            break;
+                        case (19):
+
+                            intent.putExtra("str","You enter the Game Animation Club\n" +
+                                    "You start to build your own game");
+                            break;
+                        case (20):
+
+                            intent.putExtra("str","Break time Again!! \n" +
+                                    "You went to Chicago for fun");
+                            break;
+
+                        case (21):
+
+                            intent.putExtra("str","You overslept\n" +
+                                    "You miss the most important class");
+                            break;
+                        case (22):
+
+                            intent.putExtra("str","You feel hungry \n" +
+                                    "It is grocery shopping time");
+                            break;
+                        case (23):
+
+                            intent.putExtra("str","Oops! You drop your phone!\n" +
+                                    "Touch screen no longer working \n");
+                            break;
+                        case (24):
+
+                            intent.putExtra("str","Finals finally over ~~\n" +
+                                    "Here is your grade\n");
+                            break;
+
+
+                    }
+
+
+                    startActivity(intent);
                     break;
 
                 case ("club"):
@@ -167,6 +399,135 @@ public class BoardActivity extends AppCompatActivity {
                     heart.setImageResource(R.drawable.club);
                     player.setCurrentBlock(heart);
                     nextBlock.addView(heart, 100, 100);
+
+                    switch (newSpace) {
+
+                        case (1):
+
+                            intent.putExtra("str","Welcome !!You need to register for class");
+                            break;
+                        case (2):
+
+                            intent.putExtra("str","You attend a community service. Trying to give back to the society");
+                            break;
+                        case (3):
+
+                            intent.putExtra("str", "Finally Break time !!\n" +
+                                    "You went to Florida for fun\n");
+                            break;
+                        case (4):
+
+                            intent.putExtra("str","You were kick off from your parent home\n" +
+                                    "You need to rent an apartment");
+                            break;
+                        case (5):
+
+                            intent.putExtra("str","You feel lonely\n" +
+                                    "You decide to buy a dog\n");
+                            break;
+                        case (6):
+
+                            intent.putExtra("str","You fail your mid-term exam\n" +
+                                    "You decide to drop the class a retake\n");
+                            break;
+
+                        case (7):
+
+                            intent.putExtra("str","You enter the Mobile App Development Club\n" +
+                                    "You start to build your own mobile app");
+                            break;
+                        case (8):
+
+                            intent.putExtra("str","Break time Again!! \n" +
+                                    "You went to Chicago for fun ");
+                            break;
+                        case (9):
+
+                            intent.putExtra("str","You overslept\n" +
+                                    "You miss the most important class");
+                            break;
+                        case (10):
+
+                            intent.putExtra("str","You feel hungry \n" +
+                                    "It is grocery shopping time");
+                            break;
+                        case (11):
+
+                            intent.putExtra("str","Opp! Your electricity went off!\n" +
+                                    "Did you pay your utilities bill?\n");
+                            break;
+                        case (12):
+
+                            intent.putExtra("str","Finals finally over ~~\n" +
+                                    "Here is your grade\n");
+                            break;
+                        case (13):
+
+                            intent.putExtra("str","Happy second semester\n" +
+                                    "you need to register for class again ");
+                            break;
+                        case (14):
+
+                            intent.putExtra("str","You attend a community service \n" +
+                                    "Trying to give back to the society");
+                            break;
+                        case (15):
+
+                            intent.putExtra("str","You can’t go anywhere\n" +
+                                    "You need to buy a car");
+                            break;
+                        case (16):
+
+                            intent.putExtra("str","Don’t forget your rent!\n" +
+                                    "You no longer live with your parent");
+                            break;
+                        case (17):
+
+                            intent.putExtra("str","You lovely dog get sick\n" +
+                                    "You need to take her to the pet");
+                            break;
+                        case (18):
+
+                            intent.putExtra("str","You try to pay off your loan\n" +
+                                    "You try to apply for scholarship\n");
+                            break;
+                        case (19):
+
+                            intent.putExtra("str","You enter the Game Animation Club\n" +
+                                    "You start to build your own game");
+                            break;
+                        case (20):
+
+                            intent.putExtra("str","Break time Again!! \n" +
+                                    "You went to Chicago for fun");
+                            break;
+
+                        case (21):
+
+                            intent.putExtra("str","You overslept\n" +
+                                    "You miss the most important class");
+                            break;
+                        case (22):
+
+                            intent.putExtra("str","You feel hungry \n" +
+                                    "It is grocery shopping time");
+                            break;
+                        case (23):
+
+                            intent.putExtra("str","Oops! You drop your phone!\n" +
+                                    "Touch screen no longer working \n");
+                            break;
+                        case (24):
+
+                            intent.putExtra("str","Finals finally over ~~\n" +
+                                    "Here is your grade\n");
+                            break;
+
+
+                    }
+
+
+                    startActivity(intent);
                     break;
 
                 case ("diamond"):
@@ -174,6 +535,135 @@ public class BoardActivity extends AppCompatActivity {
                     diamond.setImageResource(R.drawable.diamond);
                     player.setCurrentBlock(diamond);
                     nextBlock.addView(diamond, 100, 100);
+
+                    switch (newSpace) {
+
+                        case (1):
+
+                            intent.putExtra("str","Welcome !!You need to register for class");
+                            break;
+                        case (2):
+
+                            intent.putExtra("str","You attend a community service. Trying to give back to the society");
+                            break;
+                        case (3):
+
+                            intent.putExtra("str", "Finally Break time !!\n" +
+                                    "You went to Florida for fun\n");
+                            break;
+                        case (4):
+
+                            intent.putExtra("str","You were kick off from your parent home\n" +
+                                    "You need to rent an apartment");
+                            break;
+                        case (5):
+
+                            intent.putExtra("str","You feel lonely\n" +
+                                    "You decide to buy a dog\n");
+                            break;
+                        case (6):
+
+                            intent.putExtra("str","You fail your mid-term exam\n" +
+                                    "You decide to drop the class a retake\n");
+                            break;
+
+                        case (7):
+
+                            intent.putExtra("str","You enter the Mobile App Development Club\n" +
+                                    "You start to build your own mobile app");
+                            break;
+                        case (8):
+
+                            intent.putExtra("str","Break time Again!! \n" +
+                                    "You went to Chicago for fun ");
+                            break;
+                        case (9):
+
+                            intent.putExtra("str","You overslept\n" +
+                                    "You miss the most important class");
+                            break;
+                        case (10):
+
+                            intent.putExtra("str","You feel hungry \n" +
+                                    "It is grocery shopping time");
+                            break;
+                        case (11):
+
+                            intent.putExtra("str","Opp! Your electricity went off!\n" +
+                                    "Did you pay your utilities bill?\n");
+                            break;
+                        case (12):
+
+                            intent.putExtra("str","Finals finally over ~~\n" +
+                                    "Here is your grade\n");
+                            break;
+                        case (13):
+
+                            intent.putExtra("str","Happy second semester\n" +
+                                    "you need to register for class again ");
+                            break;
+                        case (14):
+
+                            intent.putExtra("str","You attend a community service \n" +
+                                    "Trying to give back to the society");
+                            break;
+                        case (15):
+
+                            intent.putExtra("str","You can’t go anywhere\n" +
+                                    "You need to buy a car");
+                            break;
+                        case (16):
+
+                            intent.putExtra("str","Don’t forget your rent!\n" +
+                                    "You no longer live with your parent");
+                            break;
+                        case (17):
+
+                            intent.putExtra("str","You lovely dog get sick\n" +
+                                    "You need to take her to the pet");
+                            break;
+                        case (18):
+
+                            intent.putExtra("str","You try to pay off your loan\n" +
+                                    "You try to apply for scholarship\n");
+                            break;
+                        case (19):
+
+                            intent.putExtra("str","You enter the Game Animation Club\n" +
+                                    "You start to build your own game");
+                            break;
+                        case (20):
+
+                            intent.putExtra("str","Break time Again!! \n" +
+                                    "You went to Chicago for fun");
+                            break;
+
+                        case (21):
+
+                            intent.putExtra("str","You overslept\n" +
+                                    "You miss the most important class");
+                            break;
+                        case (22):
+
+                            intent.putExtra("str","You feel hungry \n" +
+                                    "It is grocery shopping time");
+                            break;
+                        case (23):
+
+                            intent.putExtra("str","Oops! You drop your phone!\n" +
+                                    "Touch screen no longer working \n");
+                            break;
+                        case (24):
+
+                            intent.putExtra("str","Finals finally over ~~\n" +
+                                    "Here is your grade\n");
+                            break;
+
+
+                    }
+
+
+                    startActivity(intent);
                     break;
             }
         }else {
