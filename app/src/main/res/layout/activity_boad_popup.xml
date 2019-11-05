@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_span="2"
                 android:gravity="center|start"
-                android:style="@android:style/TextAppearance.DeviceDefault.Medium"
+
                 android:text="@string/description"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_span="2"
                 android:gravity="start"
-                android:style="@android:style/TextAppearance.DeviceDefault.Medium"
+
                 android:text="@string/action"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +70,7 @@
                 android:layout_height="50dp"
                 android:layout_span="2"
                 android:gravity="start"
-                android:style="@android:style/TextAppearance.DeviceDefault.Medium"
+
                 android:text="@string/remark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_span="1"
-                android:style="@android:style/TextAppearance.DeviceDefault.Large"
+
                 android:text="@string/Debt"
                 android:textAlignment="viewEnd"
                 android:textColor="#DD2C00"
@@ -98,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_span="1"
-                android:style="@android:style/TextAppearance.DeviceDefault.Large"
+
                 android:text="@string/GPA"
                 android:textAlignment="viewEnd"
                 android:textStyle="bold" />

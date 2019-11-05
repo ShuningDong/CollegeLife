@@ -28,6 +28,7 @@ public class BoardActivity extends AppCompatActivity {
     private Game game;
     private TextView showName;
 
+    String str = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,15 +102,23 @@ public class BoardActivity extends AppCompatActivity {
         TableRow block = (TableRow) player.getCurrentBlock().getParent();
         String space = (String) block.getTag();
 
+
         if(game.validMove(Integer.parseInt(space), move_space)) {
 
             // get next block based off spin
             TableRow nextBlock = getNextBlock(space, move_space);
+            int newSpace = Integer.parseInt(space) + move_space;
 
 
             //removes symbol from current space
             block.removeView(player.getCurrentBlock());
 
+            //add pop up window intent
+            Intent i = new Intent(getApplicationContext(), PopupCardActivity.class);
+            //link to pop up window
+
+
+            Intent intent = new Intent(getApplicationContext(), PopupCardActivity.class);
             //move symbol to next block
             switch (player.getIcon()) {
                 case ("spade"):
@@ -117,6 +126,33 @@ public class BoardActivity extends AppCompatActivity {
                     spade.setImageResource(R.drawable.spade);
                     player.setCurrentBlock(spade);
                     nextBlock.addView(spade, 100, 100);
+                    switch (newSpace) {
+
+                        case (1):
+
+                            intent.putExtra("str","Welcome !!You need to register for class");
+                            break;
+                        case (2):
+
+                            intent.putExtra("str","You attend a community service. Trying to give back to the society");
+                            break;
+                        case (3):
+
+                            intent.putExtra("str", "Finally Break time !!\n" +
+                                    "You went to Florida for fun\n");
+                            break;
+                        case (4):
+
+                            intent.putExtra("str","You were kick off from your parent home\n" +
+                                    "You need to rent an apartment");
+                            break;
+
+                    }
+
+
+                    startActivity(intent);
+                    //startActivity(i);
+
                     break;
 
                 case ("heart"):
