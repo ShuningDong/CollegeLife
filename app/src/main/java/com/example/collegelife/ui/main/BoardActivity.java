@@ -1,5 +1,6 @@
 package com.example.collegelife.ui.main;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.collegelife.R;
 
@@ -99,41 +101,48 @@ public class BoardActivity extends AppCompatActivity {
         TableRow block = (TableRow) player.getCurrentBlock().getParent();
         String space = (String) block.getTag();
 
-        // get next block based off spin
-        TableRow nextBlock = getNextBlock(space, move_space);
+        if(game.validMove(Integer.parseInt(space), move_space)) {
 
-        //removes symbol from current space
-        block.removeView(player.getCurrentBlock());
+            // get next block based off spin
+            TableRow nextBlock = getNextBlock(space, move_space);
 
-        //move symbol to next block
-        switch (player.getIcon()) {
-            case ("spade"):
-                ImageView spade = new ImageView(this);
-                spade.setImageResource(R.drawable.spade);
-                player.setCurrentBlock(spade);
-                nextBlock.addView(spade, 100, 100);
-                break;
 
-            case ("heart"):
-                ImageView club = new ImageView(this);
-                club.setImageResource(R.drawable.heart);
-                player.setCurrentBlock(club);
-                nextBlock.addView(club, 100, 100);
-                break;
+            //removes symbol from current space
+            block.removeView(player.getCurrentBlock());
 
-            case ("club"):
-                ImageView heart = new ImageView(this);
-                heart.setImageResource(R.drawable.club);
-                player.setCurrentBlock(heart);
-                nextBlock.addView(heart, 100, 100);
-                break;
+            //move symbol to next block
+            switch (player.getIcon()) {
+                case ("spade"):
+                    ImageView spade = new ImageView(this);
+                    spade.setImageResource(R.drawable.spade);
+                    player.setCurrentBlock(spade);
+                    nextBlock.addView(spade, 100, 100);
+                    break;
 
-            case ("diamond"):
-                ImageView diamond = new ImageView(this);
-                diamond.setImageResource(R.drawable.diamond);
-                player.setCurrentBlock(diamond);
-                nextBlock.addView(diamond, 100, 100);
-                break;
+                case ("heart"):
+                    ImageView club = new ImageView(this);
+                    club.setImageResource(R.drawable.heart);
+                    player.setCurrentBlock(club);
+                    nextBlock.addView(club, 100, 100);
+                    break;
+
+                case ("club"):
+                    ImageView heart = new ImageView(this);
+                    heart.setImageResource(R.drawable.club);
+                    player.setCurrentBlock(heart);
+                    nextBlock.addView(heart, 100, 100);
+                    break;
+
+                case ("diamond"):
+                    ImageView diamond = new ImageView(this);
+                    diamond.setImageResource(R.drawable.diamond);
+                    player.setCurrentBlock(diamond);
+                    nextBlock.addView(diamond, 100, 100);
+                    break;
+            }
+        }else {
+            int validSpace = (move_space + Integer.parseInt(space)) - 25;
+            Toast.makeText(getApplicationContext(), "Invalid move. Need a " + validSpace + " or lower", Toast.LENGTH_SHORT).show();
         }
         game.nextPlayer();
         Character currPlayer = game.getCurrentPlayer();
@@ -187,6 +196,42 @@ public class BoardActivity extends AppCompatActivity {
             case(13):
                 next = findViewById(R.id.icons_13);
                 break;
+            case(14):
+                next = findViewById(R.id.icons_14);
+                break;
+            case(15):
+                next = findViewById(R.id.icons_15);
+                break;
+            case(16):
+                next = findViewById(R.id.icons_16);
+                break;
+            case(17):
+                next = findViewById(R.id.icons_17);
+                break;
+            case(18):
+                next = findViewById(R.id.icons_18);
+                break;
+            case(19):
+                next = findViewById(R.id.icons_19);
+                break;
+            case(20):
+                next = findViewById(R.id.icons_20);
+                break;
+            case(21):
+                next = findViewById(R.id.icons_21);
+                break;
+            case(22):
+                next = findViewById(R.id.icons_22);
+                break;
+            case(23):
+                next = findViewById(R.id.icons_23);
+                break;
+            case(24):
+                next = findViewById(R.id.icons_24);
+                break;
+            case(25):
+                next = findViewById(R.id.icons_25);
+                break;
             default:
                 next = findViewById(R.id.icons_s);
         }
@@ -201,10 +246,12 @@ public class BoardActivity extends AppCompatActivity {
         String[] players = intent.getStringArrayExtra("players");
         String[] icons = intent.getStringArrayExtra("tokens");
         int count = 0;
+        assert players != null;
         for (String player_name: players) {
             if (player_name != null) {
                 Log.d(TAG, "Name: " + player_name);
                 Character player = new Character(player_name);
+                assert icons != null;
                 Log.d(TAG, "Name: " + icons[count]);
                 if (icons[count] != null) {
                     player.setIcon(icons[count]);
@@ -254,13 +301,13 @@ public class BoardActivity extends AppCompatActivity {
 
     @Override
     // Shoulde be called before onPause
-    protected void onSaveInstanceState(Bundle outstate){
+    protected void onSaveInstanceState(@NonNull Bundle outstate){
         super.onSaveInstanceState(outstate);
     }
 
     @Override
     // Should be called after onStart and onResume
-    protected void onRestoreInstanceState(Bundle savedInstanceState){
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
     }
 }

@@ -44,4 +44,10 @@ class Game {
         this.currentPlayer.setGPA(gpa);
    }
 
+   public boolean validMove(int currentSpace, int nextSpace){
+
+        return ((currentSpace + nextSpace ) < 26);
+    }
+
+
 }

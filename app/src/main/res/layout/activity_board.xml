@@ -44,19 +44,21 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E0373F"
+                        android:background="#42D14C"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/textViewGridS"
                             android:layout_width="190dp"
                             android:layout_height="100dp"
+                            android:background="#42D14C"
                             android:gravity="center"
                             android:text="@string/start"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
                             android:textSize="36sp"
                             android:textStyle="bold" />
+
                         <TableRow
                             android:id="@+id/icons_s"
                             android:layout_width="match_parent"
@@ -761,7 +763,7 @@
                             android:id="@+id/icons_25"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:tag="13" />
+                            android:tag="25" />
                     </LinearLayout>
 
                 </TableRow>
