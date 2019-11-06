@@ -40,20 +40,6 @@ public class BoardActivity extends AppCompatActivity {
 
     private FirebaseFirestore mFirestore;
 
-
-
-
-    double gpa = 4.0;
-    int debt = 0;
-    double spadegpa = 4.0;
-    int spadedebt = 0;
-    double heartgpa = 4.0;
-    int heartdebt = 0;
-    double clubgpa = 4.0;
-    int clubdebt = 0;
-    double diamondgpa = 4.0;
-    int diamonddebt = 0;
-
     String str = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,19 +65,15 @@ public class BoardActivity extends AppCompatActivity {
 
         setBoard(characters);
 
-        String gpa1 = Double.toString(gpa);
-        String debt1 = Integer.toString(debt);
-
-        gpaview.setText(gpa1);
-        debtview.setText(debt1);
-
         game = new Game(characters);
 
         Character currPlayer = game.getCurrentPlayer();
         showName = findViewById(R.id.display_name);
         showName.setText(currPlayer.getName());
-        //TextView showGPA = findViewById(R.id.GPA);
-       // showGPA.setText(player1.getGPA());
+
+
+        gpaview.setText(currPlayer.getGPA());
+        debtview.setText(currPlayer.getDebt());
 
     }
 
@@ -100,12 +82,8 @@ public class BoardActivity extends AppCompatActivity {
 
         TableRow startBlock = findViewById(R.id.icons_s);
         //transfer gpa and debt to string in order to fit in textView.
-        String gpa1 = Double.toString(gpa);
-        String debt1 = Integer.toString(debt);
 
         for (Character player: playerList) {
-
-
 
             switch (player.getIcon()) {
                 case ("spade"):
@@ -156,6 +134,8 @@ public class BoardActivity extends AppCompatActivity {
             TableRow nextBlock = getNextBlock(space, move_space);
             int newSpace = Integer.parseInt(space) + move_space;
 
+            //add to players gpa
+            player.setGPA(move_space);
 
             //removes symbol from current space
             block.removeView(player.getCurrentBlock());
@@ -164,25 +144,12 @@ public class BoardActivity extends AppCompatActivity {
             //link to pop up window
             Intent intent = new Intent(getApplicationContext(), PopupCardActivity.class);
 
-
             TextView gpaview = (TextView)this.findViewById(R.id.gpa);
             TextView debtview = (TextView)this.findViewById(R.id.debt);
 
-
-
-            String spadegpa_s;
-            String spadedebt_s;
-            String heartgpa_s;
-            String heartdebt_s;
-            String clubgpa_s;
-            String clubdebt_s;
-            String diamondgpa_s;
-            String diamonddebt_s;
-
             mFirestore = FirebaseFirestore.getInstance();
 
-            Intent intent1 = getIntent();
-            String player_name = intent1.getStringExtra("Player_name");
+            String player_name = player.getName();
             Map<String, Object> scores = new HashMap<>();
 
             //move symbol to next block
@@ -196,67 +163,67 @@ public class BoardActivity extends AppCompatActivity {
 
                         case (1):
 
-                            intent.putExtra("str","Welcome !!You need to register for class");
-                            spadedebt-=10000;
+                            intent.putExtra("str","Welcome to College!! You need to register for class.");
+                            player.addDebt(10000);
                             break;
                         case (2):
 
-                            intent.putExtra("str","You attend a community service. Trying to give back to the society");
+                            intent.putExtra("str","You attend a community service. Trying to give back to the society.");
 
                             break;
                         case (3):
 
-                            intent.putExtra("str", "Finally Break time !!\n" +
-                                    "You went to Florida for fun\n");
-                            spadedebt-=200;
+                            intent.putExtra("str", "Finally Break time!!\n" +
+                                    "You went to Florida for fun!!\n");
+                            player.addDebt(200);
                             break;
                         case (4):
 
-                            intent.putExtra("str","You were kick off from your parent home\n" +
-                                    "You need to rent an apartment");
-                            spadedebt-=500;
+                            intent.putExtra("str","You were kicked out from your parent home.\n" +
+                                    "You need to rent an apartment.");
+                            player.addDebt(500);
                             break;
                         case (5):
 
-                        intent.putExtra("str","You feel lonely\n" +
-                                "You decide to buy a dog\n");
-                            spadedebt-=200;
+                        intent.putExtra("str","You feel lonely.\n" +
+                                "You decide to buy a dog!!\n");
+                            player.addDebt(200);
                         break;
                         case (6):
 
-                            intent.putExtra("str","You fail your mid-term exam\n" +
-                                    "You decide to drop the class a retake\n");
+                            intent.putExtra("str","You fail your midterm exam.\n" +
+                                    "You decide to drop the class and retake it later.\n");
+                            player.subtractDebt(150);
                             break;
 
                         case (7):
 
-                        intent.putExtra("str","You enter the Mobile App Development Club\n" +
-                                "You start to build your own mobile app");
+                        intent.putExtra("str","You join the Mobile App Development Club.\n" +
+                                "You start to build your own mobile app.");
                         break;
                         case (8):
 
                             intent.putExtra("str","Break time Again!! \n" +
-                                    "You went to Chicago for fun ");
-                            spadedebt-=200;
+                                    "You went to Chicago for fun! ");
+                            player.addDebt(500);
                             break;
                         case (9):
 
-                            intent.putExtra("str","You overslept\n" +
-                                    "You miss the most important class");
-                            spadegpa-=0.1;
+                            intent.putExtra("str","You overslept..\n" +
+                                    "You miss the your group presentation in class.");
                             break;
                         case (10):
 
-                            intent.putExtra("str","You feel hungry \n" +
-                                    "It is grocery shopping time");
-                            spadedebt-=50;
+                            intent.putExtra("str","You feel hungry. \n" +
+                                    "It is grocery shopping time.");
+                            player.addDebt(50);
                             break;
                         case (11):
 
-                            intent.putExtra("str","Opp! Your electricity went off!\n" +
+                            intent.putExtra("str","Ope! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
 
-                            spadedebt -=100;
+                            player.addDebt( 100);
                             break;
                         case (12):
 
@@ -265,76 +232,80 @@ public class BoardActivity extends AppCompatActivity {
                             break;
                         case (13):
 
-                            intent.putExtra("str","Happy second semester\n" +
-                                    "you need to register for class again ");
-                            spadedebt-=10000;
+                            intent.putExtra("str","Happy second semester!\n" +
+                                    "you need to register for class again.");
+                            player.addDebt(10000);
                             break;
                         case (14):
 
-                            intent.putExtra("str","You attend a community service \n" +
-                                    "Trying to give back to the society");
+                            intent.putExtra("str","You attend your community service. \n" +
+                                    "Trying to give back to the society.");
                             break;
                         case (15):
 
-                            intent.putExtra("str","You can’t go anywhere\n" +
-                                    "You need to buy a car");
-                            spadedebt-=9000;
+                            intent.putExtra("str","You can’t go anywhere.\n" +
+                                    "You need to buy a car.");
+                            player.addDebt(9000);
                             break;
                         case (16):
 
                             intent.putExtra("str","Don’t forget your rent!\n" +
-                                    "You no longer live with your parent");
-                            spadedebt-=500;
+                                    "You no longer live with your parent.");
+                            player.addDebt(500);
                             break;
                         case (17):
 
-                            intent.putExtra("str","You lovely dog get sick\n" +
-                                    "You need to take her to the pet");
-                            spadedebt-=300;
+                            intent.putExtra("str","Your lovely dog gets sick.\n" +
+                                    "You need to take her to the vet.");
+                            player.addDebt(300);
                             break;
                         case (18):
 
-                            intent.putExtra("str","You try to pay off your loan\n" +
-                                    "You try to apply for scholarship\n");
-                            spadedebt+=5000;
+                            intent.putExtra("str","You try to pay off your loan.\n" +
+                                    "You try to apply for scholarship.\n");
+                            player.subtractDebt(5000);
                             break;
                         case (19):
 
-                            intent.putExtra("str","You enter the Game Animation Club\n" +
-                                    "You start to build your own game");
+                            intent.putExtra("str","You enter the Game Animation Club.\n" +
+                                    "You start to build your own game!");
+                            player.subtractDebt(50);
                             break;
                         case (20):
 
                             intent.putExtra("str","Break time Again!! \n" +
-                                    "You went to Chicago for fun");
-                            spadedebt-=200;
+                                    "You went to Chicago for fun!");
+                            player.addDebt(200);
                             break;
 
                         case (21):
 
-                            intent.putExtra("str","You overslept\n" +
-                                    "You miss the most important class");
+                            intent.putExtra("str","You overslept.\n" +
+                                    "You miss an important quiz in class.");
                             break;
                         case (22):
-
-                            intent.putExtra("str","You feel hungry \n" +
-                                    "It is grocery shopping time");
-                            spadedebt-=50;
+                            intent.putExtra("str","You are feeling hungry. \n"
+                                    + "It is grocery shopping time.");
+                            player.addDebt(50);
                             break;
                         case (23):
 
                             intent.putExtra("str","Oops! You drop your phone!\n" +
-                                    "Touch screen no longer working \n");
-                            spadedebt-=50;
+                                    "Touch screen no longer working.\n");
+                            player.addDebt(300);
                             break;
                         case (24):
 
                             intent.putExtra("str","Finals finally over ~~\n" +
-                                    "Here is your grade\n");
+                                    "Here is your grade: " + player.getGPA() + "\n");
 
+                        case (25):
 
-                            scores.put("name", "spade");
-                            scores.put("score", spadedebt);
+                            intent.putExtra("str","Congratulations on graduating!!!!! \n " +
+                                    "YOU DID IT!!!");
+
+                            scores.put("name", player.getName());
+                            scores.put("score", player.getDebt());
                             mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override
                                 public void onSuccess(DocumentReference documentReference) {
@@ -349,23 +320,11 @@ public class BoardActivity extends AppCompatActivity {
                             });
                             break;
 
-
                     }
-
-
-
-
-                    spadegpa_s = Double.toString(spadegpa);
-                    spadedebt_s = Integer.toString(spadedebt);
-
-
-
                     startActivity(intent);
 
-                    gpaview.setText(spadegpa_s);
-                    debtview.setText(spadedebt_s);
-
-
+                    gpaview.setText(player.getGPA());
+                    debtview.setText(player.getDebt());
                     break;
 
                 case ("heart"):
@@ -375,70 +334,69 @@ public class BoardActivity extends AppCompatActivity {
                     nextBlock.addView(club, 100, 100);
 
                     switch (newSpace) {
-
                         case (1):
 
-                            intent.putExtra("str","Welcome !!You need to register for class");
-                            heartdebt-=10000;
+                            intent.putExtra("str","Welcome to College!! You need to register for class.");
+                            player.addDebt(10000);
                             break;
                         case (2):
 
-                            intent.putExtra("str","You attend a community service. Trying to give back to the society");
+                            intent.putExtra("str","You attend a community service. Trying to give back to the society.");
 
                             break;
                         case (3):
 
-                            intent.putExtra("str", "Finally Break time !!\n" +
-                                    "You went to Florida for fun\n");
-                            heartdebt-=200;
+                            intent.putExtra("str", "Finally Break time!!\n" +
+                                    "You went to Florida for fun!!\n");
+                            player.addDebt(200);
                             break;
                         case (4):
 
-                            intent.putExtra("str","You were kick off from your parent home\n" +
-                                    "You need to rent an apartment");
-                            heartdebt-=500;
+                            intent.putExtra("str","You were kicked out from your parent home.\n" +
+                                    "You need to rent an apartment.");
+                            player.addDebt(500);
                             break;
                         case (5):
 
-                            intent.putExtra("str","You feel lonely\n" +
-                                    "You decide to buy a dog\n");
-                            heartdebt-=200;
+                            intent.putExtra("str","You feel lonely.\n" +
+                                    "You decide to buy a dog!!\n");
+                            player.addDebt(200);
                             break;
                         case (6):
 
-                            intent.putExtra("str","You fail your mid-term exam\n" +
-                                    "You decide to drop the class a retake\n");
+                            intent.putExtra("str","You fail your midterm exam.\n" +
+                                    "You decide to drop the class and retake it later.\n");
+                            player.subtractDebt(150);
                             break;
 
                         case (7):
 
-                            intent.putExtra("str","You enter the Mobile App Development Club\n" +
-                                    "You start to build your own mobile app");
+                            intent.putExtra("str","You join the Mobile App Development Club.\n" +
+                                    "You start to build your own mobile app.");
                             break;
                         case (8):
 
                             intent.putExtra("str","Break time Again!! \n" +
-                                    "You went to Chicago for fun ");
-                            heartdebt-=200;
+                                    "You went to Chicago for fun! ");
+                            player.addDebt(500);
                             break;
                         case (9):
 
-                            intent.putExtra("str","You overslept\n" +
-                                    "You miss the most important class");
-                            heartgpa-=0.1;
+                            intent.putExtra("str","You overslept..\n" +
+                                    "You miss the your group presentation in class.");
                             break;
                         case (10):
 
-                            intent.putExtra("str","You feel hungry \n" +
-                                    "It is grocery shopping time");
-                            heartdebt-=50;
+                            intent.putExtra("str","You feel hungry. \n" +
+                                    "It is grocery shopping time.");
+                            player.addDebt(50);
                             break;
                         case (11):
 
-                            intent.putExtra("str","Opp! Your electricity went off!\n" +
+                            intent.putExtra("str","Ope! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
 
-                            heartdebt -=100;
+                            player.addDebt( 100);
                             break;
                         case (12):
 
@@ -447,75 +405,80 @@ public class BoardActivity extends AppCompatActivity {
                             break;
                         case (13):
 
-                            intent.putExtra("str","Happy second semester\n" +
-                                    "you need to register for class again ");
-                            heartdebt-=10000;
+                            intent.putExtra("str","Happy second semester!\n" +
+                                    "you need to register for class again.");
+                            player.addDebt(10000);
                             break;
                         case (14):
 
-                            intent.putExtra("str","You attend a community service \n" +
-                                    "Trying to give back to the society");
+                            intent.putExtra("str","You attend your community service. \n" +
+                                    "Trying to give back to the society.");
                             break;
                         case (15):
 
-                            intent.putExtra("str","You can’t go anywhere\n" +
-                                    "You need to buy a car");
-                            heartdebt-=9000;
+                            intent.putExtra("str","You can’t go anywhere.\n" +
+                                    "You need to buy a car.");
+                            player.addDebt(9000);
                             break;
                         case (16):
 
                             intent.putExtra("str","Don’t forget your rent!\n" +
-                                    "You no longer live with your parent");
-                            heartdebt-=500;
+                                    "You no longer live with your parent.");
+                            player.addDebt(500);
                             break;
                         case (17):
 
-                            intent.putExtra("str","You lovely dog get sick\n" +
-                                    "You need to take her to the pet");
-                            heartdebt-=300;
+                            intent.putExtra("str","Your lovely dog gets sick.\n" +
+                                    "You need to take her to the vet.");
+                            player.addDebt(300);
                             break;
                         case (18):
 
-                            intent.putExtra("str","You try to pay off your loan\n" +
-                                    "You try to apply for scholarship\n");
-                            heartdebt+=5000;
+                            intent.putExtra("str","You try to pay off your loan.\n" +
+                                    "You try to apply for scholarship.\n");
+                            player.subtractDebt(5000);
                             break;
                         case (19):
 
-                            intent.putExtra("str","You enter the Game Animation Club\n" +
-                                    "You start to build your own game");
+                            intent.putExtra("str","You enter the Game Animation Club.\n" +
+                                    "You start to build your own game!");
+                            player.subtractDebt(50);
                             break;
                         case (20):
 
                             intent.putExtra("str","Break time Again!! \n" +
-                                    "You went to Chicago for fun");
-                            heartdebt-=200;
+                                    "You went to Chicago for fun!");
+                            player.addDebt(200);
                             break;
 
                         case (21):
 
-                            intent.putExtra("str","You overslept\n" +
-                                    "You miss the most important class");
+                            intent.putExtra("str","You overslept.\n" +
+                                    "You miss an important quiz in class.");
                             break;
                         case (22):
-
-                            intent.putExtra("str","You feel hungry \n" +
-                                    "It is grocery shopping time");
-                            heartdebt-=50;
+                            intent.putExtra("str","You are feeling hungry. \n"
+                                    + "It is grocery shopping time.");
+                            player.addDebt(50);
                             break;
                         case (23):
 
                             intent.putExtra("str","Oops! You drop your phone!\n" +
-                                    "Touch screen no longer working \n");
-                            heartdebt-=50;
+                                    "Touch screen no longer working.\n");
+                            player.addDebt(300);
                             break;
                         case (24):
 
                             intent.putExtra("str","Finals finally over ~~\n" +
-                                    "Here is your grade\n");
+                                    "Here is your grade: " + player.getGPA() + "\n");
 
-                            scores.put("name", "heart");
-                            scores.put("score", heartdebt);
+                        case (25):
+
+                            intent.putExtra("str","Congratulations on graduating!!!!! \n " +
+                                    "YOU DID IT!!!");
+
+                            scores.put("name", player.getName());
+                            scores.put("score", player.getDebt());
                             mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override
                                 public void onSuccess(DocumentReference documentReference) {
@@ -532,18 +495,9 @@ public class BoardActivity extends AppCompatActivity {
 
 
                     }
-
-
                     startActivity(intent);
-
-                    heartgpa_s = Double.toString(heartgpa);
-                    heartdebt_s = Integer.toString(heartdebt);
-
-
-                    gpaview.setText(heartgpa_s);
-                    debtview.setText(heartdebt_s);
-
-
+                    gpaview.setText(player.getGPA());
+                    debtview.setText(player.getDebt());
                     break;
 
                 case ("club"):
@@ -556,67 +510,67 @@ public class BoardActivity extends AppCompatActivity {
 
                         case (1):
 
-                            intent.putExtra("str","Welcome !!You need to register for class");
-                            clubdebt-=10000;
+                            intent.putExtra("str","Welcome to College!! You need to register for class.");
+                            player.addDebt(10000);
                             break;
                         case (2):
 
-                            intent.putExtra("str","You attend a community service. Trying to give back to the society");
+                            intent.putExtra("str","You attend a community service. Trying to give back to the society.");
 
                             break;
                         case (3):
 
-                            intent.putExtra("str", "Finally Break time !!\n" +
-                                    "You went to Florida for fun\n");
-                            clubdebt-=200;
+                            intent.putExtra("str", "Finally Break time!!\n" +
+                                    "You went to Florida for fun!!\n");
+                            player.addDebt(200);
                             break;
                         case (4):
 
-                            intent.putExtra("str","You were kick off from your parent home\n" +
-                                    "You need to rent an apartment");
-                            clubdebt-=500;
+                            intent.putExtra("str","You were kicked out from your parent home.\n" +
+                                    "You need to rent an apartment.");
+                            player.addDebt(500);
                             break;
                         case (5):
 
-                            intent.putExtra("str","You feel lonely\n" +
-                                    "You decide to buy a dog\n");
-                            clubdebt-=200;
+                            intent.putExtra("str","You feel lonely.\n" +
+                                    "You decide to buy a dog!!\n");
+                            player.addDebt(200);
                             break;
                         case (6):
 
-                            intent.putExtra("str","You fail your mid-term exam\n" +
-                                    "You decide to drop the class a retake\n");
+                            intent.putExtra("str","You fail your midterm exam.\n" +
+                                    "You decide to drop the class and retake it later.\n");
+                            player.subtractDebt(150);
                             break;
 
                         case (7):
 
-                            intent.putExtra("str","You enter the Mobile App Development Club\n" +
-                                    "You start to build your own mobile app");
+                            intent.putExtra("str","You join the Mobile App Development Club.\n" +
+                                    "You start to build your own mobile app.");
                             break;
                         case (8):
 
                             intent.putExtra("str","Break time Again!! \n" +
-                                    "You went to Chicago for fun ");
-                            clubdebt-=200;
+                                    "You went to Chicago for fun! ");
+                            player.addDebt(500);
                             break;
                         case (9):
 
-                            intent.putExtra("str","You overslept\n" +
-                                    "You miss the most important class");
-                            clubgpa-=0.1;
+                            intent.putExtra("str","You overslept..\n" +
+                                    "You miss the your group presentation in class.");
                             break;
                         case (10):
 
-                            intent.putExtra("str","You feel hungry \n" +
-                                    "It is grocery shopping time");
-                            clubdebt-=50;
+                            intent.putExtra("str","You feel hungry. \n" +
+                                    "It is grocery shopping time.");
+                            player.addDebt(50);
                             break;
                         case (11):
 
-                            intent.putExtra("str","Opp! Your electricity went off!\n" +
+                            intent.putExtra("str","Ope! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
 
-                            clubdebt -=100;
+                            player.addDebt( 100);
                             break;
                         case (12):
 
@@ -625,74 +579,81 @@ public class BoardActivity extends AppCompatActivity {
                             break;
                         case (13):
 
-                            intent.putExtra("str","Happy second semester\n" +
-                                    "you need to register for class again ");
-                            clubdebt-=10000;
+                            intent.putExtra("str","Happy second semester!\n" +
+                                    "you need to register for class again.");
+                            player.addDebt(10000);
                             break;
                         case (14):
 
-                            intent.putExtra("str","You attend a community service \n" +
-                                    "Trying to give back to the society");
+                            intent.putExtra("str","You attend your community service. \n" +
+                                    "Trying to give back to the society.");
                             break;
                         case (15):
 
-                            intent.putExtra("str","You can’t go anywhere\n" +
-                                    "You need to buy a car");
-                            clubdebt-=9000;
+                            intent.putExtra("str","You can’t go anywhere.\n" +
+                                    "You need to buy a car.");
+                            player.addDebt(9000);
                             break;
                         case (16):
 
                             intent.putExtra("str","Don’t forget your rent!\n" +
-                                    "You no longer live with your parent");
-                            clubdebt-=500;
+                                    "You no longer live with your parent.");
+                            player.addDebt(500);
                             break;
                         case (17):
 
-                            intent.putExtra("str","You lovely dog get sick\n" +
-                                    "You need to take her to the pet");
-                            clubdebt-=300;
+                            intent.putExtra("str","Your lovely dog gets sick.\n" +
+                                    "You need to take her to the vet.");
+                            player.addDebt(300);
                             break;
                         case (18):
 
-                            intent.putExtra("str","You try to pay off your loan\n" +
-                                    "You try to apply for scholarship\n");
-                            clubdebt+=5000;
+                            intent.putExtra("str","You try to pay off your loan.\n" +
+                                    "You try to apply for scholarship.\n");
+                            player.subtractDebt(5000);
                             break;
                         case (19):
 
-                            intent.putExtra("str","You enter the Game Animation Club\n" +
-                                    "You start to build your own game");
+                            intent.putExtra("str","You enter the Game Animation Club.\n" +
+                                    "You start to build your own game!");
+                            player.subtractDebt(50);
                             break;
                         case (20):
 
                             intent.putExtra("str","Break time Again!! \n" +
-                                    "You went to Chicago for fun");
-                            clubdebt-=200;
+                                    "You went to Chicago for fun!");
+                            player.addDebt(200);
                             break;
 
                         case (21):
 
-                            intent.putExtra("str","You overslept\n" +
-                                    "You miss the most important class");
+                            intent.putExtra("str","You overslept.\n" +
+                                    "You miss an important quiz in class.");
                             break;
                         case (22):
-
-                            intent.putExtra("str","You feel hungry \n" +
-                                    "It is grocery shopping time");
-                            clubdebt-=50;
+                            intent.putExtra("str","You are feeling hungry. \n"
+                                    + "It is grocery shopping time.");
+                            player.addDebt(50);
                             break;
                         case (23):
 
                             intent.putExtra("str","Oops! You drop your phone!\n" +
-                                    "Touch screen no longer working \n");
-                            clubdebt-=50;
+                                    "Touch screen no longer working.\n");
+                            player.addDebt(300);
                             break;
                         case (24):
 
                             intent.putExtra("str","Finals finally over ~~\n" +
-                                    "Here is your grade\n");
-                            scores.put("name", "club");
-                            scores.put("score", clubdebt);
+                                    "Here is your grade: " + player.getGPA() + "\n");
+
+                        case (25):
+
+                            intent.putExtra("str","Congratulations on graduating!!!!! \n " +
+                                    "YOU DID IT!!!");
+
+
+                            scores.put("name", player.getName());
+                            scores.put("score", player.getDebt());
                             mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override
                                 public void onSuccess(DocumentReference documentReference) {
@@ -707,16 +668,10 @@ public class BoardActivity extends AppCompatActivity {
                             });
                             break;
 
-
                     }
 
-
-                    clubgpa_s = Double.toString(clubgpa);
-                    clubdebt_s = Integer.toString(clubdebt);
-
-
-                    gpaview.setText(clubgpa_s);
-                    debtview.setText(clubdebt_s);
+                    gpaview.setText(player.getGPA());
+                    debtview.setText(player.getDebt());
                     startActivity(intent);
 
                     break;
@@ -731,67 +686,67 @@ public class BoardActivity extends AppCompatActivity {
 
                         case (1):
 
-                            intent.putExtra("str","Welcome !!You need to register for class");
-                            diamonddebt-=10000;
+                            intent.putExtra("str","Welcome to College!! You need to register for class.");
+                            player.addDebt(10000);
                             break;
                         case (2):
 
-                            intent.putExtra("str","You attend a community service. Trying to give back to the society");
+                            intent.putExtra("str","You attend a community service. Trying to give back to the society.");
 
                             break;
                         case (3):
 
-                            intent.putExtra("str", "Finally Break time !!\n" +
-                                    "You went to Florida for fun\n");
-                            diamonddebt-=200;
+                            intent.putExtra("str", "Finally Break time!!\n" +
+                                    "You went to Florida for fun!!\n");
+                            player.addDebt(200);
                             break;
                         case (4):
 
-                            intent.putExtra("str","You were kick off from your parent home\n" +
-                                    "You need to rent an apartment");
-                            diamonddebt-=500;
+                            intent.putExtra("str","You were kicked out from your parent home.\n" +
+                                    "You need to rent an apartment.");
+                            player.addDebt(500);
                             break;
                         case (5):
 
-                            intent.putExtra("str","You feel lonely\n" +
-                                    "You decide to buy a dog\n");
-                            diamonddebt-=200;
+                            intent.putExtra("str","You feel lonely.\n" +
+                                    "You decide to buy a dog!!\n");
+                            player.addDebt(200);
                             break;
                         case (6):
 
-                            intent.putExtra("str","You fail your mid-term exam\n" +
-                                    "You decide to drop the class a retake\n");
+                            intent.putExtra("str","You fail your midterm exam.\n" +
+                                    "You decide to drop the class and retake it later.\n");
+                            player.subtractDebt(150);
                             break;
 
                         case (7):
 
-                            intent.putExtra("str","You enter the Mobile App Development Club\n" +
-                                    "You start to build your own mobile app");
+                            intent.putExtra("str","You join the Mobile App Development Club.\n" +
+                                    "You start to build your own mobile app.");
                             break;
                         case (8):
 
                             intent.putExtra("str","Break time Again!! \n" +
-                                    "You went to Chicago for fun ");
-                            diamonddebt-=200;
+                                    "You went to Chicago for fun! ");
+                            player.addDebt(500);
                             break;
                         case (9):
 
-                            intent.putExtra("str","You overslept\n" +
-                                    "You miss the most important class");
-                            diamondgpa-=0.1;
+                            intent.putExtra("str","You overslept..\n" +
+                                    "You miss the your group presentation in class.");
                             break;
                         case (10):
 
-                            intent.putExtra("str","You feel hungry \n" +
-                                    "It is grocery shopping time");
-                            diamonddebt-=50;
+                            intent.putExtra("str","You feel hungry. \n" +
+                                    "It is grocery shopping time.");
+                            player.addDebt(50);
                             break;
                         case (11):
 
-                            intent.putExtra("str","Opp! Your electricity went off!\n" +
+                            intent.putExtra("str","Ope! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
 
-                            diamonddebt -=100;
+                            player.addDebt( 100);
                             break;
                         case (12):
 
@@ -800,75 +755,80 @@ public class BoardActivity extends AppCompatActivity {
                             break;
                         case (13):
 
-                            intent.putExtra("str","Happy second semester\n" +
-                                    "you need to register for class again ");
-                            diamonddebt-=10000;
+                            intent.putExtra("str","Happy second semester!\n" +
+                                    "you need to register for class again.");
+                            player.addDebt(10000);
                             break;
                         case (14):
 
-                            intent.putExtra("str","You attend a community service \n" +
-                                    "Trying to give back to the society");
+                            intent.putExtra("str","You attend your community service. \n" +
+                                    "Trying to give back to the society.");
                             break;
                         case (15):
 
-                            intent.putExtra("str","You can’t go anywhere\n" +
-                                    "You need to buy a car");
-                            diamonddebt-=9000;
+                            intent.putExtra("str","You can’t go anywhere.\n" +
+                                    "You need to buy a car.");
+                            player.addDebt(9000);
                             break;
                         case (16):
 
                             intent.putExtra("str","Don’t forget your rent!\n" +
-                                    "You no longer live with your parent");
-                            diamonddebt-=500;
+                                    "You no longer live with your parent.");
+                            player.addDebt(500);
                             break;
                         case (17):
 
-                            intent.putExtra("str","You lovely dog get sick\n" +
-                                    "You need to take her to the pet");
-                            diamonddebt-=300;
+                            intent.putExtra("str","Your lovely dog gets sick.\n" +
+                                    "You need to take her to the vet.");
+                            player.addDebt(300);
                             break;
                         case (18):
 
-                            intent.putExtra("str","You try to pay off your loan\n" +
-                                    "You try to apply for scholarship\n");
-                            diamonddebt+=5000;
+                            intent.putExtra("str","You try to pay off your loan.\n" +
+                                    "You try to apply for scholarship.\n");
+                            player.subtractDebt(5000);
                             break;
                         case (19):
 
-                            intent.putExtra("str","You enter the Game Animation Club\n" +
-                                    "You start to build your own game");
+                            intent.putExtra("str","You enter the Game Animation Club.\n" +
+                                    "You start to build your own game!");
+                            player.subtractDebt(50);
                             break;
                         case (20):
 
                             intent.putExtra("str","Break time Again!! \n" +
-                                    "You went to Chicago for fun");
-                            diamonddebt-=200;
+                                    "You went to Chicago for fun!");
+                            player.addDebt(200);
                             break;
 
                         case (21):
 
-                            intent.putExtra("str","You overslept\n" +
-                                    "You miss the most important class");
+                            intent.putExtra("str","You overslept.\n" +
+                                    "You miss an important quiz in class.");
                             break;
                         case (22):
-
-                            intent.putExtra("str","You feel hungry \n" +
-                                    "It is grocery shopping time");
-                            diamonddebt-=50;
+                            intent.putExtra("str","You are feeling hungry. \n"
+                                    + "It is grocery shopping time.");
+                            player.addDebt(50);
                             break;
                         case (23):
 
                             intent.putExtra("str","Oops! You drop your phone!\n" +
-                                    "Touch screen no longer working \n");
-                            diamonddebt-=50;
+                                    "Touch screen no longer working.\n");
+                            player.addDebt(300);
                             break;
                         case (24):
 
                             intent.putExtra("str","Finals finally over ~~\n" +
-                                    "Here is your grade\n");
+                                    "Here is your grade: " + player.getGPA() + "\n");
 
-                            scores.put("name", "diamond");
-                            scores.put("score", diamonddebt);
+                        case (25):
+
+                            intent.putExtra("str","Congratulations on graduating!!!!! \n " +
+                                    "YOU DID IT!!!");
+
+                            scores.put("name", player.getName());
+                            scores.put("score", player.getDebt());
                             mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override
                                 public void onSuccess(DocumentReference documentReference) {
@@ -883,31 +843,14 @@ public class BoardActivity extends AppCompatActivity {
                             });
                             break;
 
-
                     }
 
-
-
-
-
-                    diamondgpa_s = Double.toString(diamondgpa);
-                    diamonddebt_s = Integer.toString(diamonddebt);
-                    startActivity(intent);
-
-                    gpaview.setText(diamondgpa_s);
-                    debtview.setText(diamonddebt_s);
+                    gpaview.setText(player.getGPA());
+                    debtview.setText(player.getDebt());
                     break;
             }
-
-
-            //set gpa and debt shown on broad.
-            //String gpa1 = Double.toString(gpa);
-            //String debt1 = Integer.toString(debt);
-
-            //gpaview.setText(gpa1);
-            //debtview.setText(debt1);
         }else {
-            int validSpace = (move_space + Integer.parseInt(space)) - 25;
+            int validSpace = (25 - Integer.parseInt(space));
             Toast.makeText(getApplicationContext(), "Invalid move. Need a " + validSpace + " or lower", Toast.LENGTH_SHORT).show();
         }
         game.nextPlayer();

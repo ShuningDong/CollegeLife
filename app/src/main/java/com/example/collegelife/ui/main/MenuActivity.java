@@ -49,7 +49,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        Button settings_button = findViewById(R.id.settings_button);
+        Button settings_button = findViewById(R.id.highscore_button);
         settings_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -166,13 +166,13 @@ public class MenuActivity extends AppCompatActivity {
 
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
             findViewById(R.id.start_button).setVisibility(View.VISIBLE);
-            findViewById(R.id.settings_button).setVisibility(View.VISIBLE);
+            findViewById(R.id.highscore_button).setVisibility(View.VISIBLE);
             findViewById(R.id.logout).setVisibility(View.VISIBLE);
 
         } else {
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
             findViewById(R.id.start_button).setVisibility(View.GONE);
-            findViewById(R.id.settings_button).setVisibility(View.GONE);
+            findViewById(R.id.highscore_button).setVisibility(View.GONE);
             findViewById(R.id.logout).setVisibility(View.GONE);
             Toast.makeText(this, "Sign in please!", Toast.LENGTH_SHORT).show();
         }

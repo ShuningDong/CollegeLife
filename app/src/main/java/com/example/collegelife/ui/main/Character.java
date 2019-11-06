@@ -8,8 +8,8 @@ import java.util.List;
 public class Character {
 
     private String Name;
-    private int GPA;
-    private double Debt;
+    private double GPA;
+    private int Debt;
     private String Icon;
     private boolean playState;
     private ImageView CurrentBlock;
@@ -38,20 +38,20 @@ public class Character {
     }
 
     public void setGPA(int gpa){
-        int temp = this.GPA;
+        double temp = this.GPA;
         this.GPA = (temp + gpa)/2;
     }
 
-    public double getDebt(){
-        return this.Debt;
+    public String getDebt(){
+        return "" + this.Debt;
     }
 
     public void addDebt(double amount){
-        this.Debt += amount;
+        this.Debt -= amount;
     }
 
     public void subtractDebt(double amount){
-        this.Debt -= amount;
+        this.Debt += amount;
     }
 
     String getIcon(){

@@ -7,7 +7,7 @@ import android.util.Log;
 
 import com.example.collegelife.R;
 
-public class BoadPopupActivity extends AppCompatActivity {
+public class BoardPopupActivity extends AppCompatActivity {
     private static final String TAG = "popup_board_Activity";
 
     @Override

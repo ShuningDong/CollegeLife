@@ -74,43 +74,7 @@ public class SpinboardActivity extends AppCompatActivity {
         acelLast = SensorManager.GRAVITY_EARTH;
         shake = 0.00f;
 
-
-
         r = new Random();
-    /*    button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                degree_old = degree % 360;
-                degree = r.nextInt(3600) + 720;
-                RotateAnimation rotate = new RotateAnimation(degree_old, degree,
-                        RotateAnimation.RELATIVE_TO_SELF, 0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
-                rotate.setDuration(3600);
-                rotate.setFillAfter(true);
-                rotate.setInterpolator(new DecelerateInterpolator());
-                rotate.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-                        textView.setText("");
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        textView.setText(currentNumber(360 - (degree % 360)));
-                        Intent i = new Intent(getApplicationContext(), PopupCardActivity.class);
-                        startActivity(i);
-
-
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-
-                });
-                spinboard.startAnimation(rotate);
-            }
-        });*/
     }
 
     private final SensorEventListener sensorListener = new SensorEventListener() {
@@ -191,30 +155,6 @@ public class SpinboardActivity extends AppCompatActivity {
         if (degrees >= (FACTOR * 6) && degrees < (FACTOR * 8)) {
             spin = 1;
         }
-
-
-        //write firebase
-
-        /*mFirestore = FirebaseFirestore.getInstance();
-
-        Intent intent = getIntent();
-        String player_name = intent.getStringExtra("Player_name");
-
-        Map<String, Object> scores = new HashMap<>();
-        scores.put("name", player_name);
-        scores.put("score", spin);
-        mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(SpinboardActivity.this, "player added to firebase", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                String error = e.getMessage();
-                Toast.makeText(SpinboardActivity.this, "Error: "+error, Toast.LENGTH_SHORT).show();
-            }
-        });*/
         return spin;
     }
 }

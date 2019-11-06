@@ -5,35 +5,47 @@ xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/container"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".ui.main.MenuActivity">
+tools:context="com.example.collegelife.ui.main.MenuActivity">
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="16dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:stretchColumns="1">
-            <Button
-                android:id="@+id/settings_button"
-                android:layout_width="112dp"
-                android:layout_height="46dp"
-                android:layout_marginStart="285dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/settings"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="62dp">
+
+                <ImageButton
+                    android:id="@+id/logout"
+                    android:layout_width="67dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/logout"
+                    app:srcCompat="@drawable/exit" />
+
+                <Button
+                    android:id="@+id/highscore_button"
+                    android:layout_width="127dp"
+                    android:layout_height="53dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="3dp"
+                    android:baselineAligned="false"
+                    android:text="@string/highscores" />
+
+            </RelativeLayout>
 
             <ImageView
                 android:id="@+id/game_logo"
                 android:layout_width="match_parent"
-                android:layout_height="192dp"
+                android:layout_height="196dp"
                 android:layout_marginTop="64dp"
                 android:contentDescription="@string/main_logo"
                 android:src="@drawable/ic_school_black_24dp"
@@ -55,6 +67,7 @@ tools:context=".ui.main.MenuActivity">
                 app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/game_logo" />
+
             <Button
                 android:id="@+id/start_button"
                 android:layout_width="match_parent"
@@ -65,26 +78,16 @@ tools:context=".ui.main.MenuActivity">
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/game_name" />
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
-        android:layout_width="match_parent"
-        android:layout_height="66dp"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/sign_in_button"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_marginBottom="60dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/logout"
-        android:layout_width="67dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/logout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/exit" />
         </LinearLayout>
-    </ScrollView>>
+    </ScrollView>
+    >
 </androidx.constraintlayout.widget.ConstraintLayout>
