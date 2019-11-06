@@ -23,7 +23,6 @@
     <string name="enter_character_name">Enter Character Name</string>
     <string name="start_game">Start game</string>
     <string name="next_player">Next player</string>
-    <string name="name">Name</string>
 
     <string name="title_activity_game">GameActivity</string>
     <string name="game_image">game_image</string>
@@ -82,7 +81,11 @@
     <string name="drop_phone">Drop and break your phone</string>
     <string name="description">You enter the Mobile App Development Club\nYou start to build your own mobile app</string>    <!-- temp longest string-->
     <string name="action">Go back to start</string><!-- temp only string-->
-    <string name="remark">* If you have rent apartment</string> <!-- temp longest string-->
+    <string name="remark">* If you have rent apartment</string>
+    <string name="name">Name</string>
+    <string name="current_player">Current Player:</string>
+    <string name="click_the_button_below_to_spin">Click the button below to spin!</string>
+    <string name="highscores">highscores</string> <!-- temp longest string-->
 
 
 </resources>

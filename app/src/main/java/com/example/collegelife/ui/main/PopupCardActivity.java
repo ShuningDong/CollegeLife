@@ -48,7 +48,7 @@ public class PopupCardActivity extends Activity {
         String text = extras.getStringExtra("str");
         //gridinfo.setText(text);
 
-//create new linearLayout
+        //create new linearLayout
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT));
