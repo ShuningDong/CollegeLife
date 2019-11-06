@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.collegelife.R;
@@ -40,6 +41,7 @@ public class CharacterFragment extends Fragment {
     private String[] players = new String[4];
     private String[] token = new String[4];
     private boolean hasPicked = false;
+    private ImageView playerImage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -77,13 +79,17 @@ public class CharacterFragment extends Fragment {
             }
         });
         Button next_button = v.findViewById(R.id.next_player);
+
         next_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (edit_text.getText().toString().isEmpty()){
                     Toast.makeText(getActivity(), "Enter Name!", Toast.LENGTH_SHORT).show();
                 }else {
                     if (tcount == (pcount + 1)) {
+
+
                         player = edit_text.getText().toString();
                         players[pcount] = player;
                         pcount++;
@@ -159,7 +165,7 @@ public class CharacterFragment extends Fragment {
             }
         });
 
-
+        playerImage = v.findViewById(R.id.imageView);
 
         Log.d(TAG, "onCreate is called");
 
@@ -173,6 +179,16 @@ public class CharacterFragment extends Fragment {
             Toast.makeText(getActivity(), "max players!", Toast.LENGTH_SHORT).show();
 
         }
+
+        if (count ==1)
+        {
+            playerImage.setImageResource(R.drawable.player2);
+            Log.d(TAG, "I did change image");
+        }
+        else if (count ==2)
+            playerImage.setImageResource(R.drawable.player3);
+        else if (count == 3)
+            playerImage.setImageResource(R.drawable.player4);
     }
 
     @Override

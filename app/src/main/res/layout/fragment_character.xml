@@ -37,7 +37,7 @@
         android:layout_width="161dp"
         android:layout_height="154dp"
         android:contentDescription="@string/Character_page_icon"
-        android:src="@drawable/images"
+        android:src="@drawable/player1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
