@@ -146,10 +146,10 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/keik
 		ADDED from /Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:11:9-35
 	android:theme
 		ADDED from /Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:16:9-40
-activity#com.example.collegelife.ui.main.BoadPopupActivity
-ADDED from /Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:17:9-72
+activity#com.example.collegelife.ui.main.BoardPopupActivity
+ADDED from /Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:17:9-73
 	android:name
-		ADDED from /Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:17:19-60
+		ADDED from /Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:17:19-61
 activity#com.example.collegelife.ui.main.BoardActivity
 ADDED from /Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:18:9-59
 	android:name

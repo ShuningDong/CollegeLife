@@ -45,9 +45,9 @@
 29        android:testOnly="true"
 30        android:theme="@style/AppTheme" >
 30-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:16:9-40
-31        <activity android:name="com.example.collegelife.ui.main.BoadPopupActivity" />
-31-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:17:9-72
-31-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:17:19-60
+31        <activity android:name="com.example.collegelife.ui.main.BoardPopupActivity" />
+31-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:17:9-73
+31-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:17:19-61
 32        <activity android:name="com.example.collegelife.ui.main.BoardActivity" />
 32-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:18:9-59
 32-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:18:19-56

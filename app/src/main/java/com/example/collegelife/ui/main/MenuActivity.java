@@ -115,8 +115,6 @@ public class MenuActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
         Log.d(TAG, "onStart is called");
-        findViewById(R.id.sign_in_button).setVisibility(View.GONE);
-        findViewById(R.id.start_button).setVisibility(View.VISIBLE);
     }
 
     @Override

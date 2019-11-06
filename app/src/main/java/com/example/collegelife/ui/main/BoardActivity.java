@@ -235,8 +235,9 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Ope! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
-
-                            player.addDebt( 100);
+                            intent.putExtra("str","* If you have rent apartment");
+                            if (ownHouse_s)
+                                player.addDebt( 100);
                             break;
                         case (12):
 
@@ -264,13 +265,17 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Don’t forget your rent!\n" +
                                     "You no longer live with your parent.");
-                            player.addDebt(500);
+                            intent.putExtra("str","* If you have rent apartment");
+                            if (ownHouse_s)
+                                player.addDebt(500);
                             break;
                         case (17):
 
                             intent.putExtra("str","Your lovely dog gets sick.\n" +
                                     "You need to take her to the vet.");
-                            player.addDebt(300);
+                            intent.putExtra("str","* If you have buy a pet");
+                            if (ownPet_s)
+                                player.addDebt(300);
                             break;
                         case (18):
 
@@ -412,8 +417,9 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Ope! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
-
-                            player.addDebt( 100);
+                            intent.putExtra("str","* If you have rent apartment");
+                            if (ownHouse_h)
+                                player.addDebt( 100);
                             break;
                         case (12):
 
@@ -441,13 +447,17 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Don’t forget your rent!\n" +
                                     "You no longer live with your parent.");
-                            player.addDebt(500);
+                            intent.putExtra("str","* If you have rent apartment");
+                            if (ownHouse_h)
+                                player.addDebt(500);
                             break;
                         case (17):
 
                             intent.putExtra("str","Your lovely dog gets sick.\n" +
                                     "You need to take her to the vet.");
-                            player.addDebt(300);
+                            intent.putExtra("str","* If you have buy a pet");
+                            if (ownPet_h)
+                                player.addDebt(300);
                             break;
                         case (18):
 
@@ -590,8 +600,9 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Ope! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
-
-                            player.addDebt( 100);
+                            intent.putExtra("str","* If you have rent apartment");
+                            if (ownHouse_c)
+                                player.addDebt( 100);
                             break;
                         case (12):
 
@@ -619,13 +630,17 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Don’t forget your rent!\n" +
                                     "You no longer live with your parent.");
-                            player.addDebt(500);
+                            intent.putExtra("str","* If you have rent apartment");
+                            if (ownHouse_c)
+                                player.addDebt(500);
                             break;
                         case (17):
 
                             intent.putExtra("str","Your lovely dog gets sick.\n" +
                                     "You need to take her to the vet.");
-                            player.addDebt(300);
+                            intent.putExtra("str","* If you have buy a pet");
+                            if (ownPet_c)
+                                player.addDebt(300);
                             break;
                         case (18):
 
@@ -770,8 +785,9 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Ope! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
-
-                            player.addDebt( 100);
+                            intent.putExtra("str","* If you have rent apartment");
+                            if (ownHouse_d)
+                                player.addDebt( 100);
                             break;
                         case (12):
 
@@ -799,13 +815,17 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Don’t forget your rent!\n" +
                                     "You no longer live with your parent.");
-                            player.addDebt(500);
+                            intent.putExtra("str","* If you have rent apartment");
+                            if (ownHouse_d)
+                                player.addDebt(500);
                             break;
                         case (17):
 
                             intent.putExtra("str","Your lovely dog gets sick.\n" +
                                     "You need to take her to the vet.");
-                            player.addDebt(300);
+                            intent.putExtra("str","* If you have buy a pet");
+                            if (ownPet_d)
+                                player.addDebt(300);
                             break;
                         case (18):
 

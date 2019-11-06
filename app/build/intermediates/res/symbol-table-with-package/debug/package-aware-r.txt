@@ -1190,7 +1190,6 @@ id SHIFT
 id SYM
 id SpadeButton
 id SpinButton
-id Update_button
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1319,6 +1318,7 @@ id gridLoan
 id gridRemarkText
 id group_divider
 id groups
+id highscore_button
 id home
 id homeAsUp
 id horizontal
@@ -1430,7 +1430,6 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
-id settings_button
 id shortcut
 id showCustom
 id showHome
@@ -1468,6 +1467,7 @@ id space_9
 id space_f
 id space_s
 id spacer
+id spin_instructions
 id spinboard
 id split_action_bar
 id spread
@@ -1710,6 +1710,7 @@ string buy_food
 string character_counter_content_description
 string character_counter_pattern
 string choose_your_logo
+string click_the_button_below_to_spin
 string college_life
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
@@ -1730,6 +1731,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string community_service
+string current_player
 string dean_list_student
 string default_web_client_id
 string delete_high_scores
@@ -1755,6 +1757,7 @@ string happy_graduation
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string highscore
+string highscores
 string house
 string insert2
 string insert3

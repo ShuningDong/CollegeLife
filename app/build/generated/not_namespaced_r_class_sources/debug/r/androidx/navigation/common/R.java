@@ -90,15 +90,15 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int action_container = 0x7f080038;
-        public static final int action_divider = 0x7f08003a;
-        public static final int action_image = 0x7f08003b;
-        public static final int action_text = 0x7f080042;
-        public static final int actions = 0x7f080043;
-        public static final int async = 0x7f08004d;
-        public static final int blocking = 0x7f080051;
-        public static final int chronometer = 0x7f08005b;
-        public static final int forever = 0x7f080082;
+        public static final int action_container = 0x7f080037;
+        public static final int action_divider = 0x7f080039;
+        public static final int action_image = 0x7f08003a;
+        public static final int action_text = 0x7f080041;
+        public static final int actions = 0x7f080042;
+        public static final int async = 0x7f08004c;
+        public static final int blocking = 0x7f080050;
+        public static final int chronometer = 0x7f08005a;
+        public static final int forever = 0x7f080081;
         public static final int icon = 0x7f080092;
         public static final int icon_group = 0x7f080093;
         public static final int info = 0x7f0800b4;
@@ -137,7 +137,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int status_bar_notification_info_overflow = 0x7f0e008c;
+        public static final int status_bar_notification_info_overflow = 0x7f0e008f;
     }
     public static final class style {
         private style() {}
