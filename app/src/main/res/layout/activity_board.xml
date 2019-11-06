@@ -866,7 +866,7 @@
         android:id="@+id/display_name"
         android:layout_width="111dp"
         android:layout_height="29dp"
-        android:layout_marginStart="22dp"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="16dp"
         android:background="#DA0A0A"
         android:gravity="center"

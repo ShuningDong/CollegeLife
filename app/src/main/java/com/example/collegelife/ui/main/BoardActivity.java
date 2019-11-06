@@ -55,6 +55,15 @@ public class BoardActivity extends AppCompatActivity {
     int diamonddebt = 0;
 
     String str = null;
+    Boolean ownHouse_s = false;
+    Boolean ownHouse_h = false;
+    Boolean ownHouse_c = false;
+    Boolean ownHouse_d = false;
+    Boolean ownPet_s = false;
+    Boolean ownPet_h = false;
+    Boolean ownPet_c = false;
+    Boolean ownPet_d = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -215,12 +224,16 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","You were kick off from your parent home\n" +
                                     "You need to rent an apartment");
                             spadedebt-=500;
+                            ownHouse_s = true;
+                            findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
                             break;
                         case (5):
 
                         intent.putExtra("str","You feel lonely\n" +
                                 "You decide to buy a dog\n");
                             spadedebt-=200;
+                            ownPet_s = true;
+                            findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
                         break;
                         case (6):
 
@@ -397,12 +410,16 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","You were kick off from your parent home\n" +
                                     "You need to rent an apartment");
                             heartdebt-=500;
+                            ownHouse_h = true;
+                            findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
                             break;
                         case (5):
 
                             intent.putExtra("str","You feel lonely\n" +
                                     "You decide to buy a dog\n");
                             heartdebt-=200;
+                            ownPet_h = true;
+                            findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
                             break;
                         case (6):
 
@@ -575,12 +592,16 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","You were kick off from your parent home\n" +
                                     "You need to rent an apartment");
                             clubdebt-=500;
+                            ownHouse_c = true;
+                            findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
                             break;
                         case (5):
 
                             intent.putExtra("str","You feel lonely\n" +
                                     "You decide to buy a dog\n");
                             clubdebt-=200;
+                            ownPet_c = true;
+                            findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
                             break;
                         case (6):
 
@@ -750,12 +771,16 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","You were kick off from your parent home\n" +
                                     "You need to rent an apartment");
                             diamonddebt-=500;
+                            ownHouse_d = true;
+                            findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
                             break;
                         case (5):
 
                             intent.putExtra("str","You feel lonely\n" +
                                     "You decide to buy a dog\n");
                             diamonddebt-=200;
+                            ownPet_d = true;
+                            findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
                             break;
                         case (6):
 
@@ -1043,12 +1068,68 @@ public class BoardActivity extends AppCompatActivity {
         }
 
     }
+    private void updateUI() {
+        switch (game.getCurrentPlayer().getIcon()) {
+            case ("spade"):
+                if (ownPet_s)
+                    findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
+                else
+                    findViewById(R.id.imageDog).setVisibility(View.GONE);
+                break;
+            case ("heart"):
+                if (ownPet_h)
+                    findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
+                else
+                    findViewById(R.id.imageDog).setVisibility(View.GONE);
+                break;
+            case ("club"):
+                if (ownPet_c)
+                    findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
+                else
+                    findViewById(R.id.imageDog).setVisibility(View.GONE);
+                break;
+            case ("diamond"):
+                if (ownPet_d)
+                    findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
+                else
+                    findViewById(R.id.imageDog).setVisibility(View.GONE);
+                break;
+        }
 
+
+        switch (game.getCurrentPlayer().getIcon()) {
+            case ("spade"):
+                if (ownHouse_s)
+                    findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
+                else
+                    findViewById(R.id.imageHome).setVisibility(View.GONE);
+                break;
+            case ("heart"):
+                if (ownHouse_h)
+                    findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
+                else
+                    findViewById(R.id.imageHome).setVisibility(View.GONE);
+                break;
+            case ("club"):
+                if (ownHouse_c)
+                    findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
+                else
+                    findViewById(R.id.imageHome).setVisibility(View.GONE);
+                break;
+            case ("diamond"):
+                if (ownHouse_d)
+                    findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
+                else
+                    findViewById(R.id.imageHome).setVisibility(View.GONE);
+                break;
+        }
+    }
 
     @Override
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart is called");
+        updateUI();
     }
 
     @Override
@@ -1065,9 +1146,6 @@ public class BoardActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
-
-
-
         super.onStop();
         Log.d(TAG, "onStop is called");
     }

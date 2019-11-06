@@ -18,7 +18,7 @@ public class gridDatabase extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popupcard);
+        setContentView(R.layout.activity_boad_popup);
         mDatabaseHelper = new DatabaseHelper(this);
         mDatabaseHelper.addData("1", "Register a class","Welcome !!\n" +
                 "You need to register for class", "0","-100001");
