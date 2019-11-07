@@ -17,19 +17,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.collegelife.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class BoardActivity extends AppCompatActivity {
 
     private static final String TAG = "Board_Activity";
     private ArrayList<Character> characters = new ArrayList<>();
+    private ArrayList<Character> winners = new ArrayList<>();
     int turn = 0;
     private Game game;
     private TextView showName;
@@ -37,8 +32,6 @@ public class BoardActivity extends AppCompatActivity {
     //gpa and debt information
     TextView gpaview;
     TextView debtview;
-
-    private FirebaseFirestore mFirestore;
 
     String str = null;
     Boolean ownHouse_s = false;
@@ -82,7 +75,7 @@ public class BoardActivity extends AppCompatActivity {
 
 
         gpaview.setText(currPlayer.getGPA());
-        debtview.setText(currPlayer.getDebt());
+        debtview.setText("$ " + currPlayer.getDebt());
 
     }
 
@@ -153,13 +146,11 @@ public class BoardActivity extends AppCompatActivity {
             //link to pop up window
             Intent intent = new Intent(getApplicationContext(), PopupCardActivity.class);
 
+            // link to winners view
+            Intent gameOver = new Intent(getApplicationContext(), ScoreActivity.class);
+
             TextView gpaview = (TextView)this.findViewById(R.id.gpa);
             TextView debtview = (TextView)this.findViewById(R.id.debt);
-
-            mFirestore = FirebaseFirestore.getInstance();
-
-            String player_name = player.getName();
-            Map<String, Object> scores = new HashMap<>();
 
             //move symbol to next block
             switch (player.getIcon()) {
@@ -196,12 +187,12 @@ public class BoardActivity extends AppCompatActivity {
                             break;
                         case (5):
 
-                        intent.putExtra("str","You feel lonely\n" +
+                            intent.putExtra("str","You feel lonely\n" +
                                 "You decide to buy a dog\n");
                             player.addDebt(200);
                             ownPet_s = true;
                             findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
-                        break;
+                            break;
                         case (6):
 
                             intent.putExtra("str","You fail your midterm exam.\n" +
@@ -211,9 +202,9 @@ public class BoardActivity extends AppCompatActivity {
 
                         case (7):
 
-                        intent.putExtra("str","You join the Mobile App Development Club.\n" +
+                            intent.putExtra("str","You join the Mobile App Development Club.\n" +
                                 "You start to build your own mobile app.");
-                        break;
+                            break;
                         case (8):
 
                             intent.putExtra("str","Break time Again!! \n" +
@@ -236,8 +227,9 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","Ope! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
                             intent.putExtra("str","* If you have rent apartment");
-                            if (ownHouse_s)
-                                player.addDebt( 100);
+                            if (ownHouse_s) {
+                                player.addDebt(100);
+                            }
                             break;
                         case (12):
 
@@ -266,16 +258,18 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","Don’t forget your rent!\n" +
                                     "You no longer live with your parent.");
                             intent.putExtra("str","* If you have rent apartment");
-                            if (ownHouse_s)
+                            if (ownHouse_s) {
                                 player.addDebt(500);
+                            }
                             break;
                         case (17):
 
                             intent.putExtra("str","Your lovely dog gets sick.\n" +
                                     "You need to take her to the vet.");
                             intent.putExtra("str","* If you have buy a pet");
-                            if (ownPet_s)
+                            if (ownPet_s) {
                                 player.addDebt(300);
+                            }
                             break;
                         case (18):
 
@@ -319,30 +313,32 @@ public class BoardActivity extends AppCompatActivity {
 
                         case (25):
 
-                            intent.putExtra("str","Congratulations on graduating!!!!! \n " +
-                                    "YOU DID IT!!!");
+                            winners = game.getWinners();
+                            String[] names = new String[winners.size()];
+                            String[] fScores = new String[winners.size()];
+                            String[] fGpa = new String[winners.size()];
+                            for (int i=0; i < winners.size(); i++) {
+                                Character p = winners.get(i);
+                                names[i] = p.getName();
+                                fScores[i] = p.getDebt();
+                                fGpa[i] = p.getGPA();
+                            }
 
-                            scores.put("name", player.getName());
-                            scores.put("score", player.getDebt());
-                            mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                    Toast.makeText(BoardActivity.this, "player added to firebase", Toast.LENGTH_SHORT).show();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    String error = e.getMessage();
-                                    Toast.makeText(BoardActivity.this, "Error: "+error, Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                            gameOver.putExtra("pname", names);
+                            gameOver.putExtra("debt", fScores);
+                            gameOver.putExtra("fgpa", fGpa);
+
+                            //startActivity(intent);
                             break;
 
                     }
-                    startActivity(intent);
-
-                    gpaview.setText(player.getGPA());
-                    debtview.setText(player.getDebt());
+                    if (newSpace == 25){
+                        startActivity(gameOver);
+                    }else {
+                        startActivity(intent);
+                        gpaview.setText(player.getGPA());
+                        debtview.setText("$ " + player.getDebt());
+                    }
                     break;
 
                 case ("heart"):
@@ -418,8 +414,9 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","Ope! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
                             intent.putExtra("str","* If you have rent apartment");
-                            if (ownHouse_h)
-                                player.addDebt( 100);
+                            if (ownHouse_h) {
+                                player.addDebt(100);
+                            }
                             break;
                         case (12):
 
@@ -448,8 +445,9 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","Don’t forget your rent!\n" +
                                     "You no longer live with your parent.");
                             intent.putExtra("str","* If you have rent apartment");
-                            if (ownHouse_h)
+                            if (ownHouse_h) {
                                 player.addDebt(500);
+                            }
                             break;
                         case (17):
 
@@ -501,30 +499,32 @@ public class BoardActivity extends AppCompatActivity {
 
                         case (25):
 
-                            intent.putExtra("str","Congratulations on graduating!!!!! \n " +
-                                    "YOU DID IT!!!");
+                            winners = game.getWinners();
+                            String[] names = new String[winners.size()];
+                            String[] fScores = new String[winners.size()];
+                            String[] fGpa = new String[winners.size()];
+                            for (int i=0; i < winners.size(); i++) {
+                                Character p = winners.get(i);
+                                names[i] = p.getName();
+                                fScores[i] = p.getDebt();
+                                fGpa[i] = p.getGPA();
+                            }
 
-                            scores.put("name", player.getName());
-                            scores.put("score", player.getDebt());
-                            mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                    Toast.makeText(BoardActivity.this, "player added to firebase", Toast.LENGTH_SHORT).show();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    String error = e.getMessage();
-                                    Toast.makeText(BoardActivity.this, "Error: "+error, Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                            gameOver.putExtra("pname", names);
+                            gameOver.putExtra("debt", fScores);
+                            gameOver.putExtra("fgpa", fGpa);
+
+                            //startActivity(intent);
                             break;
 
-
                     }
-                    startActivity(intent);
-                    gpaview.setText(player.getGPA());
-                    debtview.setText(player.getDebt());
+                    if (newSpace == 25){
+                        startActivity(gameOver);
+                    }else {
+                        startActivity(intent);
+                        gpaview.setText(player.getGPA());
+                        debtview.setText("$ " + player.getDebt());
+                    }
                     break;
 
                 case ("club"):
@@ -601,8 +601,9 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","Ope! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
                             intent.putExtra("str","* If you have rent apartment");
-                            if (ownHouse_c)
-                                player.addDebt( 100);
+                            if (ownHouse_c) {
+                                player.addDebt(100);
+                            }
                             break;
                         case (12):
 
@@ -631,8 +632,9 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","Don’t forget your rent!\n" +
                                     "You no longer live with your parent.");
                             intent.putExtra("str","* If you have rent apartment");
-                            if (ownHouse_c)
+                            if (ownHouse_c) {
                                 player.addDebt(500);
+                            }
                             break;
                         case (17):
 
@@ -684,32 +686,32 @@ public class BoardActivity extends AppCompatActivity {
 
                         case (25):
 
-                            intent.putExtra("str","Congratulations on graduating!!!!! \n " +
-                                    "YOU DID IT!!!");
+                            winners = game.getWinners();
+                            String[] names = new String[winners.size()];
+                            String[] fScores = new String[winners.size()];
+                            String[] fGpa = new String[winners.size()];
+                            for (int i=0; i < winners.size(); i++) {
+                                Character p = winners.get(i);
+                                names[i] = p.getName();
+                                fScores[i] = p.getDebt();
+                                fGpa[i] = p.getGPA();
+                            }
 
+                            gameOver.putExtra("pname", names);
+                            gameOver.putExtra("debt", fScores);
+                            gameOver.putExtra("fgpa", fGpa);
 
-                            scores.put("name", player.getName());
-                            scores.put("score", player.getDebt());
-                            mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                    Toast.makeText(BoardActivity.this, "player added to firebase", Toast.LENGTH_SHORT).show();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    String error = e.getMessage();
-                                    Toast.makeText(BoardActivity.this, "Error: "+error, Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                            //startActivity(intent);
                             break;
 
                     }
-
-                    gpaview.setText(player.getGPA());
-                    debtview.setText(player.getDebt());
-                    startActivity(intent);
-
+                    if (newSpace == 25){
+                        startActivity(gameOver);
+                    }else {
+                        startActivity(intent);
+                        gpaview.setText(player.getGPA());
+                        debtview.setText("$ " + player.getDebt());
+                    }
                     break;
 
                 case ("diamond"):
@@ -786,8 +788,9 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","Ope! Your electricity went off!\n" +
                                     "Did you pay your utilities bill?\n");
                             intent.putExtra("str","* If you have rent apartment");
-                            if (ownHouse_d)
-                                player.addDebt( 100);
+                            if (ownHouse_d) {
+                                player.addDebt(100);
+                            }
                             break;
                         case (12):
 
@@ -824,8 +827,9 @@ public class BoardActivity extends AppCompatActivity {
                             intent.putExtra("str","Your lovely dog gets sick.\n" +
                                     "You need to take her to the vet.");
                             intent.putExtra("str","* If you have buy a pet");
-                            if (ownPet_d)
+                            if (ownPet_d) {
                                 player.addDebt(300);
+                            }
                             break;
                         case (18):
 
@@ -869,29 +873,32 @@ public class BoardActivity extends AppCompatActivity {
 
                         case (25):
 
-                            intent.putExtra("str","Congratulations on graduating!!!!! \n " +
-                                    "YOU DID IT!!!");
+                            winners = game.getWinners();
+                            String[] names = new String[winners.size()];
+                            String[] fScores = new String[winners.size()];
+                            String[] fGpa = new String[winners.size()];
+                            for (int i=0; i < winners.size(); i++) {
+                                Character p = winners.get(i);
+                                names[i] = p.getName();
+                                fScores[i] = p.getDebt();
+                                fGpa[i] = p.getGPA();
+                            }
 
-                            scores.put("name", player.getName());
-                            scores.put("score", player.getDebt());
-                            mFirestore.collection("ranking list").add(scores).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                    Toast.makeText(BoardActivity.this, "player added to firebase", Toast.LENGTH_SHORT).show();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    String error = e.getMessage();
-                                    Toast.makeText(BoardActivity.this, "Error: "+error, Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                            gameOver.putExtra("pname", names);
+                            gameOver.putExtra("debt", fScores);
+                            gameOver.putExtra("fgpa", fGpa);
+
+                            //startActivity(intent);
                             break;
 
                     }
-
-                    gpaview.setText(player.getGPA());
-                    debtview.setText(player.getDebt());
+                    if (newSpace == 25){
+                        startActivity(gameOver);
+                    }else {
+                        startActivity(intent);
+                        gpaview.setText(player.getGPA());
+                        debtview.setText("$ " + player.getDebt());
+                    }
                     break;
             }
         }else {
@@ -1062,28 +1069,35 @@ public class BoardActivity extends AppCompatActivity {
 
         switch (game.getCurrentPlayer().getIcon()) {
             case ("spade"):
-                if (ownHouse_s)
+                if (ownHouse_s) {
                     findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
+                }
                 else
                     findViewById(R.id.imageHome).setVisibility(View.GONE);
                 break;
             case ("heart"):
-                if (ownHouse_h)
+                if (ownHouse_h) {
                     findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
-                else
+                }
+                else {
                     findViewById(R.id.imageHome).setVisibility(View.GONE);
+                }
                 break;
             case ("club"):
-                if (ownHouse_c)
+                if (ownHouse_c) {
                     findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
-                else
+                }
+                else {
                     findViewById(R.id.imageHome).setVisibility(View.GONE);
+                }
                 break;
             case ("diamond"):
-                if (ownHouse_d)
+                if (ownHouse_d) {
                     findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
-                else
+                }
+                else {
                     findViewById(R.id.imageHome).setVisibility(View.GONE);
+                }
                 break;
         }
     }
@@ -1113,7 +1127,7 @@ public class BoardActivity extends AppCompatActivity {
         Log.d(TAG, "onStop is called");
     }
 
-    @Override
+/*    @Override
     // Shoulde be called before onPause
     protected void onSaveInstanceState(@NonNull Bundle outstate){
         super.onSaveInstanceState(outstate);
@@ -1123,6 +1137,6 @@ public class BoardActivity extends AppCompatActivity {
     // Should be called after onStart and onResume
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
-    }
+    }*/
 }
 

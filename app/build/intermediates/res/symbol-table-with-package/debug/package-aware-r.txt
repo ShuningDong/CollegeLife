@@ -1188,6 +1188,8 @@ id HeartButton
 id META
 id SHIFT
 id SYM
+id Score
+id Scores
 id SpadeButton
 id SpinButton
 id accessibility_action_clickable_span
@@ -1280,7 +1282,6 @@ id dark
 id debt
 id decor_content_parent
 id default_activity_button
-id del_button
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1620,6 +1621,7 @@ layout activity_character
 layout activity_high_score
 layout activity_menu
 layout activity_popupcard
+layout activity_score
 layout activity_spinboard
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -1794,6 +1796,7 @@ string project_id
 string register_a_class
 string remark
 string rent_an_apartment
+string score_text
 string search_menu_title
 string setting_icon
 string setting_logo

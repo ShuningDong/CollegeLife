@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.main.BoardPopupActivity"></activity>
+        <activity android:name=".ui.main.ScoreActivity"></activity>
+        <activity android:name=".ui.main.BoardPopupActivity" />
         <activity android:name=".ui.main.BoardActivity" />
         <activity android:name=".ui.main.MenuActivity">
             <intent-filter>

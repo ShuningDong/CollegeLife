@@ -2,10 +2,11 @@ package com.example.collegelife.ui.main;
 
 import android.widget.ImageView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Character {
+public class Character implements Serializable {
 
     private String Name;
     private double GPA;

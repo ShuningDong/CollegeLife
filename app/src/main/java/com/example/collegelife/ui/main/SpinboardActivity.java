@@ -121,6 +121,7 @@ public class SpinboardActivity extends AppCompatActivity {
                         sendRes.putExtra("spin", spinResult);
                         setResult(0, sendRes);
                         SpinboardActivity.super.onBackPressed();
+                        finish();
 
                     }
 

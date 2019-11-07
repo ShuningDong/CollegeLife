@@ -49,5 +49,33 @@ class Game {
         return ((currentSpace + nextSpace ) < 26);
     }
 
+    public ArrayList<Character> getWinners(){
+        ArrayList<Character> temp = new ArrayList<>();
+        for (Character c: this.characters){
+            if (temp.isEmpty()){
+                temp.add(c);
+            } else {
+                for (int i= 0; i< temp.size(); i++) {
+                    if (Integer.parseInt(c.getDebt()) > Integer.parseInt(temp.get(i).getDebt())) {
+                        temp.add(i, c);
+                    } else if(Integer.parseInt(c.getDebt()) == Integer.parseInt(temp.get(i).getDebt())) {
+                        if(Double.parseDouble(c.getDebt()) > Double.parseDouble(temp.get(i).getDebt())){
+                            temp.add(i,c);
+
+                        }else {
+                            if((i + 1) >= temp.size()) {
+                                temp.add(c);
+                            }
+                        }
+                    } else {
+                        if ((i + 1) >= temp.size()){
+                            temp.add(c);
+                        }
+                    }
+                }
+            }
+        }
+        return temp;
+    }
 
 }

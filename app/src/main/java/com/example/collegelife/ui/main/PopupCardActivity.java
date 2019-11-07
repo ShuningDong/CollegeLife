@@ -78,25 +78,16 @@ public class PopupCardActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
+        finish();
         Log.d(TAG, "onPause is called");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        finish();
         Log.d(TAG, "onStop is called");
     }
 
-    @Override
-    // Shoulde be called before onPause
-    protected void onSaveInstanceState(Bundle outstate){
-        super.onSaveInstanceState(outstate);
-    }
-
-    @Override
-    // Should be called after onStart and onResume
-    protected void onRestoreInstanceState(Bundle savedInstanceState){
-        super.onRestoreInstanceState(savedInstanceState);
-    }
 
 }

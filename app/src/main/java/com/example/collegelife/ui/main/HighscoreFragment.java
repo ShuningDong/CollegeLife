@@ -1,7 +1,10 @@
 package com.example.collegelife.ui.main;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Objects;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,7 +37,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HighscoreFragment extends Fragment implements View.OnClickListener {
+public class HighscoreFragment extends Fragment  {
 
     private static final String TAG = "Highscore_Fragment";
 
@@ -54,14 +57,11 @@ public class HighscoreFragment extends Fragment implements View.OnClickListener 
         TextView second = v.findViewById(R.id.place2);
         TextView third = v.findViewById(R.id.place3);
 
-        Button del = v.findViewById(R.id.del_button);
-        del.setOnClickListener(this);
-
-        //startActivity(new Intent(activity.getApplicationContext(), CharacterActivity.class));
+        DecimalFormat df = new DecimalFormat("#.##");
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        Task<QuerySnapshot> docRef = db.collection("ranking list")
-                .orderBy("score", Query.Direction.DESCENDING)
+        db.collection("ranking list")
+                .orderBy("debt", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -72,14 +72,15 @@ public class HighscoreFragment extends Fragment implements View.OnClickListener 
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                                 if (document.get("name") != null) {
                                     String name = document.get("name").toString();
-                                    String score = document.get("score").toString();
+                                    String debt = document.get("debt").toString();
+                                    String gpa = document.get("gpa").toString();
                                     //TextView first = v.findViewById(R.id.place1);
                                     if (count == 0) {
-                                        first.setText("Name: " + name + "  |  Score: " + score);
+                                        first.setText("Name: " + name + "  |  Debt: $ " + debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
                                     }else if(count == 1) {
-                                        second.setText("Name: " + name + "  |  Score: " + score);
+                                        second.setText("Name: " + name + "  |  Debt: $ " + debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
                                     }else if(count == 2) {
-                                        third.setText("Name: " + name + "  |  Score: " + score);
+                                        third.setText("Name: " + name + "  |  Debt: $ " + debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
                                     }
                                     count++;
                                 }
@@ -119,34 +120,6 @@ public class HighscoreFragment extends Fragment implements View.OnClickListener 
     public void onStop() {
         super.onStop();
         Log.d(TAG, "onStop is called");
-    }
-
-
-    public void onClick(View v) {
-
-        Activity activity =  getActivity();
-        if (activity != null) {
-            if (v.getId() == R.id.del_button) {
-
-                //startActivity(new Intent(activity.getApplicationContext(), CharacterActivity.class));
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-                db.collection("ranking list").document("")
-                        .delete()
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Log.d(TAG, "DocumentSnapshot successfully deleted!");
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                             Log.w(TAG, "Error deleting document", e);
-                            }
-                        });
-
-            }
-        }
     }
 
 }

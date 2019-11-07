@@ -85,7 +85,8 @@
     <string name="name">Name</string>
     <string name="current_player">Current Player:</string>
     <string name="click_the_button_below_to_spin">Click the button below to spin!</string>
-    <string name="highscores">highscores</string> <!-- temp longest string-->
+    <string name="highscores">highscores</string>
+    <string name="score_text">Congratulations! Here are final scores:</string> <!-- temp longest string-->
 
 
 </resources>
