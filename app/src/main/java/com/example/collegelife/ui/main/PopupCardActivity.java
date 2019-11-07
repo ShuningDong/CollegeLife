@@ -25,7 +25,7 @@ public class PopupCardActivity extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width * .7), (int) (height * .7));
+        getWindow().setLayout((int) (width * .7), (int) (height * .3));
 
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
@@ -46,6 +46,7 @@ public class PopupCardActivity extends Activity {
         //TextView gridinfo = (TextView) findViewById (R.id.gridinfo);
         Intent extras = getIntent();
         String text = extras.getStringExtra("str");
+
         //gridinfo.setText(text);
 
         //create new linearLayout
