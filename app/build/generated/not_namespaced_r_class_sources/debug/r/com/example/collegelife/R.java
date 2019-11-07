@@ -5149,15 +5149,19 @@ public final class R {
     public static final int notification_template_icon_low_bg=0x7f0700a6;
     public static final int notification_tile_bg=0x7f0700a7;
     public static final int notify_panel_notification_icon_bg=0x7f0700a8;
-    public static final int pointer=0x7f0700a9;
-    public static final int pop_bg=0x7f0700aa;
-    public static final int spade=0x7f0700ab;
-    public static final int spinboard=0x7f0700ac;
-    public static final int spinboard2=0x7f0700ad;
-    public static final int start=0x7f0700ae;
-    public static final int tooltip_frame_dark=0x7f0700af;
-    public static final int tooltip_frame_light=0x7f0700b0;
-    public static final int untitled=0x7f0700b1;
+    public static final int player1=0x7f0700a9;
+    public static final int player2=0x7f0700aa;
+    public static final int player3=0x7f0700ab;
+    public static final int player4=0x7f0700ac;
+    public static final int pointer=0x7f0700ad;
+    public static final int pop_bg=0x7f0700ae;
+    public static final int spade=0x7f0700af;
+    public static final int spinboard=0x7f0700b0;
+    public static final int spinboard2=0x7f0700b1;
+    public static final int start=0x7f0700b2;
+    public static final int tooltip_frame_dark=0x7f0700b3;
+    public static final int tooltip_frame_light=0x7f0700b4;
+    public static final int untitled=0x7f0700b5;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

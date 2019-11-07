@@ -1167,6 +1167,10 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable player1
+drawable player2
+drawable player3
+drawable player4
 drawable pointer
 drawable pop_bg
 drawable spade
