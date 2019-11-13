@@ -35,19 +35,9 @@ public class BoardPopupActivity extends AppCompatActivity {
         params.y = -20;
 
         getWindow().setAttributes(params);
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //PopupCardActivity.super.onBackPressed();
-        //set content
-        super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_popupcard);
-        //TextView gridinfo = (TextView) findViewById (R.id.gridinfo);
+
         Intent extras = getIntent();
         String text = extras.getStringExtra("str");
-        //gridinfo.setText(text);
 
         //create new linearLayout
         LinearLayout linearLayout = new LinearLayout(this);
@@ -64,22 +54,29 @@ public class BoardPopupActivity extends AppCompatActivity {
         gridDescriptionTextview.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT));
         gridDescriptionTextview.setText(text);
-        //textView1.setBackgroundColor(0xff66ff66); // hex color 0xAARRGGBB
-        //gridDescriptionTextview.setPadding(20, 20, 20, 20); // in pixels (left, top, right, bottom)
 
 
         // Set context view
         setContentView(linearLayout);
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        BoardPopupActivity.super.onBackPressed();
     }
     @Override
     protected void onPause() {
         super.onPause();
+        finish();
         Log.d(TAG, "onPause is called");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        finish();
         Log.d(TAG, "onStop is called");
     }
 

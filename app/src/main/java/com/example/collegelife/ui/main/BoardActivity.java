@@ -310,6 +310,7 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Finals finally over ~~\n" +
                                     "Here is your grade: " + player.getGPA() + "\n");
+                            break;
 
                         case (25):
 
@@ -496,6 +497,7 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Finals finally over ~~\n" +
                                     "Here is your grade: " + player.getGPA() + "\n");
+                            break;
 
                         case (25):
 
@@ -683,10 +685,13 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Finals finally over ~~\n" +
                                     "Here is your grade: " + player.getGPA() + "\n");
+                            break;
 
                         case (25):
 
+                            Log.d(TAG, "case 25");
                             winners = game.getWinners();
+                            Log.d(TAG, "got winners");
                             String[] names = new String[winners.size()];
                             String[] fScores = new String[winners.size()];
                             String[] fGpa = new String[winners.size()];
@@ -696,10 +701,12 @@ public class BoardActivity extends AppCompatActivity {
                                 fScores[i] = p.getDebt();
                                 fGpa[i] = p.getGPA();
                             }
+                            Log.d(TAG, "looped winners");
 
                             gameOver.putExtra("pname", names);
                             gameOver.putExtra("debt", fScores);
                             gameOver.putExtra("fgpa", fGpa);
+                            Log.d(TAG, "packed winners");
 
                             //startActivity(intent);
                             break;
@@ -870,23 +877,29 @@ public class BoardActivity extends AppCompatActivity {
 
                             intent.putExtra("str","Finals finally over ~~\n" +
                                     "Here is your grade: " + player.getGPA() + "\n");
+                            break;
 
                         case (25):
 
+                            Log.d(TAG, "case 25");
                             winners = game.getWinners();
+                            Log.d(TAG, "got winners");
                             String[] names = new String[winners.size()];
                             String[] fScores = new String[winners.size()];
                             String[] fGpa = new String[winners.size()];
+                            Log.d(TAG, "created winners");
                             for (int i=0; i < winners.size(); i++) {
                                 Character p = winners.get(i);
                                 names[i] = p.getName();
                                 fScores[i] = p.getDebt();
                                 fGpa[i] = p.getGPA();
                             }
+                            Log.d(TAG, "loop winners");
 
                             gameOver.putExtra("pname", names);
                             gameOver.putExtra("debt", fScores);
                             gameOver.putExtra("fgpa", fGpa);
+                            Log.d(TAG, "pack winners");
 
                             //startActivity(intent);
                             break;
@@ -1127,8 +1140,8 @@ public class BoardActivity extends AppCompatActivity {
         Log.d(TAG, "onStop is called");
     }
 
-/*    @Override
-    // Shoulde be called before onPause
+    @Override
+    // Should be be called before onPause
     protected void onSaveInstanceState(@NonNull Bundle outstate){
         super.onSaveInstanceState(outstate);
     }
@@ -1137,6 +1150,6 @@ public class BoardActivity extends AppCompatActivity {
     // Should be called after onStart and onResume
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
-    }*/
+    }
 }
 

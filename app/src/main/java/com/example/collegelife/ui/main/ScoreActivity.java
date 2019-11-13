@@ -57,26 +57,27 @@ public class ScoreActivity extends AppCompatActivity {
             show.setText(data);
             row.addView(show);
             s.addView(row);
-        }
 
-        Map<String, Object> scores = new HashMap<>();
-        scores.put("name", names[0]);
-        scores.put("debt", Integer.parseInt(fScores[0]));
-        scores.put("gpa", Double.parseDouble(fGpa[0]));
-        mFirestore.collection("ranking list").document(names[0])
-                .set(scores)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d(TAG, "DocumentSnapshot successfully written!");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error writing document", e);
-                    }
-                });
+
+            Map<String, Object> scores = new HashMap<>();
+            scores.put("name", names[i]);
+            scores.put("debt", Integer.parseInt(fScores[i]));
+            scores.put("gpa", Double.parseDouble(fGpa[i]));
+            mFirestore.collection("ranking list").document(names[i])
+                    .set(scores)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Log.d(TAG, "DocumentSnapshot successfully written!");
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error writing document", e);
+                        }
+                    });
+        }
 
     }
 

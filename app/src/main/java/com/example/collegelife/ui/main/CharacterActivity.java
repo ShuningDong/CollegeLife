@@ -44,10 +44,12 @@ public class CharacterActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+        CharacterActivity.super.onBackPressed();
+        finish();
         Log.d(TAG, "onStop is called");
     }
 
-    @Override
+/*    @Override
     // Shoulde be called before onPause
     protected void onSaveInstanceState(Bundle outstate){
         super.onSaveInstanceState(outstate);
@@ -57,5 +59,5 @@ public class CharacterActivity extends AppCompatActivity {
     // Should be called after onStart and onResume
     protected void onRestoreInstanceState(Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
-    }
+    }*/
 }

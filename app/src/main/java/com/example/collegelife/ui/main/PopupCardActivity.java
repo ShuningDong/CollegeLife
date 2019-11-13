@@ -34,20 +34,8 @@ public class PopupCardActivity extends Activity {
         params.y = -20;
 
         getWindow().setAttributes(params);
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //PopupCardActivity.super.onBackPressed();
-        //set content
-        super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_popupcard);
-        //TextView gridinfo = (TextView) findViewById (R.id.gridinfo);
         Intent extras = getIntent();
         String text = extras.getStringExtra("str");
-
-        //gridinfo.setText(text);
 
         //create new linearLayout
         LinearLayout linearLayout = new LinearLayout(this);
@@ -79,6 +67,7 @@ public class PopupCardActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
+        PopupCardActivity.super.onBackPressed();
         finish();
         Log.d(TAG, "onPause is called");
     }

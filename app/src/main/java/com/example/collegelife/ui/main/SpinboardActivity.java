@@ -108,8 +108,6 @@ public class SpinboardActivity extends AppCompatActivity {
                         int currNum = currentNumber(360 - (degree % 360));
                         String showNum = "" + currNum;
                         textView.setText(showNum);
-                        //Intent i = new Intent(getApplicationContext(), PopupCardActivity.class);
-                        //startActivity(i);
 
                         try {
                             Thread.sleep(200);
