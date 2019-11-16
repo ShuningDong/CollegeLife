@@ -87,6 +87,14 @@ tools:context="com.example.collegelife.ui.main.MenuActivity">
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <Switch
+                android:id="@+id/switchLanguage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="English" />
+
+
         </LinearLayout>
     </ScrollView>
     >

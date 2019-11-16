@@ -9,7 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import com.example.collegelife.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -33,12 +37,12 @@ public class MenuActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;
     private FirebaseUser user;
+    Switch Language_button ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
         Button start_button = findViewById(R.id.start_button);
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +62,26 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Language_button = findViewById(R.id.switchLanguage);
+        Language_button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) //Line A
+            {
+                TextView gameName = findViewById(R.id.game_name);
+                if (Language_button.isChecked()) {
+                    Log.d(TAG, "English");
+                    Language_button.setText("English");
+                    gameName.setText(R.string.college_life);
+                }
+                else if (Language_button.isChecked()== false) {
+                    Log.d(TAG, "Chinese");
+                    Language_button.setText("繁體中文");
+                    gameName.setText("大學生活");
+
+                }
+
+            }
+        });
 
         ImageButton logout_button = findViewById(R.id.logout);
         logout_button.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +90,6 @@ public class MenuActivity extends AppCompatActivity {
                 signOut();
             }
         });
-
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -92,8 +115,6 @@ public class MenuActivity extends AppCompatActivity {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
-
-
     private void signOut() {
         // Firebase sign out
         mAuth.signOut();
@@ -194,5 +215,4 @@ public class MenuActivity extends AppCompatActivity {
         super.onStop();
         Log.d(TAG, "onStop is called");
     }
-
 }
