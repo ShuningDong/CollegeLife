@@ -162,79 +162,68 @@ public class BoardActivity extends AppCompatActivity {
                     switch (newSpace) {
 
                         case (1):
-
-                            intent.putExtra("str","Welcome to College!! You need to register for class.");
+                            intent.putExtra("str",getString( R.string.Welcome_1)+"\n"+getString(R.string.Welcome_2));
                             player.addDebt(10000);
                             break;
                         case (2):
 
-                            intent.putExtra("str","You attend a community service. Trying to give back to the society.");
+                            intent.putExtra("str",getString(R.string.Community_1)+"\n"+getString(R.string.Community_2));
 
                             break;
                         case (3):
 
-                            intent.putExtra("str", "Finally Break time!!\n" +
-                                    "You went to Florida for fun!!\n");
+                            intent.putExtra("str", getString(R.string.Fall_1)+"\n"+getString(R.string.Fall_2));
                             player.addDebt(200);
                             break;
                         case (4):
 
-                            intent.putExtra("str","You were kick off from your parent home\n" +
-                                    "You need to rent an apartment");
+                            intent.putExtra("str",getString(R.string.Apartment1)+"\n"+getString(R.string.Apartment2));
                             player.addDebt(500);
                             ownHouse_s = true;
                             findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
                             break;
                         case (5):
 
-                            intent.putExtra("str","You feel lonely\n" +
-                                "You decide to buy a dog\n");
+                            intent.putExtra("str",getString(R.string.BuyDog_1)+"\n"+getString(R.string.BuyDog_2));
                             player.addDebt(200);
                             ownPet_s = true;
                             findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
                             break;
                         case (6):
 
-                            intent.putExtra("str","You fail your midterm exam.\n" +
-                                    "You decide to drop the class and retake it later.\n");
+                            intent.putExtra("str",getString(R.string.FailMidterm_1)+"\n"+getString(R.string.FailMidterm_2));
                             player.subtractDebt(150);
                             break;
 
                         case (7):
 
-                            intent.putExtra("str","You join the Mobile App Development Club.\n" +
-                                "You start to build your own mobile app.");
+                            intent.putExtra("str",getString(R.string.MobileClub1)+"\n"+getString(R.string.MobileClub2));
                             break;
                         case (8):
 
-                            intent.putExtra("str","Break time Again!! \n" +
-                                    "You went to Chicago for fun! ");
+                            intent.putExtra("str",getString(R.string.Spring_1)+"\n"+getString(R.string.Spring_2));
                             player.addDebt(500);
                             break;
                         case (9):
 
-                            intent.putExtra("str","You overslept..\n" +
-                                    "You miss the your group presentation in class.");
+                            intent.putExtra("str",getString(R.string.MissClass_1)+"\n"+getString(R.string.MissClass_2));
                             break;
                         case (10):
 
-                            intent.putExtra("str","You feel hungry. \n" +
-                                    "It is grocery shopping time.");
+                            intent.putExtra("str",getString(R.string.Hungry_1)+"\n"+getString(R.string.Hungry_2));
                             player.addDebt(50);
                             break;
                         case (11):
 
-                            intent.putExtra("str","Ope! Your electricity went off!\n" +
-                                    "Did you pay your utilities bill?\n");
-                            intent.putExtra("str","* If you have rent apartment");
+                            intent.putExtra("str",getString(R.string.electricityOff_1)+"\n"+getString(R.string.electricityOff_2));
+                            intent.putExtra("str",getString(R.string.PreRentHome));
                             if (ownHouse_s) {
                                 player.addDebt(100);
                             }
                             break;
                         case (12):
 
-                            intent.putExtra("str","Finals finally over ~~\n" +
-                                    "Here is your grade\n");
+                            intent.putExtra("str",getString(R.string.FinalGrade_1)+"\n"+getString(R.string.FinalGrade_2));
                             break;
                         case (13):
 

@@ -88,5 +88,34 @@
     <string name="highscores" translatable="false">highscores</string>
     <string name="score_text" translatable="false">Congratulations! Here are final scores:</string> <!-- temp longest string-->
 
+    <string name="Welcome_1"> Welcome !! </string>
+    <string name="Welcome_2"> You need to register for class</string>
+    <string name="Community_1"> You attend a community service</string>
+    <string name="Community_2"> Trying to give back to the society</string>
+    <string name="Fall_1">Finally Break time !!</string>
+    <string name="Fall_2">You went to Florida for fun</string>
+    <string name ="Apartment1">You were kick off from your parent home</string>
+    <string name ="Apartment2">You need to rent an apartment</string>
+    <string name="BuyDog_1">You feel lonely</string>
+    <string name="BuyDog_2">You decide to buy a dog</string>
+    <string name="FailMidterm_1">You fail your mid-term exam</string>
+    <string name="FailMidterm_2">You decide to drop the class a retake</string>
+    <string name="MobileClub1">You enter the Mobile App Development Club</string>
+    <string name="MobileClub2">You start to build your own mobile app</string>
+    <string name="Spring_1">Break time Again!!</string>
+    <string name="Spring_2">You went to Chicago for fun</string>
+    <string name="MissClass_1">You overslept</string>
+    <string name="MissClass_2">You miss the most important class</string>
+    <string name="Hungry_1">You feel hungry</string>
+    <string name="Hungry_2">It is grocery shopping time</string>
+    <string name="electricityOff_1">Opp! Your electricity went off!</string>
+    <string name="electricityOff_2">Did you pay your utilities bill?</string>
+    <string name="PreRentHome">* If you have rent apartment</string>
+    <string name="FinalGrade_1">Finals finally over ~~</string>
+    <string name="FinalGrade_2">Here is your grade ~~</string>
+
+
+
+
 
 </resources>
