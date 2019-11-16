@@ -1488,6 +1488,7 @@ id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
+id switchLanguage
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
