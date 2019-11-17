@@ -53,7 +53,7 @@
     <string name="nav_header_title" translatable="false">Android Studio</string>
     <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
     <string name="nav_header_desc" translatable="false">Navigation header</string>
-    <string name="start" translatable="false">Start</string>
+    <string name="start">Start</string>
     <string name="logout" translatable="false">logout</string>
     <string name="GPA" translatable="false">GPA</string>
     <string name="Debt" translatable="false">Debt</string>
@@ -67,7 +67,7 @@
     <string name="name" translatable="false">Name</string>
     <string name="current_player" >Current Player:</string>
     <string name="click_the_button_below_to_spin" >Click the button below to spin!</string>
-    <string name="highscores" translatable="false">highscores</string>
+    <string name="highscores">highscores</string>
     <string name="score_text" translatable="false">Congratulations! Here are final scores:</string> <!-- temp longest string-->
 
     <!-- Warning Message-->

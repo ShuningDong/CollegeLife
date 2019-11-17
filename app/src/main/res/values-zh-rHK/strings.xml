@@ -70,4 +70,6 @@
     <string name="NeedLogo">每個玩家都需要一個標誌！</string>
     <string name="NeedName">輸入名字！</string>
     <string name="MaxPlayer">太多玩家！</string>
+    <string name="start">開始</string>
+    <string name="highscores">排行榜</string>
 </resources>

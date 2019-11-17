@@ -71,13 +71,10 @@ public class MenuActivity extends AppCompatActivity {
                 if (Language_button.isChecked()) {
                     Log.d(TAG, "English");
                     Language_button.setText("English");
-                    gameName.setText(R.string.college_life);
                 }
                 else if (Language_button.isChecked()== false) {
                     Log.d(TAG, "Chinese");
                     Language_button.setText("繁體中文");
-                    gameName.setText("大學生活");
-
                 }
 
             }
