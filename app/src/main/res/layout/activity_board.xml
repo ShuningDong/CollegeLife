@@ -83,7 +83,7 @@
                         android:layout_width="190dp"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/register_a_class"
+                        android:text="@string/RegClass_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -111,7 +111,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/community_service"
+                        android:text="@string/Community_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -139,7 +139,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/fall_break_trip"
+                        android:text="@string/FallTrip_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -167,7 +167,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/rent_an_apartment"
+                        android:text="@string/RentApart_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -195,7 +195,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/buy_a_pet"
+                        android:text="@string/ButPet_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -223,7 +223,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/dropping_a_class"
+                        android:text="@string/DropClass_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -251,7 +251,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/join_a_club"
+                        android:text="@string/JoinClub_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -279,7 +279,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/spring_break_trip"
+                        android:text="@string/SpringTrip_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -307,7 +307,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/miss_class"
+                        android:text="@string/MissClass_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -335,7 +335,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/buy_food"
+                        android:text="@string/BuyFood_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -363,7 +363,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/pay_utilities_bills"
+                        android:text="@string/Utilities_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -391,7 +391,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/get_grade_from_a_class"
+                        android:text="@string/FinalGrad_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -419,7 +419,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/register_a_class"
+                        android:text="@string/RegClass_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -447,7 +447,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/community_service"
+                        android:text="@string/Community_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -475,7 +475,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/buy_car"
+                        android:text="@string/BuyCar_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -503,7 +503,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/pay_rent"
+                        android:text="@string/PayRent_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -531,7 +531,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/pet_sick"
+                        android:text="@string/PetSick_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -559,7 +559,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/apply_scholarship"
+                        android:text="@string/ApplyScholarship_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -587,7 +587,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/join_a_club"
+                        android:text="@string/JoinClub_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -615,7 +615,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/spring_break_trip"
+                        android:text="@string/SpringTrip_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -643,7 +643,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/miss_class"
+                        android:text="@string/MissClass_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -671,7 +671,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/buy_food"
+                        android:text="@string/BuyFood_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -699,7 +699,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/drop_phone"
+                        android:text="@string/DropClass_s"
                         android:textAlignment="center" />
 
                     <TableRow
@@ -727,7 +727,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:gravity="center"
-                        android:text="@string/get_grade_from_a_class"
+                        android:text="@string/FinalGrad_s"
                         android:textAlignment="center" />
 
                     <TableRow

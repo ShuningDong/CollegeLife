@@ -20,9 +20,9 @@
     <string name="settings" translatable="false">settings</string>
     <string name="Character_page_icon" translatable="false">Character_page_icon</string>
     <string name="player1" translatable="false">player1</string>
-    <string name="enter_character_name" translatable="false">Enter Character Name</string>
-    <string name="start_game" translatable="false">Start game</string>
-    <string name="next_player" translatable="false">Next player</string>
+    <string name="enter_character_name">Enter Character Name</string>
+    <string name="start_game">Start game</string>
+    <string name="next_player">Next player</string>
 
     <string name="title_activity_game" translatable="false">GameActivity</string>
     <string name="game_image" translatable="false">game_image</string>
@@ -37,7 +37,6 @@
     <string name="insert2" translatable="false">insert2</string>
     <string name="insert3" translatable="false">insert3</string>
     <string name="delete_high_scores" translatable="false">delete high scores</string>
-    <string name="choose_your_logo" translatable="false">Choose your logo</string>
     <string name="Spade" translatable="false">Spade</string>
     <string name="Heart" translatable="false">Heart</string>
     <string name="Club" translatable="false">Club</string>
@@ -59,34 +58,22 @@
     <string name="GPA" translatable="false">GPA</string>
     <string name="Debt" translatable="false">Debt</string>
     <string name="backgroundgrid" translatable="false">backgroundgrid</string>
-    <string name="happy_graduation" translatable="false">Happy Graduation</string>
-    <string name="get_grade_from_a_class" translatable="false">Get grade from a class</string>
-    <string name="pay_utilities_bills" translatable="false">Pay utilities bills</string>
-    <string name="register_a_class" translatable="false">Register a class</string>
-    <string name="miss_class" translatable="false">Miss class</string>
-    <string name="dropping_a_class" translatable="false">Dropping a class</string>
-    <string name="join_a_club" translatable="false">Join a club</string>
-    <string name="buy_a_pet" translatable="false">Buy a pet</string>
-    <string name="rent_an_apartment" translatable="false">Rent an apartment</string>
-    <string name="fall_break_trip" translatable="false">Fall break trip</string>
-    <string name="community_service" translatable="false">Community service</string>
-    <string name="spring_break_trip" translatable="false">Spring break trip</string>
-    <string name="buy_food" translatable="false">Buy food</string>
+    <string name="happy_graduation">Happy Graduation</string>
     <string name="house" translatable="false">House</string>
     <string name="dog" translatable="false">Dog</string>
-    <string name="buy_car" translatable="false">Buy car</string>
-    <string name="pay_rent" translatable="false">Pay rent</string>
-    <string name="pet_sick" translatable="false">Your pet got sick</string>
-    <string name="apply_scholarship" translatable="false">Apply for scholarship</string>
-    <string name="drop_phone" translatable="false">Drop and break your phone</string>
     <string name="description" translatable="false">You enter the Mobile App Development Club\nYou start to build your own mobile app</string>    <!-- temp longest string-->
     <string name="action" translatable="false">Go back to start</string><!-- temp only string-->
     <string name="remark" translatable="false">* If you have rent apartment</string>
     <string name="name" translatable="false">Name</string>
-    <string name="current_player" translatable="false">Current Player:</string>
-    <string name="click_the_button_below_to_spin" translatable="false">Click the button below to spin!</string>
+    <string name="current_player" >Current Player:</string>
+    <string name="click_the_button_below_to_spin" >Click the button below to spin!</string>
     <string name="highscores" translatable="false">highscores</string>
     <string name="score_text" translatable="false">Congratulations! Here are final scores:</string> <!-- temp longest string-->
+
+    <!-- Warning Message-->
+    <string name="NeedLogo">Every player needs a logo!</string>
+    <string name="NeedName">Enter Name!</string>
+    <string name="MaxPlayer">Max players!</string>
 
     <string name="Welcome_1"> Welcome !! </string>
     <string name="Welcome_2"> You need to register for class</string>
@@ -113,9 +100,40 @@
     <string name="PreRentHome">* If you have rent apartment</string>
     <string name="FinalGrade_1">Finals finally over ~~</string>
     <string name="FinalGrade_2">Here is your grade ~~</string>
+    <string name="SecondSem_1">Happy second semester</string>
+    <string name="SecondSem_2">you need to register for class again</string>
+    <string name="BuyCar_1">You can’t go anywhere</string>
+    <string name="BuyCar_2">You need to buy a car</string>
+    <string name="RentRemind_1">Don’t forget your rent!</string>
+    <string name="RentRemind_2">You no longer live with your parent</string>
+    <string name="PetSick_1">You lovely dog get sick</string>
+    <string name="PetSick_2">You need to take her to the pet</string>
+    <string name="PrePet">* If you have buy a pet</string>
+    <string name="ApplyScholarship_1">You try to pay off your loan</string>
+    <string name="ApplyScholarship_2">You try to apply for scholarship</string>
+    <string name="GameClub_1">You enter the Game Animation Club</string>
+    <string name="GameClub_2">You start to build your own game</string>
+    <string name="DropPhone_1">Oops! You drop your phone!</string>
+    <string name="DropPhone_2">Touch screen no longer working</string>
 
-
-
+    <string name="RegClass_s">Register a class</string>
+    <string name="Community_s">Community service</string>
+    <string name="FallTrip_s">Fall break trip</string>
+    <string name="RentApart_s">Rent an apartment</string>
+    <string name="ButPet_s">Buy a pet</string>
+    <string name="DropClass_s">Dropping a class</string>
+    <string name="JoinClub_s">Join a club</string>
+    <string name="SpringTrip_s">Spring break trip</string>
+    <string name="MissClass_s">Miss class</string>
+    <string name="BuyFood_s">buy food</string>
+    <string name="Utilities_s">pay utilities bills</string>
+    <string name="FinalGrad_s">Get grade from a class</string>
+    <string name="BuyCar_s">Buy car</string>
+    <string name="PayRent_s">Pay rent</string>
+    <string name="PetSick_s">Your pet got sick</string>
+    <string name="ApplyScholarship_s">Apply for scholarship</string>
+    <string name="DropPhone"> Drop and break your phone</string>
+    <string name="choose_your_logo">Choose your logo</string>
 
 
 </resources>

@@ -55,7 +55,7 @@ public class CharacterFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (edit_text.getText().toString().isEmpty()){
-                    Toast.makeText(getActivity(), "Enter Name!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.NeedName, Toast.LENGTH_SHORT).show();
                 }else {
                     player = edit_text.getText().toString();
                     players[pcount] = player;
@@ -71,7 +71,7 @@ public class CharacterFragment extends Fragment {
                             Log.d(TAG, "Game Activity is null");
                         }
                     } else {
-                        Toast.makeText(getActivity(), "Every player needs a logo!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), R.string.NeedLogo, Toast.LENGTH_SHORT).show();
                         pcount--;
                     }
 
@@ -85,7 +85,7 @@ public class CharacterFragment extends Fragment {
             public void onClick(View v) {
 
                 if (edit_text.getText().toString().isEmpty()){
-                    Toast.makeText(getActivity(), "Enter Name!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.NeedName, Toast.LENGTH_SHORT).show();
                 }else {
                     if (tcount == (pcount + 1)) {
 
@@ -100,7 +100,7 @@ public class CharacterFragment extends Fragment {
                         Log.d(TAG, player);
                         Log.d(TAG, "#" + tcount);
                     } else {
-                        Toast.makeText(getActivity(), "Every player needs a logo!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), R.string.NeedLogo, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -176,15 +176,12 @@ public class CharacterFragment extends Fragment {
         if (count >= 3) {
 
             v.findViewById(R.id.next_player).setVisibility(View.GONE);
-            Toast.makeText(getActivity(), "max players!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), R.string.MaxPlayer, Toast.LENGTH_SHORT).show();
 
         }
 
         if (count ==1)
-        {
             playerImage.setImageResource(R.drawable.player2);
-            Log.d(TAG, "I did change image");
-        }
         else if (count ==2)
             playerImage.setImageResource(R.drawable.player3);
         else if (count == 3)
