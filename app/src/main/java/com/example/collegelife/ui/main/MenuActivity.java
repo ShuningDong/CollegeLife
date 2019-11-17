@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +31,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+
+import java.util.Locale;
 
 
 public class MenuActivity extends AppCompatActivity {
@@ -67,14 +72,24 @@ public class MenuActivity extends AppCompatActivity {
         {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) //Line A
             {
+                Locale curLocale = getResources().getConfiguration().locale;
+                Resources resources = getResources();
+                Configuration config = resources.getConfiguration();
+                DisplayMetrics dm = resources.getDisplayMetrics();
+
+
                 TextView gameName = findViewById(R.id.game_name);
                 if (Language_button.isChecked()) {
                     Log.d(TAG, "English");
                     Language_button.setText("English");
+                    config.locale = Locale.ENGLISH;
+                    resources.updateConfiguration(config,dm);
                 }
                 else if (Language_button.isChecked()== false) {
                     Log.d(TAG, "Chinese");
                     Language_button.setText("繁體中文");
+                    config.locale = Locale.TRADITIONAL_CHINESE;
+                    resources.updateConfiguration(config,dm);
                 }
 
             }

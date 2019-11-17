@@ -1,10 +1,10 @@
-#Sat Nov 16 21:06:39 EST 2019
+#Sat Nov 16 22:49:03 EST 2019
 path.2=classes2.dex
 path.1=classes.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=/Users/keikei0709/CollegeLife/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes2.dex
-base.1=/Users/keikei0709/CollegeLife/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex
-base.0=/Users/keikei0709/CollegeLife/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
+base.2=C\:\\Users\\shuni\\StudioProjects\\CollegeLife\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes2.dex
+base.1=C\:\\Users\\shuni\\StudioProjects\\CollegeLife\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.0=C\:\\Users\\shuni\\StudioProjects\\CollegeLife\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex

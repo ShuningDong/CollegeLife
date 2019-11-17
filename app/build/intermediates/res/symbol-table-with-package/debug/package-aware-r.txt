@@ -1708,12 +1708,14 @@ string Highscores
 string Hungry_1
 string Hungry_2
 string JoinClub_s
+string MaxPlayer
 string MissClass_1
 string MissClass_2
 string MissClass_s
 string MobileClub1
 string MobileClub2
 string NeedLogo
+string NeedName
 string PayRent_s
 string PetSick_1
 string PetSick_2
