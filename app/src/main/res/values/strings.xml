@@ -3,6 +3,8 @@
     <string name="action_settings">Settings</string>
     <string name="mainfragment" translatable="false">MainFragment</string>
     <string name="college_life">College Life</string>
+    <string name="Name">Name:</string>
+    <string name="Debt_d">  |  Debt: $</string>
 
     <string name="title_activity_home_screen" translatable="false">HomeScreen</string>
     <string name="start_button" translatable="false">Button</string>
@@ -74,6 +76,7 @@
     <string name="NeedLogo">Every player needs a logo!</string>
     <string name="NeedName">Enter Name!</string>
     <string name="MaxPlayer">Max players!</string>
+    <string name="SingInPlease">Sign in Please</string>
 
     <string name="Welcome_1"> Welcome !! </string>
     <string name="Welcome_2"> You need to register for class</string>

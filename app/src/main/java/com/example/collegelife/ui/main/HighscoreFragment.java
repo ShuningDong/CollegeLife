@@ -86,11 +86,11 @@ public class HighscoreFragment extends Fragment  {
                                     String gpa = document.get("gpa").toString();
                                     //TextView first = v.findViewById(R.id.place1);
                                     if (count == 0) {
-                                        first.setText("Name: " + name + "  |  Debt: $ " + debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
+                                        first.setText( R.string.Name + name + R.string.Debt_d + debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
                                     }else if(count == 1) {
-                                        second.setText("Name: " + name + "  |  Debt: $ " + debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
+                                        second.setText(R.string.Name + name + R.string.Debt_d + debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
                                     }else if(count == 2) {
-                                        third.setText("Name: " + name + "  |  Debt: $ " + debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
+                                        third.setText(R.string.Name + name + R.string.Debt_d + debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
                                     }
                                     count++;
                                 }

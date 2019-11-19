@@ -72,4 +72,7 @@
     <string name="MaxPlayer">太多玩家！</string>
     <string name="start">開始</string>
     <string name="highscores">排行榜</string>
+    <string name="SingInPlease">請登錄</string>
+    <string name="Name">名字:</string>
+    <string name="Debt_d">"  |  債務：$"</string>
 </resources>
