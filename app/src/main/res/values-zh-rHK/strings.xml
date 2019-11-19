@@ -76,4 +76,6 @@
     <string name="Name">名字:</string>
     <string name="Debt_d">"  |  債務：$"</string>
     <string name="dean_list_student">優等生名錄</string>
+    <string name="GPA">绩点</string>
+    <string name="Debt">债务</string>
 </resources>

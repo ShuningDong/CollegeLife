@@ -80,6 +80,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
                 TextView gameName = findViewById(R.id.game_name);
+                TextView startGame = findViewById(R.id.start_button);
                 if (Language_button.isChecked()) {
                     Log.d(TAG, "English");
                     Language_button.setText("English");
