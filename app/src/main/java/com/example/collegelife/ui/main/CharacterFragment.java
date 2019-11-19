@@ -6,7 +6,6 @@ import android.app.Activity;
 
 import androidx.fragment.app.Fragment;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +18,6 @@ import android.widget.Toast;
 
 import com.example.collegelife.R;
 
-import java.io.Serializable;
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -203,6 +198,7 @@ public class CharacterFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+        getActivity().finish();
         Log.d(TAG, "onPause is called");
     }
 

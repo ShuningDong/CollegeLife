@@ -5,8 +5,6 @@ import java.util.ArrayList;
 
 class Game {
 
-    private enum STATE {Inactive, Active, Won};
-    private STATE gamestate;
     private ArrayList<Character> characters;
     private Character currentPlayer;
 
@@ -14,7 +12,6 @@ class Game {
 
     // constructor
     Game( ArrayList<Character> players) {
-        gamestate = STATE.Active;
         characters = players;
         currentPlayer = characters.get(0);
     }
@@ -57,20 +54,6 @@ class Game {
             } else {
 
                 temp.add(c);
-                /*for (int i= 0; i < temp.size(); i++) {
-                    if (Integer.parseInt(c.getDebt()) < Integer.parseInt(temp.get(i).getDebt())) {
-                        temp.add(i, c);
-                        break;
-                    } else if(Integer.parseInt(c.getDebt()) == Integer.parseInt(temp.get(i).getDebt())) {
-                        if(Double.parseDouble(c.getGPA()) > Double.parseDouble(temp.get(i).getGPA())){
-                            temp.add(i,c);
-
-                        }else {
-                            temp.add(c);
-                        }
-                        break;
-                    }
-                }*/
             }
         }
         return temp;

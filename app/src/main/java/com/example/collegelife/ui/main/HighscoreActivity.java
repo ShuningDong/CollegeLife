@@ -45,7 +45,7 @@ public class HighscoreActivity extends AppCompatActivity {
     }
 
     @Override
-    // Shoulde be called before onPause
+    // Should be called before onPause
     protected void onSaveInstanceState(Bundle outstate){
         super.onSaveInstanceState(outstate);
     }

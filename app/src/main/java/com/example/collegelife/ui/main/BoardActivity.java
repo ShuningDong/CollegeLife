@@ -1,15 +1,12 @@
 package com.example.collegelife.ui.main;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.util.Log;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableRow;
@@ -24,16 +21,12 @@ public class BoardActivity extends AppCompatActivity {
 
     private static final String TAG = "Board_Activity";
     private ArrayList<Character> characters = new ArrayList<>();
-    private ArrayList<Character> winners = new ArrayList<>();
     int turn = 0;
     private Game game;
     private TextView showName;
+    private TextView gpaview;
+    private TextView debtview;
 
-    //gpa and debt information
-    TextView gpaview;
-    TextView debtview;
-
-    String str = null;
     Boolean ownHouse_s = false;
     Boolean ownHouse_h = false;
     Boolean ownHouse_c = false;
@@ -48,8 +41,8 @@ public class BoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
 
-        TextView gpaview = (TextView)this.findViewById(R.id.gpa);
-        TextView debtview = (TextView)this.findViewById(R.id.debt);
+        gpaview = this.findViewById(R.id.gpa);
+        debtview = this.findViewById(R.id.debt);
 
         Button spin = findViewById(R.id.SpinButton);
         spin.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +50,6 @@ public class BoardActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent1 = new Intent(view.getContext(), SpinboardActivity.class);
-                //intent1.putExtra("Player_name", player1.getName());
-                //view.getContext().startActivity(intent1);
                 startActivityForResult(intent1, 0);
             }
         });
@@ -142,167 +133,13 @@ public class BoardActivity extends AppCompatActivity {
             //removes symbol from current space
             block.removeView(player.getCurrentBlock());
 
-
-            //link to pop up window
-            Intent intent = new Intent(getApplicationContext(), PopupCardActivity.class);
-
-            // link to winners view
-            Intent gameOver = new Intent(getApplicationContext(), ScoreActivity.class);
-
-            TextView gpaview = (TextView)this.findViewById(R.id.gpa);
-            TextView debtview = (TextView)this.findViewById(R.id.debt);
-
-            //move symbol to next block
             switch (player.getIcon()) {
                 case ("spade"):
                     ImageView spade = new ImageView(this);
                     spade.setImageResource(R.drawable.spade);
                     player.setCurrentBlock(spade);
                     nextBlock.addView(spade, 100, 100);
-                    switch (newSpace) {
-                        case (1):
-                            intent.putExtra("str",getString( R.string.Welcome_1)+"\n"+getString(R.string.Welcome_2));
-                            player.addDebt(10000);
-                            break;
-                        case (2):
-
-                            intent.putExtra("str",getString(R.string.Community_1)+"\n"+getString(R.string.Community_2));
-
-                            break;
-                        case (3):
-
-                            intent.putExtra("str", getString(R.string.Fall_1)+"\n"+getString(R.string.Fall_2));
-                            player.addDebt(200);
-                            break;
-                        case (4):
-
-                            intent.putExtra("str",getString(R.string.Apartment1)+"\n"+getString(R.string.Apartment2));
-                            player.addDebt(500);
-                            ownHouse_s = true;
-                            findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
-                            break;
-                        case (5):
-
-                            intent.putExtra("str",getString(R.string.BuyDog_1)+"\n"+getString(R.string.BuyDog_2));
-                            player.addDebt(200);
-                            ownPet_s = true;
-                            findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
-                            break;
-                        case (6):
-
-                            intent.putExtra("str",getString(R.string.FailMidterm_1)+"\n"+getString(R.string.FailMidterm_2));
-                            player.subtractDebt(150);
-                            break;
-
-                        case (7):
-
-                            intent.putExtra("str",getString(R.string.MobileClub1)+"\n"+getString(R.string.MobileClub2));
-                            break;
-                        case (8):
-
-                            intent.putExtra("str",getString(R.string.Spring_1)+"\n"+getString(R.string.Spring_2));
-                            player.addDebt(500);
-                            break;
-                        case (9):
-
-                            intent.putExtra("str",getString(R.string.MissClass_1)+"\n"+getString(R.string.MissClass_2));
-                            break;
-                        case (10):
-
-                            intent.putExtra("str",getString(R.string.Hungry_1)+"\n"+getString(R.string.Hungry_2));
-                            player.addDebt(50);
-                            break;
-                        case (11):
-
-                            intent.putExtra("str",getString(R.string.electricityOff_1)+"\n"+getString(R.string.electricityOff_2));
-                            intent.putExtra("str",getString(R.string.PreRentHome));
-                            if (ownHouse_s) {
-                                player.addDebt(100);
-                            }
-                            break;
-                        case (12):
-
-                            intent.putExtra("str",getString(R.string.FinalGrade_1)+"\n"+getString(R.string.FinalGrade_2));
-                            break;
-                        case (13):
-                            intent.putExtra("str",getString(R.string.SecondSem_1)+"\n"+getString(R.string.SecondSem_2));
-                            player.addDebt(10000);
-                            break;
-                        case (14):
-                            intent.putExtra("str",getString(R.string.Community_1)+"\n"+getString(R.string.Community_2));
-                            break;
-                        case (15):
-                            intent.putExtra("str",getString(R.string.BuyCar_1)+"\n"+getString(R.string.BuyCar_2));
-                            player.addDebt(9000);
-                            break;
-                        case (16):
-                            intent.putExtra("str",getString(R.string.RentRemind_1)+"\n"+getString(R.string.RentRemind_2));
-                            intent.putExtra("str",getString(R.string.PreRentHome));
-                            if (ownHouse_s) {
-                                player.addDebt(500);
-                            }
-                            break;
-                        case (17):
-                            intent.putExtra("str",getString(R.string.PetSick_1)+"\n"+getString(R.string.PetSick_2));
-                            intent.putExtra("str",getString(R.string.PrePet));
-                            if (ownPet_s) {
-                                player.addDebt(300);
-                            }
-                            break;
-                        case (18):
-                            intent.putExtra("str",getString(R.string.ApplyScholarship_1)+"\n"+getString(R.string.ApplyScholarship_2));
-                            player.subtractDebt(5000);
-                            break;
-                        case (19):
-                            intent.putExtra("str",getString(R.string.GameClub_1)+"\n"+getString(R.string.GameClub_2));
-                            player.subtractDebt(50);
-                            break;
-                        case (20):
-                            intent.putExtra("str",getString(R.string.Spring_1)+"\n"+getString(R.string.Spring_2));
-                            player.addDebt(200);
-                            break;
-
-                        case (21):
-                            intent.putExtra("str",getString(R.string.MissClass_1)+"\n"+getString(R.string.MissClass_2));
-                            break;
-                        case (22):
-                            intent.putExtra("str",getString(R.string.Hungry_1)+"\n"+getString(R.string.Hungry_2));
-                            player.addDebt(50);
-                            break;
-                        case (23):
-                            intent.putExtra("str",getString(R.string.DropPhone_1)+"\n"+getString(R.string.DropPhone_2));
-                            player.addDebt(300);
-                            break;
-                        case (24):
-                            intent.putExtra("str",getString(R.string.FinalGrade_1)+"\n"+getString(R.string.FinalGrade_2));
-                            break;
-                        case (25):
-                            winners = game.getWinners();
-                            String[] names = new String[winners.size()];
-                            String[] fScores = new String[winners.size()];
-                            String[] fGpa = new String[winners.size()];
-                            for (int i=0; i < winners.size(); i++) {
-                                Character p = winners.get(i);
-                                names[i] = p.getName();
-                                fScores[i] = p.getDebt();
-                                fGpa[i] = p.getGPA();
-                            }
-
-                            gameOver.putExtra("pname", names);
-                            gameOver.putExtra("debt", fScores);
-                            gameOver.putExtra("fgpa", fGpa);
-
-                            //startActivity(intent);
-                            break;
-
-                    }
-                    if (newSpace == 25){
-                        startActivity(gameOver);
-                    }else {
-                        startActivity(intent);
-                        gpaview.setText(player.getGPA());
-                        debtview.setText("$ " + player.getDebt());
-                    }
+                    getEventCard(newSpace, player);
                     break;
 
                 case ("heart"):
@@ -310,150 +147,7 @@ public class BoardActivity extends AppCompatActivity {
                     club.setImageResource(R.drawable.heart);
                     player.setCurrentBlock(club);
                     nextBlock.addView(club, 100, 100);
-                    switch (newSpace) {
-                        case (1):
-                            intent.putExtra("str",getString( R.string.Welcome_1)+"\n"+getString(R.string.Welcome_2));
-                            player.addDebt(10000);
-                            break;
-                        case (2):
-
-                            intent.putExtra("str",getString(R.string.Community_1)+"\n"+getString(R.string.Community_2));
-
-                            break;
-                        case (3):
-
-                            intent.putExtra("str", getString(R.string.Fall_1)+"\n"+getString(R.string.Fall_2));
-                            player.addDebt(200);
-                            break;
-                        case (4):
-
-                            intent.putExtra("str",getString(R.string.Apartment1)+"\n"+getString(R.string.Apartment2));
-                            player.addDebt(500);
-                            ownHouse_h = true;
-                            findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
-                            break;
-                        case (5):
-
-                            intent.putExtra("str",getString(R.string.BuyDog_1)+"\n"+getString(R.string.BuyDog_2));
-                            player.addDebt(200);
-                            ownPet_h = true;
-                            findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
-                            break;
-                        case (6):
-
-                            intent.putExtra("str",getString(R.string.FailMidterm_1)+"\n"+getString(R.string.FailMidterm_2));
-                            player.subtractDebt(150);
-                            break;
-
-                        case (7):
-
-                            intent.putExtra("str",getString(R.string.MobileClub1)+"\n"+getString(R.string.MobileClub2));
-                            break;
-                        case (8):
-
-                            intent.putExtra("str",getString(R.string.Spring_1)+"\n"+getString(R.string.Spring_2));
-                            player.addDebt(500);
-                            break;
-                        case (9):
-
-                            intent.putExtra("str",getString(R.string.MissClass_1)+"\n"+getString(R.string.MissClass_2));
-                            break;
-                        case (10):
-
-                            intent.putExtra("str",getString(R.string.Hungry_1)+"\n"+getString(R.string.Hungry_2));
-                            player.addDebt(50);
-                            break;
-                        case (11):
-
-                            intent.putExtra("str",getString(R.string.electricityOff_1)+"\n"+getString(R.string.electricityOff_2));
-                            intent.putExtra("str",getString(R.string.PreRentHome));
-                            if (ownHouse_h) {
-                                player.addDebt(100);
-                            }
-                            break;
-                        case (12):
-
-                            intent.putExtra("str",getString(R.string.FinalGrade_1)+"\n"+getString(R.string.FinalGrade_2));
-                            break;
-                        case (13):
-                            intent.putExtra("str",getString(R.string.SecondSem_1)+"\n"+getString(R.string.SecondSem_2));
-                            player.addDebt(10000);
-                            break;
-                        case (14):
-                            intent.putExtra("str",getString(R.string.Community_1)+"\n"+getString(R.string.Community_2));
-                            break;
-                        case (15):
-                            intent.putExtra("str",getString(R.string.BuyCar_1)+"\n"+getString(R.string.BuyCar_2));
-                            player.addDebt(9000);
-                            break;
-                        case (16):
-                            intent.putExtra("str",getString(R.string.RentRemind_1)+"\n"+getString(R.string.RentRemind_2));
-                            intent.putExtra("str",getString(R.string.PreRentHome));
-                            if (ownHouse_h) {
-                                player.addDebt(500);
-                            }
-                            break;
-                        case (17):
-                            intent.putExtra("str",getString(R.string.PetSick_1)+"\n"+getString(R.string.PetSick_2));
-                            intent.putExtra("str",getString(R.string.PrePet));
-                            if (ownPet_h) {
-                                player.addDebt(300);
-                            }
-                            break;
-                        case (18):
-                            intent.putExtra("str",getString(R.string.ApplyScholarship_1)+"\n"+getString(R.string.ApplyScholarship_2));
-                            player.subtractDebt(5000);
-                            break;
-                        case (19):
-                            intent.putExtra("str",getString(R.string.GameClub_1)+"\n"+getString(R.string.GameClub_2));
-                            player.subtractDebt(50);
-                            break;
-                        case (20):
-                            intent.putExtra("str",getString(R.string.Spring_1)+"\n"+getString(R.string.Spring_2));
-                            player.addDebt(200);
-                            break;
-
-                        case (21):
-                            intent.putExtra("str",getString(R.string.MissClass_1)+"\n"+getString(R.string.MissClass_2));
-                            break;
-                        case (22):
-                            intent.putExtra("str",getString(R.string.Hungry_1)+"\n"+getString(R.string.Hungry_2));
-                            player.addDebt(50);
-                            break;
-                        case (23):
-                            intent.putExtra("str",getString(R.string.DropPhone_1)+"\n"+getString(R.string.DropPhone_2));
-                            player.addDebt(300);
-                            break;
-                        case (24):
-                            intent.putExtra("str",getString(R.string.FinalGrade_1)+"\n"+getString(R.string.FinalGrade_2));
-                            break;
-                        case (25):
-                            winners = game.getWinners();
-                            String[] names = new String[winners.size()];
-                            String[] fScores = new String[winners.size()];
-                            String[] fGpa = new String[winners.size()];
-                            for (int i=0; i < winners.size(); i++) {
-                                Character p = winners.get(i);
-                                names[i] = p.getName();
-                                fScores[i] = p.getDebt();
-                                fGpa[i] = p.getGPA();
-                            }
-
-                            gameOver.putExtra("pname", names);
-                            gameOver.putExtra("debt", fScores);
-                            gameOver.putExtra("fgpa", fGpa);
-
-                            //startActivity(intent);
-                            break;
-
-                    }
-                    if (newSpace == 25){
-                        startActivity(gameOver);
-                    }else {
-                        startActivity(intent);
-                        gpaview.setText(player.getGPA());
-                        debtview.setText("$ " + player.getDebt());
-                    }
+                    getEventCard(newSpace, player);
                     break;
 
                 case ("club"):
@@ -461,151 +155,7 @@ public class BoardActivity extends AppCompatActivity {
                     heart.setImageResource(R.drawable.club);
                     player.setCurrentBlock(heart);
                     nextBlock.addView(heart, 100, 100);
-                    switch (newSpace) {
-                        case (1):
-                            intent.putExtra("str",getString( R.string.Welcome_1)+"\n"+getString(R.string.Welcome_2));
-                            player.addDebt(10000);
-                            break;
-                        case (2):
-
-                            intent.putExtra("str",getString(R.string.Community_1)+"\n"+getString(R.string.Community_2));
-
-                            break;
-                        case (3):
-
-                            intent.putExtra("str", getString(R.string.Fall_1)+"\n"+getString(R.string.Fall_2));
-                            player.addDebt(200);
-                            break;
-                        case (4):
-
-                            intent.putExtra("str",getString(R.string.Apartment1)+"\n"+getString(R.string.Apartment2));
-                            player.addDebt(500);
-                            ownHouse_c = true;
-                            findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
-                            break;
-                        case (5):
-
-                            intent.putExtra("str",getString(R.string.BuyDog_1)+"\n"+getString(R.string.BuyDog_2));
-                            player.addDebt(200);
-                            ownPet_c = true;
-                            findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
-                            break;
-                        case (6):
-
-                            intent.putExtra("str",getString(R.string.FailMidterm_1)+"\n"+getString(R.string.FailMidterm_2));
-                            player.subtractDebt(150);
-                            break;
-
-                        case (7):
-
-                            intent.putExtra("str",getString(R.string.MobileClub1)+"\n"+getString(R.string.MobileClub2));
-                            break;
-                        case (8):
-
-                            intent.putExtra("str",getString(R.string.Spring_1)+"\n"+getString(R.string.Spring_2));
-                            player.addDebt(500);
-                            break;
-                        case (9):
-
-                            intent.putExtra("str",getString(R.string.MissClass_1)+"\n"+getString(R.string.MissClass_2));
-                            break;
-                        case (10):
-
-                            intent.putExtra("str",getString(R.string.Hungry_1)+"\n"+getString(R.string.Hungry_2));
-                            player.addDebt(50);
-                            break;
-                        case (11):
-
-                            intent.putExtra("str",getString(R.string.electricityOff_1)+"\n"+getString(R.string.electricityOff_2));
-                            intent.putExtra("str",getString(R.string.PreRentHome));
-                            if (ownHouse_c) {
-                                player.addDebt(100);
-                            }
-                            break;
-                        case (12):
-
-                            intent.putExtra("str",getString(R.string.FinalGrade_1)+"\n"+getString(R.string.FinalGrade_2));
-                            break;
-                        case (13):
-                            intent.putExtra("str",getString(R.string.SecondSem_1)+"\n"+getString(R.string.SecondSem_2));
-                            player.addDebt(10000);
-                            break;
-                        case (14):
-                            intent.putExtra("str",getString(R.string.Community_1)+"\n"+getString(R.string.Community_2));
-                            break;
-                        case (15):
-                            intent.putExtra("str",getString(R.string.BuyCar_1)+"\n"+getString(R.string.BuyCar_2));
-                            player.addDebt(9000);
-                            break;
-                        case (16):
-                            intent.putExtra("str",getString(R.string.RentRemind_1)+"\n"+getString(R.string.RentRemind_2));
-                            intent.putExtra("str",getString(R.string.PreRentHome));
-                            if (ownHouse_c) {
-                                player.addDebt(500);
-                            }
-                            break;
-                        case (17):
-                            intent.putExtra("str",getString(R.string.PetSick_1)+"\n"+getString(R.string.PetSick_2));
-                            intent.putExtra("str",getString(R.string.PrePet));
-                            if (ownPet_c) {
-                                player.addDebt(300);
-                            }
-                            break;
-                        case (18):
-                            intent.putExtra("str",getString(R.string.ApplyScholarship_1)+"\n"+getString(R.string.ApplyScholarship_2));
-                            player.subtractDebt(5000);
-                            break;
-                        case (19):
-                            intent.putExtra("str",getString(R.string.GameClub_1)+"\n"+getString(R.string.GameClub_2));
-                            player.subtractDebt(50);
-                            break;
-                        case (20):
-                            intent.putExtra("str",getString(R.string.Spring_1)+"\n"+getString(R.string.Spring_2));
-                            player.addDebt(200);
-                            break;
-
-                        case (21):
-                            intent.putExtra("str",getString(R.string.MissClass_1)+"\n"+getString(R.string.MissClass_2));
-                            break;
-                        case (22):
-                            intent.putExtra("str",getString(R.string.Hungry_1)+"\n"+getString(R.string.Hungry_2));
-                            player.addDebt(50);
-                            break;
-                        case (23):
-                            intent.putExtra("str",getString(R.string.DropPhone_1)+"\n"+getString(R.string.DropPhone_2));
-                            player.addDebt(300);
-                            break;
-                        case (24):
-                            intent.putExtra("str",getString(R.string.FinalGrade_1)+"\n"+getString(R.string.FinalGrade_2));
-                            break;
-                        case (25):
-                            winners = game.getWinners();
-                            String[] names = new String[winners.size()];
-                            String[] fScores = new String[winners.size()];
-                            String[] fGpa = new String[winners.size()];
-                            for (int i=0; i < winners.size(); i++) {
-                                Character p = winners.get(i);
-                                names[i] = p.getName();
-                                fScores[i] = p.getDebt();
-                                fGpa[i] = p.getGPA();
-                            }
-
-                            gameOver.putExtra("pname", names);
-                            gameOver.putExtra("debt", fScores);
-                            gameOver.putExtra("fgpa", fGpa);
-
-                            //startActivity(intent);
-                            break;
-
-                    }
-
-                    if (newSpace == 25){
-                        startActivity(gameOver);
-                    }else {
-                        startActivity(intent);
-                        gpaview.setText(player.getGPA());
-                        debtview.setText("$ " + player.getDebt());
-                    }
+                    getEventCard(newSpace, player);
                     break;
 
                 case ("diamond"):
@@ -613,152 +163,10 @@ public class BoardActivity extends AppCompatActivity {
                     diamond.setImageResource(R.drawable.diamond);
                     player.setCurrentBlock(diamond);
                     nextBlock.addView(diamond, 100, 100);
-                    switch (newSpace) {
-                        case (1):
-                            intent.putExtra("str",getString( R.string.Welcome_1)+"\n"+getString(R.string.Welcome_2));
-                            player.addDebt(10000);
-                            break;
-                        case (2):
-
-                            intent.putExtra("str",getString(R.string.Community_1)+"\n"+getString(R.string.Community_2));
-
-                            break;
-                        case (3):
-
-                            intent.putExtra("str", getString(R.string.Fall_1)+"\n"+getString(R.string.Fall_2));
-                            player.addDebt(200);
-                            break;
-                        case (4):
-
-                            intent.putExtra("str",getString(R.string.Apartment1)+"\n"+getString(R.string.Apartment2));
-                            player.addDebt(500);
-                            ownHouse_d = true;
-                            findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
-                            break;
-                        case (5):
-
-                            intent.putExtra("str",getString(R.string.BuyDog_1)+"\n"+getString(R.string.BuyDog_2));
-                            player.addDebt(200);
-                            ownPet_d = true;
-                            findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
-                            break;
-                        case (6):
-
-                            intent.putExtra("str",getString(R.string.FailMidterm_1)+"\n"+getString(R.string.FailMidterm_2));
-                            player.subtractDebt(150);
-                            break;
-
-                        case (7):
-
-                            intent.putExtra("str",getString(R.string.MobileClub1)+"\n"+getString(R.string.MobileClub2));
-                            break;
-                        case (8):
-
-                            intent.putExtra("str",getString(R.string.Spring_1)+"\n"+getString(R.string.Spring_2));
-                            player.addDebt(500);
-                            break;
-                        case (9):
-
-                            intent.putExtra("str",getString(R.string.MissClass_1)+"\n"+getString(R.string.MissClass_2));
-                            break;
-                        case (10):
-
-                            intent.putExtra("str",getString(R.string.Hungry_1)+"\n"+getString(R.string.Hungry_2));
-                            player.addDebt(50);
-                            break;
-                        case (11):
-
-                            intent.putExtra("str",getString(R.string.electricityOff_1)+"\n"+getString(R.string.electricityOff_2));
-                            intent.putExtra("str",getString(R.string.PreRentHome));
-                            if (ownHouse_d) {
-                                player.addDebt(100);
-                            }
-                            break;
-                        case (12):
-
-                            intent.putExtra("str",getString(R.string.FinalGrade_1)+"\n"+getString(R.string.FinalGrade_2));
-                            break;
-                        case (13):
-                            intent.putExtra("str",getString(R.string.SecondSem_1)+"\n"+getString(R.string.SecondSem_2));
-                            player.addDebt(10000);
-                            break;
-                        case (14):
-                            intent.putExtra("str",getString(R.string.Community_1)+"\n"+getString(R.string.Community_2));
-                            break;
-                        case (15):
-                            intent.putExtra("str",getString(R.string.BuyCar_1)+"\n"+getString(R.string.BuyCar_2));
-                            player.addDebt(9000);
-                            break;
-                        case (16):
-                            intent.putExtra("str",getString(R.string.RentRemind_1)+"\n"+getString(R.string.RentRemind_2));
-                            intent.putExtra("str",getString(R.string.PreRentHome));
-                            if (ownHouse_d) {
-                                player.addDebt(500);
-                            }
-                            break;
-                        case (17):
-                            intent.putExtra("str",getString(R.string.PetSick_1)+"\n"+getString(R.string.PetSick_2));
-                            intent.putExtra("str",getString(R.string.PrePet));
-                            if (ownPet_d) {
-                                player.addDebt(300);
-                            }
-                            break;
-                        case (18):
-                            intent.putExtra("str",getString(R.string.ApplyScholarship_1)+"\n"+getString(R.string.ApplyScholarship_2));
-                            player.subtractDebt(5000);
-                            break;
-                        case (19):
-                            intent.putExtra("str",getString(R.string.GameClub_1)+"\n"+getString(R.string.GameClub_2));
-                            player.subtractDebt(50);
-                            break;
-                        case (20):
-                            intent.putExtra("str",getString(R.string.Spring_1)+"\n"+getString(R.string.Spring_2));
-                            player.addDebt(200);
-                            break;
-
-                        case (21):
-                            intent.putExtra("str",getString(R.string.MissClass_1)+"\n"+getString(R.string.MissClass_2));
-                            break;
-                        case (22):
-                            intent.putExtra("str",getString(R.string.Hungry_1)+"\n"+getString(R.string.Hungry_2));
-                            player.addDebt(50);
-                            break;
-                        case (23):
-                            intent.putExtra("str",getString(R.string.DropPhone_1)+"\n"+getString(R.string.DropPhone_2));
-                            player.addDebt(300);
-                            break;
-                        case (24):
-                            intent.putExtra("str",getString(R.string.FinalGrade_1)+"\n"+getString(R.string.FinalGrade_2));
-                            break;
-                        case (25):
-                            winners = game.getWinners();
-                            String[] names = new String[winners.size()];
-                            String[] fScores = new String[winners.size()];
-                            String[] fGpa = new String[winners.size()];
-                            for (int i=0; i < winners.size(); i++) {
-                                Character p = winners.get(i);
-                                names[i] = p.getName();
-                                fScores[i] = p.getDebt();
-                                fGpa[i] = p.getGPA();
-                            }
-
-                            gameOver.putExtra("pname", names);
-                            gameOver.putExtra("debt", fScores);
-                            gameOver.putExtra("fgpa", fGpa);
-
-                            //startActivity(intent);
-                            break;
-
-                    }
-                    if (newSpace == 25){
-                        startActivity(gameOver);
-                    }else {
-                        startActivity(intent);
-                        gpaview.setText(player.getGPA());
-                        debtview.setText("$ " + player.getDebt());
-                    }
+                    getEventCard(newSpace, player);
                     break;
             }
+
         }else {
             int validSpace = (25 - Integer.parseInt(space));
             Toast.makeText(getApplicationContext(), "Invalid move. Need a " + validSpace + " or lower", Toast.LENGTH_SHORT).show();
@@ -767,7 +175,162 @@ public class BoardActivity extends AppCompatActivity {
         Character currPlayer = game.getCurrentPlayer();
         showName = findViewById(R.id.display_name);
         showName.setText(currPlayer.getName());
+        gpaview.setText(currPlayer.getGPA());
+        debtview.setText("$ " + currPlayer.getDebt());
     }
+
+    private void getEventCard(int newSpace, Character player) {
+
+
+        //link to pop up window
+        Intent intent = new Intent(getApplicationContext(), PopupCardActivity.class);
+
+        // link to winners view
+        Intent gameOver = new Intent(getApplicationContext(), ScoreActivity.class);
+
+        gpaview = this.findViewById(R.id.gpa);
+        debtview = this.findViewById(R.id.debt);
+
+        //move symbol to next block
+        ArrayList<Character> winners;
+
+        switch (newSpace) {
+            case (1):
+                intent.putExtra("str",getString( R.string.Welcome_1)+"\n"+getString(R.string.Welcome_2));
+                player.addDebt(10000);
+                break;
+            case (2):
+            case (14):
+
+                intent.putExtra("str",getString(R.string.Community_1)+"\n"+getString(R.string.Community_2));
+
+                break;
+            case (3):
+
+                intent.putExtra("str", getString(R.string.Fall_1)+"\n"+getString(R.string.Fall_2));
+                player.addDebt(200);
+                break;
+            case (4):
+
+                intent.putExtra("str",getString(R.string.Apartment1)+"\n"+getString(R.string.Apartment2));
+                player.addDebt(500);
+                ownHouse_d = true;
+                findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
+                break;
+            case (5):
+
+                intent.putExtra("str",getString(R.string.BuyDog_1)+"\n"+getString(R.string.BuyDog_2));
+                player.addDebt(200);
+                ownPet_d = true;
+                findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
+                break;
+            case (6):
+
+                intent.putExtra("str",getString(R.string.FailMidterm_1)+"\n"+getString(R.string.FailMidterm_2));
+                player.subtractDebt(150);
+                break;
+
+            case (7):
+
+                intent.putExtra("str",getString(R.string.MobileClub1)+"\n"+getString(R.string.MobileClub2));
+                break;
+            case (8):
+
+                intent.putExtra("str",getString(R.string.Spring_1)+"\n"+getString(R.string.Spring_2));
+                player.addDebt(500);
+                break;
+            case (9):
+
+            case (21):
+
+                intent.putExtra("str",getString(R.string.MissClass_1)+"\n"+getString(R.string.MissClass_2));
+                break;
+            case (10):
+            case (22):
+
+                intent.putExtra("str",getString(R.string.Hungry_1)+"\n"+getString(R.string.Hungry_2));
+                player.addDebt(50);
+                break;
+            case (11):
+
+                intent.putExtra("str",getString(R.string.electricityOff_1)+"\n"+getString(R.string.electricityOff_2));
+                intent.putExtra("str",getString(R.string.PreRentHome));
+                if (ownHouse_d) {
+                    player.addDebt(100);
+                }
+                break;
+            case (12):
+            case (24):
+
+                intent.putExtra("str",getString(R.string.FinalGrade_1)+"\n"+getString(R.string.FinalGrade_2));
+                break;
+            case (13):
+                intent.putExtra("str",getString(R.string.SecondSem_1)+"\n"+getString(R.string.SecondSem_2));
+                player.addDebt(10000);
+                break;
+            case (15):
+                intent.putExtra("str",getString(R.string.BuyCar_1)+"\n"+getString(R.string.BuyCar_2));
+                player.addDebt(9000);
+                break;
+            case (16):
+                intent.putExtra("str",getString(R.string.RentRemind_1)+"\n"+getString(R.string.RentRemind_2));
+                intent.putExtra("str",getString(R.string.PreRentHome));
+                if (ownHouse_d) {
+                    player.addDebt(500);
+                }
+                break;
+            case (17):
+                intent.putExtra("str",getString(R.string.PetSick_1)+"\n"+getString(R.string.PetSick_2));
+                intent.putExtra("str",getString(R.string.PrePet));
+                if (ownPet_d) {
+                    player.addDebt(300);
+                }
+                break;
+            case (18):
+                intent.putExtra("str",getString(R.string.ApplyScholarship_1)+"\n"+getString(R.string.ApplyScholarship_2));
+                player.subtractDebt(5000);
+                break;
+            case (19):
+                intent.putExtra("str",getString(R.string.GameClub_1)+"\n"+getString(R.string.GameClub_2));
+                player.subtractDebt(50);
+                break;
+            case (20):
+                intent.putExtra("str",getString(R.string.Spring_1)+"\n"+getString(R.string.Spring_2));
+                player.addDebt(200);
+                break;
+            case (23):
+                intent.putExtra("str",getString(R.string.DropPhone_1)+"\n"+getString(R.string.DropPhone_2));
+                player.addDebt(300);
+                break;
+            case (25):
+                winners = game.getWinners();
+                String[] names = new String[winners.size()];
+                String[] fScores = new String[winners.size()];
+                String[] fGpa = new String[winners.size()];
+                for (int i = 0; i < winners.size(); i++) {
+                    Character p = winners.get(i);
+                    names[i] = p.getName();
+                    fScores[i] = p.getDebt();
+                    fGpa[i] = p.getGPA();
+                }
+
+                gameOver.putExtra("pname", names);
+                gameOver.putExtra("debt", fScores);
+                gameOver.putExtra("fgpa", fGpa);
+
+                break;
+
+        }
+        if (newSpace == 25){
+            startActivity(gameOver);
+            finish();
+        }else {
+            startActivity(intent);
+            gpaview.setText(player.getGPA());
+            debtview.setText("$ " + player.getDebt());
+        }
+    }
+
 
     private TableRow getNextBlock(String current_space, int move_space) {
 
@@ -855,7 +418,6 @@ public class BoardActivity extends AppCompatActivity {
                 next = findViewById(R.id.icons_s);
         }
         return next;
-
     }
 
     private void createCharacters(){
@@ -884,13 +446,10 @@ public class BoardActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-
-
         if (requestCode == 0){
             if(resultCode == 0) {
                 turn = data.getIntExtra("spin", 0);
                 updateBoard(game.getCurrentPlayer(), turn);
-                //updateInfo(game.getCurrentPlayer(), turn);
                 Log.d(TAG, "Spin: " + turn);
             }
         }
@@ -903,37 +462,20 @@ public class BoardActivity extends AppCompatActivity {
                     findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
                 else
                     findViewById(R.id.imageDog).setVisibility(View.GONE);
-                break;
-            case ("heart"):
-                if (ownPet_h)
-                    findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
-                else
-                    findViewById(R.id.imageDog).setVisibility(View.GONE);
-                break;
-            case ("club"):
-                if (ownPet_c)
-                    findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
-                else
-                    findViewById(R.id.imageDog).setVisibility(View.GONE);
-                break;
-            case ("diamond"):
-                if (ownPet_d)
-                    findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
-                else
-                    findViewById(R.id.imageDog).setVisibility(View.GONE);
-                break;
-        }
 
-
-        switch (game.getCurrentPlayer().getIcon()) {
-            case ("spade"):
                 if (ownHouse_s) {
                     findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
                 }
                 else
                     findViewById(R.id.imageHome).setVisibility(View.GONE);
                 break;
+
             case ("heart"):
+                if (ownPet_h)
+                    findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
+                else
+                    findViewById(R.id.imageDog).setVisibility(View.GONE);
+
                 if (ownHouse_h) {
                     findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
                 }
@@ -941,7 +483,13 @@ public class BoardActivity extends AppCompatActivity {
                     findViewById(R.id.imageHome).setVisibility(View.GONE);
                 }
                 break;
+
             case ("club"):
+                if (ownPet_c)
+                    findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
+                else
+                    findViewById(R.id.imageDog).setVisibility(View.GONE);
+
                 if (ownHouse_c) {
                     findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
                 }
@@ -949,7 +497,12 @@ public class BoardActivity extends AppCompatActivity {
                     findViewById(R.id.imageHome).setVisibility(View.GONE);
                 }
                 break;
+
             case ("diamond"):
+                if (ownPet_d)
+                    findViewById(R.id.imageDog).setVisibility(View.VISIBLE);
+                else
+                    findViewById(R.id.imageDog).setVisibility(View.GONE);
                 if (ownHouse_d) {
                     findViewById(R.id.imageHome).setVisibility(View.VISIBLE);
                 }

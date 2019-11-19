@@ -1246,7 +1246,6 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
-id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1317,10 +1316,6 @@ id game_name
 id ghost_view
 id gone
 id gpa
-id gridActionText
-id gridDescriptionText
-id gridLoan
-id gridRemarkText
 id group_divider
 id groups
 id highscore_button
@@ -1507,7 +1502,6 @@ id textStart
 id textView
 id textView2
 id textView3
-id textView6
 id textViewBoarderBottom
 id textViewBoarderTop
 id textViewGrid1
@@ -1620,7 +1614,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_boad_popup
 layout activity_board
 layout activity_character
 layout activity_high_score
@@ -1666,7 +1659,6 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
-menu menu_main
 mipmap ic_launcher
 mipmap ic_launcher_round
 string Apartment1

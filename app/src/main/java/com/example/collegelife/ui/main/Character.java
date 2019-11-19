@@ -12,7 +12,6 @@ public class Character implements Serializable {
     private double GPA;
     private int Debt;
     private String Icon;
-    private boolean playState;
     private ImageView CurrentBlock;
 
     // constructor
@@ -22,7 +21,6 @@ public class Character implements Serializable {
         Debt = 0;
         Icon = "";
         CurrentBlock = null;
-        playState = true;
     }
 
 

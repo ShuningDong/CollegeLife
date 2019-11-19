@@ -30,7 +30,6 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.collegelife.ui.main.ScoreActivity" />
-        <activity android:name="com.example.collegelife.ui.main.BoardPopupActivity" />
         <activity android:name="com.example.collegelife.ui.main.BoardActivity" />
         <activity android:name="com.example.collegelife.ui.main.MenuActivity" >
             <intent-filter>

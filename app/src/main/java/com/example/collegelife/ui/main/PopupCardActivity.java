@@ -50,7 +50,6 @@ public class PopupCardActivity extends Activity {
         textView1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT));
         textView1.setText(text);
-        //textView1.setBackgroundColor(0xff66ff66); // hex color 0xAARRGGBB
         textView1.setPadding(20, 20, 20, 20); // in pixels (left, top, right, bottom)
         linearLayout.addView(textView1);
 

@@ -6,20 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.collegelife.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,14 +26,12 @@ public class ScoreActivity extends AppCompatActivity {
     String[] fScores;
     String[] fGpa;
 
-    private FirebaseFirestore mFirestore;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
-        mFirestore = FirebaseFirestore.getInstance();
+        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
 
         DecimalFormat df = new DecimalFormat("#.##");
         names = getIntent().getStringArrayExtra("pname");
@@ -63,7 +57,7 @@ public class ScoreActivity extends AppCompatActivity {
             scores.put("name", names[i]);
             scores.put("debt", Integer.parseInt(fScores[i]));
             scores.put("gpa", Double.parseDouble(fGpa[i]));
-            mFirestore.collection("ranking list").document(names[i])
+            firestore.collection("ranking list").document(names[i])
                     .set(scores)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override

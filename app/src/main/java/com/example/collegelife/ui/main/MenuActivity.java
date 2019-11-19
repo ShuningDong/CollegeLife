@@ -16,7 +16,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import com.example.collegelife.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -85,7 +84,7 @@ public class MenuActivity extends AppCompatActivity {
                     config.locale = Locale.ENGLISH;
                     resources.updateConfiguration(config,dm);
                 }
-                else if (Language_button.isChecked()== false) {
+                else if (!(Language_button.isChecked())) {
                     Log.d(TAG, "Chinese");
                     Language_button.setText("繁體中文");
                     config.locale = Locale.TRADITIONAL_CHINESE;

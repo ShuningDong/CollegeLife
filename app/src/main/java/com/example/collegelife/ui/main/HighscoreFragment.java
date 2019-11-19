@@ -29,6 +29,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -60,6 +61,15 @@ public class HighscoreFragment extends Fragment  {
         DecimalFormat df = new DecimalFormat("#.##");
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // The default cache size threshold is 100 MB. Configure "setCacheSizeBytes"
+        // for a different threshold (minimum 1 MB) or set to "CACHE_SIZE_UNLIMITED"
+        // to disable clean-up.
+        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+                .setCacheSizeBytes(FirebaseFirestoreSettings.CACHE_SIZE_UNLIMITED)
+                .build();
+        db.setFirestoreSettings(settings);
+
         db.collection("ranking list")
                 .orderBy("debt", Query.Direction.DESCENDING)
                 .get()

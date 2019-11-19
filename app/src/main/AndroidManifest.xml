@@ -16,7 +16,6 @@
         android:theme="@style/AppTheme"
         android:largeHeap="true">
         <activity android:name=".ui.main.ScoreActivity"></activity>
-        <activity android:name=".ui.main.BoardPopupActivity" />
         <activity android:name=".ui.main.BoardActivity" />
         <activity android:name=".ui.main.MenuActivity">
             <intent-filter>
