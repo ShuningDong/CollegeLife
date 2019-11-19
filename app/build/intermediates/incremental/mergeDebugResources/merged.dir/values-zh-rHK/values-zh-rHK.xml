@@ -15,6 +15,7 @@
     <string name="Community_1">你參加社會服務</string>
     <string name="Community_2">貢獻社會</string>
     <string name="Community_s">參加社會服務</string>
+    <string name="Debt">债务</string>
     <string name="Debt_d">"  |  債務：$"</string>
     <string name="DropClass_s">退掉课程</string>
     <string name="DropPhone">掉手機</string>
@@ -28,6 +29,7 @@
     <string name="FinalGrad_s">期未成績</string>
     <string name="FinalGrade_1">期未考終於完</string>
     <string name="FinalGrade_2">你收到這樣的成績</string>
+    <string name="GPA">绩点</string>
     <string name="GameClub_1">你入了製作動畫遊戲社團</string>
     <string name="GameClub_2">你開始製作你自己的遊戲</string>
     <string name="Hungry_1">你覺得很餓</string>
@@ -112,6 +114,7 @@
     <string msgid="3441753203274453993" name="common_signin_button_text">"登入"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"透過 Google 登入"</string>
     <string name="current_player">玩家:</string>
+    <string name="dean_list_student">優等生名錄</string>
     <string name="electricityOff_1">啊！你家裹斷電</string>
     <string name="electricityOff_2">你是否沒有交電費？</string>
     <string name="enter_character_name">輸入玩家名稱</string>

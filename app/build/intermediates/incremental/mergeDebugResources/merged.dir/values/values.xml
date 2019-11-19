@@ -714,7 +714,7 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="current_player">Current Player:</string>
-    <string name="dean_list_student" translatable="false">Dean List Student</string>
+    <string name="dean_list_student">Dean List Student</string>
     <string name="default_web_client_id" translatable="false">605711992926-c17js4aplrjt3ktbuaj2je649a7124em.apps.googleusercontent.com</string>
     <string name="delete_high_scores" translatable="false">delete high scores</string>
     <string name="desc" translatable="false">Image</string>
