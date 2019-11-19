@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="Apartment1">你不可以在爸媽一起住</string>
+    <string name="Apartment2">你要租間屋</string>
+    <string name="ApplyScholarship_1">你想還債</string>
+    <string name="ApplyScholarship_2">你正在申請獎學金</string>
+    <string name="ApplyScholarship_s">申請獎學金</string>
+    <string name="ButPet_s">寵物寵物</string>
+    <string name="BuyCar_1">你哪裡都去不了</string>
+    <string name="BuyCar_2">你要買車</string>
+    <string name="BuyCar_s">買車</string>
+    <string name="BuyDog_1">你覺得好寂寞</string>
+    <string name="BuyDog_2">你念住買隻狗</string>
+    <string name="BuyFood_s">購買食物</string>
+    <string name="Community_1">你參加社會服務</string>
+    <string name="Community_2">貢獻社會</string>
+    <string name="Community_s">參加社會服務</string>
+    <string name="Debt_d">"  |  債務：$"</string>
+    <string name="DropClass_s">退掉课程</string>
+    <string name="DropPhone">掉手機</string>
+    <string name="DropPhone_1">啊！你掉了你的手機</string>
+    <string name="DropPhone_2">你的手機觸摸屏不能操作</string>
+    <string name="FailMidterm_1">你考試不合格</string>
+    <string name="FailMidterm_2">你要重讀</string>
+    <string name="FallTrip_s">秋假旅行</string>
+    <string name="Fall_1">終於秋假</string>
+    <string name="Fall_2">你去芝加哥玩！</string>
+    <string name="FinalGrad_s">期未成績</string>
+    <string name="FinalGrade_1">期未考終於完</string>
+    <string name="FinalGrade_2">你收到這樣的成績</string>
+    <string name="GameClub_1">你入了製作動畫遊戲社團</string>
+    <string name="GameClub_2">你開始製作你自己的遊戲</string>
+    <string name="Hungry_1">你覺得很餓</string>
+    <string name="Hungry_2">你去超市買食物</string>
+    <string name="JoinClub_s">入社團</string>
+    <string name="MaxPlayer">太多玩家！</string>
+    <string name="MissClass_1">你睡過了</string>
+    <string name="MissClass_2">你沒有上那堂很重要的班</string>
+    <string name="MissClass_s">缺課</string>
+    <string name="MobileClub1">你参加了製作手機app社團</string>
+    <string name="MobileClub2">你開始製作你自己的應用程式</string>
+    <string name="Name">名字:</string>
+    <string name="NeedLogo">每個玩家都需要一個標誌！</string>
+    <string name="NeedName">輸入名字！</string>
+    <string name="PayRent_s">付房租</string>
+    <string name="PetSick_1">你可愛的狗病了</string>
+    <string name="PetSick_2">你要帶他去動物醫院</string>
+    <string name="PetSick_s">寵物生病</string>
+    <string name="PrePet">如果你有買狗</string>
+    <string name="PreRentHome">如果你有租房住</string>
+    <string name="RegClass_s">註冊課程</string>
+    <string name="RentApart_s">租房</string>
+    <string name="RentRemind_1">不要忘記你的租金</string>
+    <string name="RentRemind_2">你不再住在父母家</string>
+    <string name="SecondSem_1">第二學期！</string>
+    <string name="SecondSem_2">又要報名上課</string>
+    <string name="SingInPlease">請登錄</string>
+    <string name="SpringTrip_s">春假旅行</string>
+    <string name="Spring_1">終於春假</string>
+    <string name="Spring_2">你去左芝加哥玩！</string>
+    <string name="Utilities_s">支付水電費賬單</string>
+    <string name="Welcome_1">歡迎！！</string>
+    <string name="Welcome_2">你要報名上学</string>
+    <string msgid="7903180715631665059" name="abc_action_bar_home_description">"瀏覽主頁"</string>
+    <string msgid="6794660482873516081" name="abc_action_bar_up_description">"向上瀏覽"</string>
+    <string msgid="1155814932213556626" name="abc_action_menu_overflow_description">"更多選項"</string>
+    <string msgid="2571498368472823490" name="abc_action_mode_done">"完成"</string>
+    <string msgid="3732416590524162402" name="abc_activity_chooser_view_see_all">"查看全部"</string>
+    <string msgid="1798588241954930982" name="abc_activitychooserview_choose_application">"選擇應用程式"</string>
+    <string msgid="3403923230105792483" name="abc_capital_off">"關閉"</string>
+    <string msgid="7831734969929204599" name="abc_capital_on">"開啟"</string>
+    <string msgid="5725160506500770567" name="abc_menu_alt_shortcut_label">"Alt +"</string>
+    <string msgid="944415252197684443" name="abc_menu_ctrl_shortcut_label">"Ctrl +"</string>
+    <string msgid="129742188101734366" name="abc_menu_delete_shortcut_label">"刪除"</string>
+    <string msgid="6840127756824236027" name="abc_menu_enter_shortcut_label">"Enter 鍵"</string>
+    <string msgid="4974283687810130415" name="abc_menu_function_shortcut_label">"Fn +"</string>
+    <string msgid="8046416353848716905" name="abc_menu_meta_shortcut_label">"Meta +"</string>
+    <string msgid="3271697756921353410" name="abc_menu_shift_shortcut_label">"Shift +"</string>
+    <string msgid="2304645930658438191" name="abc_menu_space_shortcut_label">"空白鍵"</string>
+    <string msgid="8327365089695024394" name="abc_menu_sym_shortcut_label">"Sym +"</string>
+    <string msgid="3570106412128999382" name="abc_prepend_shortcut_label">"Menu +"</string>
+    <string msgid="940844115270746197" name="abc_search_hint">"搜尋…"</string>
+    <string msgid="1769270744562318534" name="abc_searchview_description_clear">"清除查詢"</string>
+    <string msgid="908784302972860853" name="abc_searchview_description_query">"搜尋查詢"</string>
+    <string msgid="5466662225065974044" name="abc_searchview_description_search">"搜尋"</string>
+    <string msgid="8203855622131699655" name="abc_searchview_description_submit">"提交查詢"</string>
+    <string msgid="3478748990613108725" name="abc_searchview_description_voice">"語音搜尋"</string>
+    <string msgid="2650565705514630347" name="abc_shareactionprovider_share_with">"分享對象"</string>
+    <string msgid="9009661856846212431" name="abc_shareactionprovider_share_with_application">"使用「<ns1:g id="APPLICATION_NAME">%s</ns1:g>」分享"</string>
+    <string msgid="6389460216547290468" name="abc_toolbar_collapse_description">"收合"</string>
+    <string name="action_settings">設定</string>
+    <string name="app_name">大學生活</string>
+    <string name="choose_your_logo">選擇您的標誌</string>
+    <string name="click_the_button_below_to_spin">單擊下面按鈕旋轉！</string>
+    <string name="college_life">大學生活</string>
+    <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"啟用"</string>
+    <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"您必須啟用 Google Play 服務，方可執行「<ns1:g id="APP_NAME">%1$s</ns1:g>」。"</string>
+    <string msgid="3147157405986503375" name="common_google_play_services_enable_title">"啟用 Google Play 服務"</string>
+    <string msgid="9115728400623041681" name="common_google_play_services_install_button">"安裝"</string>
+    <string msgid="8179894293032530091" name="common_google_play_services_install_text">"您的裝置尚未安裝 Google Play 服務，因此無法執行「<ns1:g id="APP_NAME">%1$s</ns1:g>」。"</string>
+    <string msgid="7442193194585196676" name="common_google_play_services_install_title">"安裝 Google Play 服務"</string>
+    <string msgid="4293541511340436975" name="common_google_play_services_notification_channel_name">"Google Play 服務的適用範圍"</string>
+    <string msgid="180394615667698242" name="common_google_play_services_notification_ticker">"Google Play 服務錯誤"</string>
+    <string msgid="2518680582564677258" name="common_google_play_services_unknown_issue">"「<ns1:g id="APP_NAME">%1$s</ns1:g>」存取 Google Play 服務時發生問題。請稍後再試一次。"</string>
+    <string msgid="5501187292256987189" name="common_google_play_services_unsupported_text">"您的裝置不支援 Google Play 服務，因此無法執行「<ns1:g id="APP_NAME">%1$s</ns1:g>」。"</string>
+    <string msgid="8172070149091615356" name="common_google_play_services_update_button">"更新"</string>
+    <string msgid="7773943415006962566" name="common_google_play_services_update_text">"您必須更新「Google Play 服務」，才能執行 <ns1:g id="APP_NAME">%1$s</ns1:g>。"</string>
+    <string msgid="8706675115216073244" name="common_google_play_services_update_title">"更新 Google Play 服務"</string>
+    <string msgid="7894275749778928941" name="common_google_play_services_updating_text">"正在更新 Google Play 服務，更新完成後方可執行「<ns1:g id="APP_NAME">%1$s</ns1:g>」。"</string>
+    <string msgid="2804989272736383918" name="common_google_play_services_wear_update_text">"需要使用新版本的 Google Play 服務。更新會即將自動開始。"</string>
+    <string msgid="5201977337835724196" name="common_open_on_phone">"在手機開啟"</string>
+    <string msgid="3441753203274453993" name="common_signin_button_text">"登入"</string>
+    <string msgid="669893613918351210" name="common_signin_button_text_long">"透過 Google 登入"</string>
+    <string name="current_player">玩家:</string>
+    <string name="electricityOff_1">啊！你家裹斷電</string>
+    <string name="electricityOff_2">你是否沒有交電費？</string>
+    <string name="enter_character_name">輸入玩家名稱</string>
+    <string name="happy_graduation">祝賀畢業</string>
+    <string name="highscores">排行榜</string>
+    <string msgid="6301633601645100427" name="nav_app_bar_navigate_up_description">"向上導覽"</string>
+    <string msgid="7456070600745802113" name="nav_app_bar_open_drawer_description">"開啟導覽列"</string>
+    <string name="next_player">下個玩家</string>
+    <string msgid="730395136688082741" name="search_menu_title">"搜尋"</string>
+    <string name="start">開始</string>
+    <string name="start_game">開始遊戲</string>
+    <string msgid="8106346172024741305" name="status_bar_notification_info_overflow">"999+"</string>
+</resources>
