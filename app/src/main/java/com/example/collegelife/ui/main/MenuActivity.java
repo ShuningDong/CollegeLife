@@ -83,14 +83,12 @@ public class MenuActivity extends AppCompatActivity {
                 if (Language_button.isChecked()) {
                     Log.d(TAG, "English");
                     Language_button.setText("English");
-                    //config.locale = Locale.ENGLISH;
                     config.setLocale(Locale.ENGLISH);
                     resources.updateConfiguration(config,dm);
                 }
                 else if (!(Language_button.isChecked())) {
                     Log.d(TAG, "Chinese");
                     Language_button.setText("繁體中文");
-                    //config.locale = Locale.TRADITIONAL_CHINESE;
                     config.setLocale(Locale.TRADITIONAL_CHINESE);
                     resources.updateConfiguration(config,dm);
                 }
@@ -157,7 +155,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
+        updateUI(currentUser);
         Log.d(TAG, "onStart is called");
     }
 

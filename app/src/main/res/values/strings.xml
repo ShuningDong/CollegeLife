@@ -44,7 +44,7 @@
     <string name="Club" translatable="false">Club</string>
     <string name="Diamond" translatable="false">Diamond</string>
     <string name="update_lowest" translatable="false">update lowest</string>
-    <string name="dean_list_student" translatable="false">Dean List Student</string>
+    <string name="dean_list_student">Dean List Student</string>
     <string name="spin" translatable="false">SPIN</string>
     <string name="spinboard" translatable="false">spinboard</string>
     <string name="pointer" translatable="false">pointer</string>
