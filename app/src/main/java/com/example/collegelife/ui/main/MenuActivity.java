@@ -78,15 +78,20 @@ public class MenuActivity extends AppCompatActivity {
 
 
                 TextView gameName = findViewById(R.id.game_name);
+                TextView startGame = findViewById(R.id.start_button);
                 if (Language_button.isChecked()) {
                     Log.d(TAG, "English");
                     Language_button.setText("English");
+                    gameName.setText("College Life");
+                    startGame.setText("Start");
                     config.locale = Locale.ENGLISH;
                     resources.updateConfiguration(config,dm);
                 }
                 else if (!(Language_button.isChecked())) {
                     Log.d(TAG, "Chinese");
                     Language_button.setText("繁體中文");
+                    gameName.setText("大学生活");
+                    startGame.setText("开始");
                     config.locale = Locale.TRADITIONAL_CHINESE;
                     resources.updateConfiguration(config,dm);
                 }

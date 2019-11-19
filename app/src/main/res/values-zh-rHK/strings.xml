@@ -75,4 +75,6 @@
     <string name="SingInPlease">請登錄</string>
     <string name="Name">名字:</string>
     <string name="Debt_d">"  |  債務：$"</string>
+    <string name="GPA">绩点</string>
+    <string name="Debt">债务</string>
 </resources>

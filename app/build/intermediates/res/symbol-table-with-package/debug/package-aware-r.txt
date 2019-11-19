@@ -1679,6 +1679,7 @@ string Community_1
 string Community_2
 string Community_s
 string Debt
+string Debt_d
 string Diamond
 string DropClass_s
 string DropPhone
@@ -1706,6 +1707,7 @@ string MissClass_2
 string MissClass_s
 string MobileClub1
 string MobileClub2
+string Name
 string NeedLogo
 string NeedName
 string PayRent_s
@@ -1720,6 +1722,7 @@ string RentRemind_1
 string RentRemind_2
 string SecondSem_1
 string SecondSem_2
+string SingInPlease
 string Spade
 string SpringTrip_s
 string Spring_1
