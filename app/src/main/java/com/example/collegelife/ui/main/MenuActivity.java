@@ -7,9 +7,11 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.text.style.UpdateLayout;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Switch;
@@ -81,16 +83,26 @@ public class MenuActivity extends AppCompatActivity {
                 if (Language_button.isChecked()) {
                     Log.d(TAG, "English");
                     Language_button.setText("English");
-                    config.locale = Locale.ENGLISH;
+                    //config.locale = Locale.ENGLISH;
+                    config.setLocale(Locale.ENGLISH);
                     resources.updateConfiguration(config,dm);
                 }
                 else if (!(Language_button.isChecked())) {
                     Log.d(TAG, "Chinese");
                     Language_button.setText("繁體中文");
-                    config.locale = Locale.TRADITIONAL_CHINESE;
+                    //config.locale = Locale.TRADITIONAL_CHINESE;
+                    config.setLocale(Locale.TRADITIONAL_CHINESE);
                     resources.updateConfiguration(config,dm);
                 }
 
+
+                TextView textView1 = (TextView) findViewById(R.id.highscore_button);
+                TextView textView2 = (TextView) findViewById(R.id.game_name);
+                TextView textView3 = (TextView) findViewById(R.id.start_button);
+                textView1.setText(R.string.highscores);
+                textView2.setText(R.string.college_life);
+                textView3.setText(R.string.start);
+                //setContentView(R.layout.activity_menu);
             }
         });
 
@@ -145,7 +157,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        //updateUI(currentUser);
         Log.d(TAG, "onStart is called");
     }
 
