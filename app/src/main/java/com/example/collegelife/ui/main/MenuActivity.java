@@ -73,7 +73,7 @@ public class MenuActivity extends AppCompatActivity {
         {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) //Line A
             {
-                Locale curLocale = getResources().getConfiguration().locale;
+                //Locale curLocale = getResources().getConfiguration().locale;
                 Resources resources = getResources();
                 Configuration config = resources.getConfiguration();
                 DisplayMetrics dm = resources.getDisplayMetrics();

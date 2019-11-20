@@ -1,7 +1,5 @@
 package com.example.collegelife.ui.main;
 
-
-import android.util.Log;
 import android.util.SparseArray;
 
 import java.util.ArrayList;
@@ -12,10 +10,6 @@ class Game {
     private SparseArray<Character> characters;
     private Character currentPlayer;
     private int size;
-
-    private static final String TAG = "Game_logic";
-
-
 
     // constructor
     Game( SparseArray<Character> players) {

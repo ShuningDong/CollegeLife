@@ -1,7 +1,6 @@
 package com.example.collegelife.ui.main;
 
 import java.text.DecimalFormat;
-import java.util.Objects;
 
 import android.os.Bundle;
 

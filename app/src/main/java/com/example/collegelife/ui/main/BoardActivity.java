@@ -1,6 +1,5 @@
 package com.example.collegelife.ui.main;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -307,10 +306,11 @@ public class BoardActivity extends AppCompatActivity {
                 break;
             case (25):
                 winners = game.getWinners();
-                String[] names = new String[winners.size()];
-                String[] fScores = new String[winners.size()];
-                String[] fGpa = new String[winners.size()];
-                for (int i = 0; i < winners.size(); i++) {
+                int w_size = winners.size();
+                String[] names = new String[w_size];
+                String[] fScores = new String[w_size];
+                String[] fGpa = new String[w_size];
+                for (int i = 0; i < w_size; i++) {
                     Character p = winners.get(i);
                     names[i] = p.getName();
                     fScores[i] = p.getDebt();

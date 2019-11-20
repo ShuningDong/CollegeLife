@@ -205,6 +205,7 @@ public class CharacterFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
+        getActivity().finish();
         Log.d(TAG, "onStop is called");
     }
 
