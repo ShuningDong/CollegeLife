@@ -131,6 +131,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void signIn() {
+
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -172,6 +173,8 @@ public class MenuActivity extends AppCompatActivity {
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
+                Toast.makeText(this, "Please check network connection.\n" +
+                        "Must have internet connection to sign in.", Toast.LENGTH_SHORT).show();
                 // ...
             }
         }
