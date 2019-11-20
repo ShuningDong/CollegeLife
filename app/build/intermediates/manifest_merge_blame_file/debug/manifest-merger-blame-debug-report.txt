@@ -6,184 +6,184 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="19"
-8-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml
+8-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml
+9-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml
 10
 11    <uses-feature
-11-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:5:5-7:35
+11-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:5:5-7:35
 12        android:name="android.hardware.sensor.accelerometer"
-12-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:6:9-61
+12-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:6:9-61
 13        android:required="true" /> <!-- To access Google+ APIs: -->
-13-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:7:9-32
+13-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:7:9-32
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:8:5-67
-14-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:8:22-64
+14-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:8:5-67
+14-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:8:22-64
 15
 16    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 17    <!-- <uses-sdk android:minSdkVersion="14" /> -->
 18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-18-->[com.google.firebase:firebase-firestore:21.3.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/3e271154d24da9d1cc46d0a915dd3eba/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:13:5-79
-18-->[com.google.firebase:firebase-firestore:21.3.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/3e271154d24da9d1cc46d0a915dd3eba/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:13:22-76
+18-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\dd2b2d55f21d03abc10341ec4be2a6f9\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:13:5-79
+18-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\dd2b2d55f21d03abc10341ec4be2a6f9\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:13:22-76
 19
 20    <application
-20-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:10:5-33:19
+20-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:10:5-33:19
 21        android:name="androidx.multidex.MultiDexApplication"
 22        android:allowBackup="true"
-22-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:11:9-35
+22-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:11:9-35
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/3bcafbc2e95e113b9db4402c8bff255d/core-1.1.0/AndroidManifest.xml:24:18-86
+23-->[androidx.core:core:1.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\3bcafbc2e95e113b9db4402c8bff255d\core-1.1.0\AndroidManifest.xml:24:18-86
 24        android:debuggable="true"
 25        android:icon="@mipmap/ic_launcher"
-25-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:12:9-43
+25-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:12:9-43
 26        android:label="@string/app_name"
-26-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:13:9-41
+26-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:13:9-41
 27        android:largeHeap="true"
-27-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:17:9-33
+27-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:17:9-33
 28        android:roundIcon="@mipmap/ic_launcher_round"
-28-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:14:9-54
+28-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:14:9-54
 29        android:supportsRtl="true"
-29-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:15:9-35
+29-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:15:9-35
 30        android:theme="@style/AppTheme" >
-30-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:16:9-40
+30-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:16:9-40
 31        <activity android:name="com.example.collegelife.ui.main.ScoreActivity" />
-31-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:18:9-68
-31-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:18:19-56
+31-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:18:9-68
+31-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:18:19-56
 32        <activity android:name="com.example.collegelife.ui.main.BoardActivity" />
-32-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:19:9-59
-32-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:19:19-56
+32-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:19:9-59
+32-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:19:19-56
 33        <activity android:name="com.example.collegelife.ui.main.MenuActivity" >
-33-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:20:9-26:20
-33-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:20:19-55
+33-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:20:9-26:20
+33-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:20:19-55
 34            <intent-filter>
-34-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:21:13-25:29
+34-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:21:13-25:29
 35                <action android:name="android.intent.action.MAIN" />
-35-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:22:17-69
-35-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:22:25-66
+35-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:22:17-69
+35-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:22:25-66
 36
 37                <category android:name="android.intent.category.LAUNCHER" />
-37-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:24:17-77
-37-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:24:27-74
+37-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:24:17-77
+37-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:24:27-74
 38            </intent-filter>
 39        </activity>
 40        <activity android:name="com.example.collegelife.ui.main.HighscoreActivity" />
-40-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:27:9-63
-40-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:27:19-60
+40-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:27:9-63
+40-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:27:19-60
 41        <activity
-41-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:28:9-30:53
+41-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:28:9-30:53
 42            android:name="com.example.collegelife.ui.main.PopupCardActivity"
-42-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:29:13-54
+42-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:29:13-54
 43            android:theme="@style/AppTheme.PopMe" />
-43-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:30:13-50
+43-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:30:13-50
 44        <activity android:name="com.example.collegelife.ui.main.CharacterActivity" />
-44-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:31:9-63
-44-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:31:19-60
+44-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:31:9-63
+44-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:31:19-60
 45        <activity android:name="com.example.collegelife.ui.main.SpinboardActivity" />
-45-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:32:9-63
-45-->/Users/keikei0709/CollegeLife/app/src/main/AndroidManifest.xml:32:19-60
+45-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:32:9-63
+45-->C:\Users\shuni\StudioProjects\CollegeLife3\app\src\main\AndroidManifest.xml:32:19-60
 46        <activity
-46-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:24:9-31:50
+46-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:24:9-31:50
 47            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-47-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:25:13-85
+47-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:25:13-85
 48            android:excludeFromRecents="true"
-48-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:26:13-46
+48-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:26:13-46
 49            android:exported="true"
-49-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:27:13-36
+49-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:27:13-36
 50            android:launchMode="singleTask"
-50-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:28:13-44
+50-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:28:13-44
 51            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-51-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:29:13-102
+51-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:29:13-102
 52            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-52-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:30:13-72
+52-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:30:13-72
 53
 54        <service
-54-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:33:9-39:19
+54-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:33:9-39:19
 55            android:name="com.google.firebase.components.ComponentDiscoveryService"
-55-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:34:13-84
+55-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:34:13-84
 56            android:directBootAware="true"
-56-->[com.google.firebase:firebase-common:19.3.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/0ed905aa2f55416ace945d48da16f4d1/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+56-->[com.google.firebase:firebase-common:19.3.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\d994b69047e20920c1b2337cd76dffc3\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
 57            android:exported="false" >
-57-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:35:13-37
+57-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:35:13-37
 58            <meta-data
-58-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:36:13-38:85
+58-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:36:13-38:85
 59                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-59-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:37:17-109
+59-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:37:17-109
 60                android:value="com.google.firebase.components.ComponentRegistrar" />
-60-->[com.google.firebase:firebase-auth:19.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:38:17-82
+60-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:38:17-82
 61            <meta-data
-61-->[com.google.firebase:firebase-firestore:21.3.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/3e271154d24da9d1cc46d0a915dd3eba/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:20:13-22:85
+61-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\dd2b2d55f21d03abc10341ec4be2a6f9\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:20:13-22:85
 62                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-62-->[com.google.firebase:firebase-firestore:21.3.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/3e271154d24da9d1cc46d0a915dd3eba/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:21:17-111
+62-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\dd2b2d55f21d03abc10341ec4be2a6f9\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:21:17-111
 63                android:value="com.google.firebase.components.ComponentRegistrar" />
-63-->[com.google.firebase:firebase-firestore:21.3.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/3e271154d24da9d1cc46d0a915dd3eba/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:22:17-82
+63-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\dd2b2d55f21d03abc10341ec4be2a6f9\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:22:17-82
 64            <meta-data
-64-->[com.google.firebase:firebase-database:19.2.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/829c2c9fef73b753e2e0084cf78085fb/firebase-database-19.2.0/AndroidManifest.xml:32:13-34:85
+64-->[com.google.firebase:firebase-database:19.2.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\829c2c9fef73b753e2e0084cf78085fb\firebase-database-19.2.0\AndroidManifest.xml:32:13-34:85
 65                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-65-->[com.google.firebase:firebase-database:19.2.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/829c2c9fef73b753e2e0084cf78085fb/firebase-database-19.2.0/AndroidManifest.xml:33:17-109
+65-->[com.google.firebase:firebase-database:19.2.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\829c2c9fef73b753e2e0084cf78085fb\firebase-database-19.2.0\AndroidManifest.xml:33:17-109
 66                android:value="com.google.firebase.components.ComponentRegistrar" />
-66-->[com.google.firebase:firebase-database:19.2.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/829c2c9fef73b753e2e0084cf78085fb/firebase-database-19.2.0/AndroidManifest.xml:34:17-82
+66-->[com.google.firebase:firebase-database:19.2.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\829c2c9fef73b753e2e0084cf78085fb\firebase-database-19.2.0\AndroidManifest.xml:34:17-82
 67        </service>
 68
 69        <activity
-69-->[com.google.android.gms:play-services-auth:17.0.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/f93910dcc4bbfd964f949e2ecee79f63/play-services-auth-17.0.0/AndroidManifest.xml:23:9-27:75
+69-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\f93910dcc4bbfd964f949e2ecee79f63\play-services-auth-17.0.0\AndroidManifest.xml:23:9-27:75
 70            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-70-->[com.google.android.gms:play-services-auth:17.0.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/f93910dcc4bbfd964f949e2ecee79f63/play-services-auth-17.0.0/AndroidManifest.xml:24:13-93
+70-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\f93910dcc4bbfd964f949e2ecee79f63\play-services-auth-17.0.0\AndroidManifest.xml:24:13-93
 71            android:excludeFromRecents="true"
-71-->[com.google.android.gms:play-services-auth:17.0.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/f93910dcc4bbfd964f949e2ecee79f63/play-services-auth-17.0.0/AndroidManifest.xml:25:13-46
+71-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\f93910dcc4bbfd964f949e2ecee79f63\play-services-auth-17.0.0\AndroidManifest.xml:25:13-46
 72            android:exported="false"
-72-->[com.google.android.gms:play-services-auth:17.0.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/f93910dcc4bbfd964f949e2ecee79f63/play-services-auth-17.0.0/AndroidManifest.xml:26:13-37
+72-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\f93910dcc4bbfd964f949e2ecee79f63\play-services-auth-17.0.0\AndroidManifest.xml:26:13-37
 73            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-73-->[com.google.android.gms:play-services-auth:17.0.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/f93910dcc4bbfd964f949e2ecee79f63/play-services-auth-17.0.0/AndroidManifest.xml:27:13-72
+73-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\f93910dcc4bbfd964f949e2ecee79f63\play-services-auth-17.0.0\AndroidManifest.xml:27:13-72
 74        <!--
 75            Service handling Google Sign-In user revocation. For apps that do not integrate with
 76            Google Sign-In, this service will never be started.
 77        -->
 78        <service
-78-->[com.google.android.gms:play-services-auth:17.0.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/f93910dcc4bbfd964f949e2ecee79f63/play-services-auth-17.0.0/AndroidManifest.xml:33:9-36:110
+78-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\f93910dcc4bbfd964f949e2ecee79f63\play-services-auth-17.0.0\AndroidManifest.xml:33:9-36:110
 79            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-79-->[com.google.android.gms:play-services-auth:17.0.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/f93910dcc4bbfd964f949e2ecee79f63/play-services-auth-17.0.0/AndroidManifest.xml:34:13-89
+79-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\f93910dcc4bbfd964f949e2ecee79f63\play-services-auth-17.0.0\AndroidManifest.xml:34:13-89
 80            android:exported="true"
-80-->[com.google.android.gms:play-services-auth:17.0.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/f93910dcc4bbfd964f949e2ecee79f63/play-services-auth-17.0.0/AndroidManifest.xml:35:13-36
+80-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\f93910dcc4bbfd964f949e2ecee79f63\play-services-auth-17.0.0\AndroidManifest.xml:35:13-36
 81            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-81-->[com.google.android.gms:play-services-auth:17.0.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/f93910dcc4bbfd964f949e2ecee79f63/play-services-auth-17.0.0/AndroidManifest.xml:36:13-107
+81-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\f93910dcc4bbfd964f949e2ecee79f63\play-services-auth-17.0.0\AndroidManifest.xml:36:13-107
 82
 83        <activity
-83-->[com.google.android.gms:play-services-base:17.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/cfafb781a345d3f54848aefef9b2f0c0/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+83-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\cfafb781a345d3f54848aefef9b2f0c0\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
 84            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-84-->[com.google.android.gms:play-services-base:17.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/cfafb781a345d3f54848aefef9b2f0c0/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+84-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\cfafb781a345d3f54848aefef9b2f0c0\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
 85            android:exported="false"
-85-->[com.google.android.gms:play-services-base:17.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/cfafb781a345d3f54848aefef9b2f0c0/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+85-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\cfafb781a345d3f54848aefef9b2f0c0\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
 86            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-86-->[com.google.android.gms:play-services-base:17.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/cfafb781a345d3f54848aefef9b2f0c0/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+86-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\cfafb781a345d3f54848aefef9b2f0c0\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
 87
 88        <provider
-88-->[com.google.firebase:firebase-common:19.3.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/0ed905aa2f55416ace945d48da16f4d1/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+88-->[com.google.firebase:firebase-common:19.3.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\d994b69047e20920c1b2337cd76dffc3\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
 89            android:name="com.google.firebase.provider.FirebaseInitProvider"
-89-->[com.google.firebase:firebase-common:19.3.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/0ed905aa2f55416ace945d48da16f4d1/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+89-->[com.google.firebase:firebase-common:19.3.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\d994b69047e20920c1b2337cd76dffc3\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
 90            android:authorities="com.example.collegelife.ui.main.firebaseinitprovider"
-90-->[com.google.firebase:firebase-common:19.3.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/0ed905aa2f55416ace945d48da16f4d1/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+90-->[com.google.firebase:firebase-common:19.3.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\d994b69047e20920c1b2337cd76dffc3\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
 91            android:exported="false"
-91-->[com.google.firebase:firebase-common:19.3.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/0ed905aa2f55416ace945d48da16f4d1/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+91-->[com.google.firebase:firebase-common:19.3.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\d994b69047e20920c1b2337cd76dffc3\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
 92            android:initOrder="100" />
-92-->[com.google.firebase:firebase-common:19.3.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/0ed905aa2f55416ace945d48da16f4d1/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+92-->[com.google.firebase:firebase-common:19.3.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\d994b69047e20920c1b2337cd76dffc3\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
 93
 94        <meta-data
-94-->[com.google.android.gms:play-services-basement:17.0.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/b1e1464c7c4580becd9dd26282841741/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+94-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\f2369491e982ebe2d6aeca65ad606e26\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
 95            android:name="com.google.android.gms.version"
-95-->[com.google.android.gms:play-services-basement:17.0.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/b1e1464c7c4580becd9dd26282841741/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+95-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\f2369491e982ebe2d6aeca65ad606e26\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
 96            android:value="@integer/google_play_services_version" />
-96-->[com.google.android.gms:play-services-basement:17.0.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/b1e1464c7c4580becd9dd26282841741/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+96-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\f2369491e982ebe2d6aeca65ad606e26\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 97
 98        <provider
-98-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/fcbb5637981c91962c76ae8e32c4b0ef/lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
+98-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\fcbb5637981c91962c76ae8e32c4b0ef\lifecycle-process-2.1.0\AndroidManifest.xml:23:9-27:43
 99            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-99-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/fcbb5637981c91962c76ae8e32c4b0ef/lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
+99-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\fcbb5637981c91962c76ae8e32c4b0ef\lifecycle-process-2.1.0\AndroidManifest.xml:24:13-79
 100            android:authorities="com.example.collegelife.ui.main.lifecycle-process"
-100-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/fcbb5637981c91962c76ae8e32c4b0ef/lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
+100-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\fcbb5637981c91962c76ae8e32c4b0ef\lifecycle-process-2.1.0\AndroidManifest.xml:25:13-69
 101            android:exported="false"
-101-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/fcbb5637981c91962c76ae8e32c4b0ef/lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
+101-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\fcbb5637981c91962c76ae8e32c4b0ef\lifecycle-process-2.1.0\AndroidManifest.xml:26:13-37
 102            android:multiprocess="true" />
-102-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/keikei0709/.gradle/caches/transforms-2/files-2.1/fcbb5637981c91962c76ae8e32c4b0ef/lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
+102-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\shuni\.gradle\caches\transforms-2\files-2.1\fcbb5637981c91962c76ae8e32c4b0ef\lifecycle-process-2.1.0\AndroidManifest.xml:27:13-40
 103    </application>
 104
 105</manifest>
