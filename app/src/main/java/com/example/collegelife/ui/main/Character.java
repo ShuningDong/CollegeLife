@@ -3,8 +3,6 @@ package com.example.collegelife.ui.main;
 import android.widget.ImageView;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Character implements Serializable {
 
@@ -30,26 +28,26 @@ public class Character implements Serializable {
         return this.Name;
     }
 
-    public String getGPA(){
+    String getGPA(){
         String gpa = "";
         gpa += this.GPA;
         return gpa;
     }
 
-    public void setGPA(int gpa){
+    void setGPA(int gpa){
         double temp = this.GPA;
         this.GPA = (temp + gpa)/2;
     }
 
-    public String getDebt(){
+    String getDebt(){
         return "" + this.Debt;
     }
 
-    public void addDebt(double amount){
+    void addDebt(double amount){
         this.Debt -= amount;
     }
 
-    public void subtractDebt(double amount){
+    void subtractDebt(double amount){
         this.Debt += amount;
     }
 

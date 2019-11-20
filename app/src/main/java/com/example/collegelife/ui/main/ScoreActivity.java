@@ -43,6 +43,7 @@ public class ScoreActivity extends AppCompatActivity {
             String debt = fScores[i];
             assert fGpa != null;
             String gpa = fGpa[i];
+            Log.d(TAG, "name " + name);
             String data = ("Name: " + name + " | GPA: " + df.format(Double.parseDouble(gpa)) + " | Debt: " + debt);
 
             TableLayout s = this.findViewById(R.id.Score);

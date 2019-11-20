@@ -1131,13 +1131,8 @@ drawable design_snackbar_background
 drawable diamond
 drawable dog
 drawable exit
-drawable game_image
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
-drawable grid
-drawable grid1
-drawable grid2
-drawable grid3
 drawable heart
 drawable home
 drawable ic_launcher_background
@@ -1151,7 +1146,6 @@ drawable ic_plusone_standard_off_client
 drawable ic_plusone_tall_off_client
 drawable ic_school_black_24dp
 drawable ic_settings_applications_black_24dp
-drawable images
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1174,12 +1168,9 @@ drawable player4
 drawable pointer
 drawable pop_bg
 drawable spade
-drawable spinboard
 drawable spinboard2
-drawable start
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
-drawable untitled
 id ALT
 id CTRL
 id ClubButton

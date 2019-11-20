@@ -28,15 +28,15 @@ public class SpinboardActivity extends AppCompatActivity {
     TextView textView;
     ImageView spinboard2;
 
-    private float acelVal; //current acceleration value and gravity.
-    private float acelLast;  //last acceleration value and gravity.
-    private float shake;  //acceleration value differ from gravity.
+    private double acelVal; //current acceleration value and gravity.
+    private double acelLast;  //last acceleration value and gravity.
+    private double shake;  //acceleration value differ from gravity.
 
     Random r;
 
     int degree = 0, degree_old = 0;
 
-    private static final float FACTOR = 45.0f;
+    private static final double FACTOR = 45.0f;
 
 
 
@@ -64,13 +64,13 @@ public class SpinboardActivity extends AppCompatActivity {
     private final SensorEventListener sensorListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent sensorEvent) {
-            float x = sensorEvent.values[0];
-            float y = sensorEvent.values[1];
-            float z = sensorEvent.values[2];
+            double x = sensorEvent.values[0];
+            double y = sensorEvent.values[1];
+            double z = sensorEvent.values[2];
 
             acelLast = acelVal;
-            acelVal = (float) Math.sqrt((double) (x*x+y*y+z*z));
-            float delta = acelVal-acelLast;
+            acelVal = Math.sqrt(x*x+y*y+z*z);
+            double delta = acelVal-acelLast;
             shake = shake * 0.9f + delta;
 
             if(shake > 12){
@@ -93,11 +93,6 @@ public class SpinboardActivity extends AppCompatActivity {
                         String showNum = "" + currNum;
                         textView.setText(showNum);
 
-/*                        try {
-                            Thread.sleep(200);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }*/
                         Intent sendRes = new Intent();
                         sendRes.putExtra("spin", currNum);
                         setResult(0, sendRes);

@@ -78,9 +78,6 @@ public class MenuActivity extends AppCompatActivity {
                 Configuration config = resources.getConfiguration();
                 DisplayMetrics dm = resources.getDisplayMetrics();
 
-
-                TextView gameName = findViewById(R.id.game_name);
-                TextView startGame = findViewById(R.id.start_button);
                 if (Language_button.isChecked()) {
                     Log.d(TAG, "English");
                     Language_button.setText("English");
@@ -95,12 +92,12 @@ public class MenuActivity extends AppCompatActivity {
                 }
 
 
-                TextView textView1 = (TextView) findViewById(R.id.highscore_button);
-                TextView textView2 = (TextView) findViewById(R.id.game_name);
-                TextView textView3 = (TextView) findViewById(R.id.start_button);
-                textView1.setText(R.string.highscores);
-                textView2.setText(R.string.college_life);
-                textView3.setText(R.string.start);
+                TextView highscore_txt = findViewById(R.id.highscore_button);
+                TextView gameName = findViewById(R.id.game_name);
+                TextView startGame = findViewById(R.id.start_button);
+                highscore_txt.setText(R.string.highscores);
+                gameName.setText(R.string.college_life);
+                startGame.setText(R.string.start);
                 //setContentView(R.layout.activity_menu);
             }
         });
@@ -170,6 +167,7 @@ public class MenuActivity extends AppCompatActivity {
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
+                assert account != null;
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately

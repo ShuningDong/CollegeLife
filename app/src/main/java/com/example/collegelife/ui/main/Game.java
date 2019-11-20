@@ -1,61 +1,56 @@
 package com.example.collegelife.ui.main;
 
 
+import android.util.Log;
+import android.util.SparseArray;
+
 import java.util.ArrayList;
 
 class Game {
 
-    private ArrayList<Character> characters;
+    //private ArrayList<Character> characters;
+    private SparseArray<Character> characters;
     private Character currentPlayer;
+    private int size;
+
+    private static final String TAG = "Game_logic";
 
 
 
     // constructor
-    Game( ArrayList<Character> players) {
+    Game( SparseArray<Character> players) {
         characters = players;
         currentPlayer = characters.get(0);
+        size = characters.size();
     }
 
 
     /////////// Methods ///////////////////////
-   public void nextPlayer(){
-        int curr = characters.indexOf(this.currentPlayer);
-        if (curr == (characters.size() - 1)){
+    void nextPlayer(){
+        int curr = characters.indexOfValue(this.currentPlayer);
+        if (curr == (this.size - 1)){
             curr = 0;
         } else {
             curr += 1;
         }
-        currentPlayer = characters.get(curr);
+        currentPlayer = characters.valueAt(curr);
    }
 
-   public Character getCurrentPlayer() {
+   Character getCurrentPlayer() {
         return this.currentPlayer;
    }
 
-   public void playerTurn(double debt, int gpa) {
-        if (debt < 0) {
-            this.currentPlayer.subtractDebt(debt);
-        } else {
-            this.currentPlayer.addDebt(debt);
-        }
-        this.currentPlayer.setGPA(gpa);
-   }
-
-   public boolean validMove(int currentSpace, int nextSpace){
+   boolean validMove(int currentSpace, int nextSpace){
 
         return ((currentSpace + nextSpace ) < 26);
     }
 
-    public ArrayList<Character> getWinners(){
+    ArrayList<Character> getWinners(){
         ArrayList<Character> temp = new ArrayList<>();
-        for (Character c: characters){
-            if (temp.size() == 0){
-                temp.add(c);
-            } else {
-
-                temp.add(c);
+        int c_size = characters.size();
+        for (int j = 0; j < c_size; j++){
+                temp.add(characters.valueAt(j));
             }
-        }
         return temp;
     }
 

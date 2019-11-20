@@ -1,12 +1,8 @@
 package com.example.collegelife.ui.main;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Objects;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,20 +12,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.example.collegelife.R;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -62,14 +51,6 @@ public class HighscoreFragment extends Fragment  {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        // The default cache size threshold is 100 MB. Configure "setCacheSizeBytes"
-        // for a different threshold (minimum 1 MB) or set to "CACHE_SIZE_UNLIMITED"
-        // to disable clean-up.
-        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
-                .setCacheSizeBytes(FirebaseFirestoreSettings.CACHE_SIZE_UNLIMITED)
-                .build();
-        db.setFirestoreSettings(settings);
-
         db.collection("ranking list")
                 .orderBy("debt", Query.Direction.DESCENDING)
                 .get()
@@ -86,11 +67,11 @@ public class HighscoreFragment extends Fragment  {
                                     String gpa = document.get("gpa").toString();
                                     //TextView first = v.findViewById(R.id.place1);
                                     if (count == 0) {
-                                        first.setText( R.string.Name + name + R.string.Debt_d + debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
+                                        first.setText( "Player: " + name + " | debt: "+ debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
                                     }else if(count == 1) {
-                                        second.setText(R.string.Name + name + R.string.Debt_d + debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
+                                        second.setText("Player: " + name + " | debt: "+ debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
                                     }else if(count == 2) {
-                                        third.setText(R.string.Name + name + R.string.Debt_d + debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
+                                        third.setText("Player: " + name + " | debt: "+ debt  + " | "  + "GPA: " + df.format(Double.parseDouble(gpa)));
                                     }
                                     count++;
                                 }

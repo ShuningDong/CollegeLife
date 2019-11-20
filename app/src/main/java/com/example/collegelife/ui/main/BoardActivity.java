@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.util.Log;
 import android.os.Bundle;
+import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 public class BoardActivity extends AppCompatActivity {
 
     private static final String TAG = "Board_Activity";
-    private ArrayList<Character> characters = new ArrayList<>();
+    private SparseArray<Character> characters = new SparseArray<>();
     int turn = 0;
     private Game game;
     private TextView showName;
@@ -71,12 +72,14 @@ public class BoardActivity extends AppCompatActivity {
     }
 
 
-    private void setBoard(ArrayList<Character> playerList){
+    private void setBoard(SparseArray<Character> playerList){
 
         TableRow startBlock = findViewById(R.id.icons_s);
         //transfer gpa and debt to string in order to fit in textView.
 
-        for (Character player: playerList) {
+        int size = characters.size();
+        for (int i = 0; i < size; i++) {
+            Character player = playerList.valueAt(i);
 
             switch (player.getIcon()) {
                 case ("spade"):
@@ -437,7 +440,7 @@ public class BoardActivity extends AppCompatActivity {
                 if (icons[count] != null) {
                     player.setIcon(icons[count]);
                 }
-                characters.add(player);
+                characters.append(count, player);
                 count++;
             }
         }
@@ -538,7 +541,7 @@ public class BoardActivity extends AppCompatActivity {
         Log.d(TAG, "onStop is called");
     }
 
-    @Override
+/*    @Override
     // Should be be called before onPause
     protected void onSaveInstanceState(@NonNull Bundle outstate){
         super.onSaveInstanceState(outstate);
@@ -548,6 +551,6 @@ public class BoardActivity extends AppCompatActivity {
     // Should be called after onStart and onResume
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
-    }
+    }*/
 }
 
